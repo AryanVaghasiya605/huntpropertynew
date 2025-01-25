@@ -1,0 +1,121 @@
+<ion-content [fullscreen]="true">
+  <div class="login-bg">
+    <div class="login-bg-opacity">
+      <div lines="none">
+        <ion-icon routerLink="/splash/tabs/home" class="back-btn" name="arrow-back-outline"></ion-icon>
+      </div>
+      <ion-label>
+        <span class="sign">Login/SignUp</span> to showcase you property and search for your Desired property
+      </ion-label>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <ion-list class="ion-padding form-parent">
+          <ion-item lines="none">
+            <ion-input type="text" formControlName="username"
+              placeholder="Enter your email or mobile number"></ion-input>
+          </ion-item>
+          <div  class="web_error" *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)" >
+            <div *ngIf="loginForm.controls['username'].errors.required">*Email is required</div>            
+        </div>
+          <ion-item lines="none">
+            <ion-input type="password" placeholder="Enter your password" formControlName="password"></ion-input>
+          </ion-item>
+          <div  class="web_error" *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" >
+            <div *ngIf="loginForm.controls['password'].errors.required">*Password is required</div>            
+        </div>
+          <ion-item lines="none">
+            <ion-button class="submit-btn" type="submit" [disabled]="!loginForm.valid">Next</ion-button>
+          </ion-item>
+        </ion-list>
+      </form>
+
+      <ion-button  class="register" type="submit" id="open-modal" (click)="registerWith()">Register with us</ion-button>
+
+    </div>
+  </div>
+  <ion-modal *ngIf="showregisterModal === true" trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <span class="cancelBtn" (click)="cancel()">X</span>
+      <ion-content>
+        <div class="modal_content">
+          <div class="registerImage">
+            <img src="../../assets/images/register-image.jpeg" alt="">
+          </div>
+          <h2>Welcome</h2>
+          <h3>We'll need a few things to help you get started</h3>          
+            <div class="form-wrapper">
+              <form [formGroup]="register" (ngSubmit)="onRegister()">
+                <div class="steps" *ngIf="steps == 1">
+                <div class="availableFormWrapper">
+                  <span>I am</span>
+                  <ul>
+                    <li>
+                      <ion-icon name="builder"></ion-icon>
+                      <label class="container">
+                        <input type="radio" formControlName="type" value="individual" name="type"
+                          >
+                        <span>Individual</span>
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <ion-icon name="builder"></ion-icon>
+                      <label class="container">
+                        <input type="radio" formControlName="type" value="agent" name="type"
+                          >
+                        <span>Agent</span>
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <ion-icon name="builder"></ion-icon>
+                      <label class="container">
+                        <input type="radio" formControlName="type" value="builder" name="type"
+                          >
+                        <span>Builder</span>
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+
+                  </ul>
+                </div>
+                <span>Full Name</span>
+                <ion-input formControlName="name"></ion-input>
+                <div class="web_error"
+                  *ngIf="register.controls['name'].invalid && (register.controls['name'].dirty || register.controls['name'].touched)">
+                  <div *ngIf="register.controls['name'].errors.required">*Full name is required</div>
+                </div>
+                <span class="email-mt">Email</span>
+                <ion-input type="email" required email="true" formControlName="email"></ion-input>
+                <div  class="web_error" *ngIf="register.controls['email'].invalid && (register.controls['email'].dirty || register.controls['email'].touched)" >
+                  <div *ngIf="register.controls['email'].errors.required">*email is required</div>
+                  <div *ngIf="register.controls['email'].errors.pattern ">* Enter valid email</div>      
+              </div>                
+              </div>
+              <div class="steps" *ngIf="steps == 2">
+                <span>Password</span>
+                <ion-input type="password" formControlName="password"></ion-input>
+                <div class="web_error"
+                  *ngIf="register.controls['password'].invalid && (register.controls['password'].dirty || register.controls['password'].touched)">
+                  <div *ngIf="register.controls['password'].errors.required">*Password is required</div>
+                </div>
+                <span>Mobile Number</span>
+                <ion-input type="tel" formControlName="mobile"></ion-input>
+                <div class="web_error"
+                  *ngIf="register.controls['mobile'].invalid && (register.controls['mobile'].dirty || register.controls['mobile'].touched)">
+                  <div *ngIf="register.controls['mobile'].errors.required">*Mobile number is required</div>
+                </div>
+              </div>
+              <span *ngIf="steps <= 1"><ion-button class="submit-btn register" [disabled]="register.controls['name'].invalid && register.controls['email'].invalid"  type="submit">Next</ion-button></span>
+                
+                <ion-button class="submit-btn register" *ngIf="steps > 1" type="submit">register</ion-button>
+              </form>
+            </div>
+          <!-- </div> -->
+
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>

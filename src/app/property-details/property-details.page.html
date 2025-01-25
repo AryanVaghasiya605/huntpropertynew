@@ -1,0 +1,165 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1 small
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar class="list-img">
+   <img src="../../assets/images/proList.PNG" alt="image missing">
+    <fa-icon [icon]="faArrow" routerLink="/posted-property"></fa-icon>
+  </ion-toolbar>
+ 
+  <div class="bg-white" lines="none">
+    <span>
+      <img src="../../assets/images/icons/svg/user-avatar.svg" alt="image missing">
+    </span>
+    <div class="right-content">
+    <span>
+      <div>Owner</div>
+      <div>{{propertyDetails?.UserName}}</div>
+      <h6>Posted on: {{propertyDetails?.CreatedOn | date: 'mediumDate' }}</h6>
+    </span>
+    <span>
+      <div>9899095939</div>
+      <div><button type="submit">View Phone no.</button></div>
+    </span>
+  </div>
+  </div>
+
+  <div class="property-detail-wrapper">
+  <div class="property-detail">
+    <label>Property details</label>
+  <div class="bg-white" lines="none">
+   
+    <span>
+      <img src="../../assets/images/icons/price.png" alt="image missing">
+    </span>
+    <div class="right-content">
+    <span>
+      <div>Price</div>
+      <div><fa-icon [icon]="faIndianRupee"></fa-icon><span class="bold">{{expectedPrice}}</span></div>
+      <!-- <h6>Posted on: may 08, 2021</h6> -->
+    </span>
+    <span>
+      <div>Property For</div>
+      <div class="bold">{{propertyDetails?.PropertyFor}}</div>
+    </span>
+    <div class="border-bottom"></div>
+  </div>
+  </div>
+</div>
+
+
+<div class="bg-white" lines="none">
+ 
+  <span>
+    <img src="../../assets/images/icons/configuration.png" alt="image missing">
+  </span>
+  <div class="right-content">
+    
+  <span>    
+    <div>Configuration</div>
+    <div>Floors</div>
+    <div class="bold">{{floorNumber}}</div>
+    <!-- <h6>Posted on: may 08, 2021</h6> -->
+  </span>
+  <span>
+    <div class="bedroom">Bedrooms</div>
+    <div class="bold">{{bedRooms}}</div>
+  </span>
+  <div class="border-bottom"></div>
+</div>
+</div>
+
+<div class="bg-white" lines="none">
+ 
+  <span>
+    <img src="../../assets/images/icons/area.png" alt="image missing">
+  </span>
+  <div class="right-content">
+    
+  <span> 
+    <div>Area</div>   
+    <div>Super Buildup area - <span class="bold">{{superArea}}</span></div>
+    <div>Carpet Area- <span class="bold">{{carpetArea}}</span></div>
+    
+    <!-- <h6>Posted on: may 08, 2021</h6> -->
+  </span>
+  <span>
+    <div class="bedroom">BuiltUp Area</div>
+    <div class="bold">{{builtUpArea}} Sqft</div>
+  </span>
+  <div class="border-bottom"></div>
+</div>
+</div>
+
+<div class="bg-white" lines="none">
+ 
+  <span>
+    <img src="../../assets/images/icons/status.png" alt="image missing">
+  </span>
+  <div class="right-content">
+    
+  <span> 
+    <div>Status</div>   
+    <div>Transaction Type - <span class="bold">{{transactionType}}</span></div>
+    <div>Age of Construction - <span class="bold">{{constructionAge}}</span></div>
+    
+    <!-- <h6>Posted on: may 08, 2021</h6> -->
+  </span>
+  <span>
+    <div class="bedroom">Possession Status - <span class="bold">{{possessionStatus}}</span></div>
+    <div>Furnishing Status - <span class="bold">{{finishingStatus}}</span></div>
+  </span>
+  <div class="border-bottom"></div>
+</div>
+</div>
+
+<div class="bg-white" lines="none">
+ 
+  <span>
+    <img src="../../assets/images/icons/ownership.png" alt="image missing">
+  </span>
+  <div class="right-content">
+    
+  <span> 
+    <div>Ownership</div>   
+    <div>Type</div>
+    
+  </span>
+  <span>
+    <div class="bedroom bold">{{ownerShip}}</div>
+  
+  </span>
+  <div class="border-bottom"></div>
+</div>
+</div>
+
+</div>
+<div class="property-detail-wrapper" *ngIf="propertyDetails?.Description != ''">
+  <div class="property-detail">
+  <label>Property Description</label>
+  <p >{{propertyDetails?.Description}}</p>
+  </div>
+</div>
+
+<div class="property-detail-wrapper">
+  <div class="property-detail">
+  <label>Property Location</label>
+  <!-- <p >
+    <img src="../../assets/images/map.PNG" alt="">
+   
+  </p> -->
+  <div #map id="map" style="margin-bottom: 50px; height: 400px;"></div>
+  </div>
+</div>
+<div class="buttons">
+  <ion-button class="enq" (click)="redirectToSendMessage(propertyDetails.UserId)">Enquire Now</ion-button>
+  <ion-button (click)="redirectToSendMessage(propertyDetails.UserId)">
+    <fa-icon [icon]="faMessage"></fa-icon>Chat
+  </ion-button>
+</div>
+</ion-content>

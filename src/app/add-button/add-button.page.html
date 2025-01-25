@@ -1,0 +1,6 @@
+<ion-button class="addBtn" (click)="addProduct()" *ngIf="showAddBtn">ADD</ion-button>
+<div class="add-btn" *ngIf="plusMinus" [formGroup]="form">    
+<a class="plusminus"  (click)="handleMinus()">-</a>
+<input type="text" readonly class="num" value="0" formControlName="control" [(ngModel)]="value" />
+<a class="plusminus" (click)="handlePlus()">+</a>
+</div>

@@ -1,0 +1,16 @@
+
+
+<ion-content>
+<div class="login-bg">
+        <fa-icon [icon]="faArrowLeft" routerLink="/splash/tabs/home"></fa-icon>
+        <span>
+          Continue with <span class="free-listing">Free Listing</span> or select a Package.
+      </span>
+      <div class="slectDropdown">       
+          <ion-select placeholder="Select a Package" [interfaceOptions]="customAlertOptions">
+            <ion-select-option value="Free">Free</ion-select-option>           
+          </ion-select>       
+      </div>
+</div>
+<ion-button class="next-btn" routerLink="/select-package/post-property-for">Next</ion-button>
+</ion-content>

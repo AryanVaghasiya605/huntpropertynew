@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar class="header-bg-color">    
+    <ion-icon routerLink="/splash/tabs/home" class="back-btn" name="arrow-back-outline"></ion-icon>
+    <ion-title class="header-title">Loan Eligibility</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="loanElegibility" (ngSubmit)="onSubmit()"> 
+<div class="item-wrapper">
+    <ion-item class="loan-item" lines="none">
+      <span class="loan-left-wrapper">
+    <label for="first-name">Loan Required: </label>
+    <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+  </span>  
+    <ion-input inputmode="numeric" type="number"  formControlName="LoanAmount"></ion-input>    
+  </ion-item>
+  <div  class="web_error" *ngIf="loanElegibility.controls['LoanAmount'].invalid && (loanElegibility.controls['LoanAmount'].dirty || loanElegibility.controls['LoanAmount'].touched)" >
+    <div *ngIf="loanElegibility.controls['LoanAmount'].errors.required">*Loan amount is required</div>
+    <div *ngIf="loanElegibility.controls['LoanAmount'].errors.pattern ">* Only numbers are allowed</div>      
+</div>
+</div>
+  <div class="item-wrapper">
+  <ion-item class="loan-item" lines="none">    
+    <span class="loan-left-wrapper">
+    <label for="last-name">Net income per month<br>Excluding LTA and Medical Allowances: </label>
+    <fa-icon  [icon]="faIndianRupeeSign"></fa-icon>
+  </span>
+    <ion-input inputmode="numeric" type="number" formControlName="NetIncome"></ion-input>
+  </ion-item>
+  <div  class="web_error" *ngIf="loanElegibility.controls['NetIncome'].invalid && (loanElegibility.controls['NetIncome'].dirty || loanElegibility.controls['NetIncome'].touched)" >
+    <div *ngIf="loanElegibility.controls['NetIncome'].errors.required">*Net income is required</div>
+    <div *ngIf="loanElegibility.controls['NetIncome'].errors.pattern ">* Only numbers are allowed</div>      
+</div> 
+</div>
+  <div class="item-wrapper">
+  <ion-item class="loan-item" lines="none">
+    <span class="loan-left-wrapper">
+    <label for="last-name">Existing Loan commitments <br>(per month): </label>
+    <fa-icon  [icon]="faIndianRupeeSign"></fa-icon>
+  </span>
+    <ion-input inputmode="numeric" type="number" formControlName="ExistingEMI"></ion-input>
+  </ion-item>
+  <div  class="web_error" *ngIf="loanElegibility.controls['ExistingEMI'].invalid && (loanElegibility.controls['ExistingEMI'].dirty || loanElegibility.controls['ExistingEMI'].touched)" >
+    <div *ngIf="loanElegibility.controls['ExistingEMI'].errors.required">*Existing Loan amount is required</div>
+    <div *ngIf="loanElegibility.controls['ExistingEMI'].errors.pattern ">* Only numbers are allowed</div>      
+  </div>
+</div>
+  <div class="item-wrapper">
+  <ion-item class="loan-item" lines="none">
+    <span class="loan-left-wrapper">
+    <label for="last-name">Loan Tenure: </label>
+  </span>
+    <ion-input inputmode="numeric" type="number" formControlName="LoanTenure"></ion-input>
+  </ion-item>
+  <div  class="web_error" *ngIf="loanElegibility.controls['LoanTenure'].invalid && (loanElegibility.controls['LoanTenure'].dirty || loanElegibility.controls['LoanTenure'].touched)" >
+    <div *ngIf="loanElegibility.controls['LoanTenure'].errors.required">*Loan tenure is required</div>
+    <div *ngIf="loanElegibility.controls['LoanTenure'].errors.pattern ">* Only numbers are allowed</div>      
+  </div>
+</div>
+<div class="item-wrapper">
+  <ion-item class="loan-item" lines="none">
+    <span class="loan-left-wrapper">
+    <label for="last-name">Rate of Interest </label>
+    <fa-icon  [icon]="faPercent"></fa-icon>
+  </span>
+    <ion-input inputmode="numeric" type="number" formControlName="InterestRate"></ion-input>
+  </ion-item> 
+  <div  class="web_error" *ngIf="loanElegibility.controls['InterestRate'].invalid && (loanElegibility.controls['InterestRate'].dirty || loanElegibility.controls['InterestRate'].touched)" >
+    <div *ngIf="loanElegibility.controls['InterestRate'].errors.required">*Rate of interest is required</div> 
+  </div>
+</div>
+<ion-button class="loan-submit-btn" type="submit" [disabled]="!loanElegibility.valid">Check Your Elegibility</ion-button>
+  </form>  
+  
+  <ion-button class="reset-btn" fill="clear" type="submit" (click)="resetSubmitForm()">Reset all fields</ion-button>
+  <span class="red-border"></span>
+  <span *ngIf="loanEle" class="res">Result:
+    <div class="resultLoanEle">you are Eligible for this loan
+      <fa-icon [icon]="faIndianRupeeSign"></fa-icon>{{LoanAmount}} at the EMI <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+      {{monthlyEMI}}
+
+    </div>
+    <div class="resultLoanEle">you are also Eligible for the maximum loan of
+      <fa-icon [icon]="faIndianRupeeSign"></fa-icon>{{maxLoan}} at the EMI <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+      {{EligibleEmi}}
+
+    </div>
+  </span>
+</ion-content>

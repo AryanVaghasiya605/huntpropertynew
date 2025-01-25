@@ -1,0 +1,44 @@
+<!-- <span class="monthlyRent color-black" slot="start">
+    Accomodation Type
+  </span>
+<ion-item lines="none">
+  <ion-select type="text" placeholder="Select Category" (onChange)="getCategory()">
+    <ion-select-option value="New Construction">New Construction</ion-select-option>
+    <ion-select-option value="Less than 5 years">Less than 5 years</ion-select-option>    
+  </ion-select>
+</ion-item>
+<span class="monthlyRent color-black" slot="start">
+  Size(SQFT)
+</span>
+<ion-item lines="none">
+<ion-input></ion-input>
+</ion-item>
+<span class="monthlyRent color-black" slot="start">
+  Site plan
+</span>
+<ion-item lines="none">
+<ion-input></ion-input>
+</ion-item>
+<span class="monthlyRent color-black" slot="start">
+  Cluster Plan
+</span>
+<ion-item lines="none">
+<ion-input></ion-input>
+</ion-item>
+<span class="monthlyRent color-black" slot="start">
+  Floor Plan
+</span>
+<ion-item lines="none">
+<ion-input></ion-input>
+</ion-item>
+ -->
+ <div formArrayName="items"
+  *ngFor="let item of itemsArrayControl.controls; let i = index;">
+  <div [formGroupName]="i">
+    <input formControlName="name" placeholder="Item name">
+    <input formControlName="description" placeholder="Item description">
+    <input formControlName="price" placeholder="Item price">
+  </div>
+
+  Chosen name: {{ itemsArrayControl[i].controls.name.value }}
+</div>

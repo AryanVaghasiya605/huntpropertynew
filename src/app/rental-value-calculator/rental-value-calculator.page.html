@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar class="header-bg-color">    
+    <ion-icon routerLink="/splash/tabs/home" class="back-btn" name="arrow-back-outline"></ion-icon>
+    <ion-title class="header-title">Rental Value calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="rentalValueCalculator" (ngSubmit)="onSubmit()"> 
+<div class="item-wrapper">
+    <ion-item class="loan-item" lines="none">
+      <span class="loan-left-wrapper">
+    <label for="first-name">Property Value: </label>
+    <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+  </span>  
+    <ion-input inputmode="numeric" type="number"  formControlName="propertyvalue"></ion-input>    
+  </ion-item>
+  <div  class="web_error" *ngIf="rentalValueCalculator.controls['propertyvalue'].invalid && (rentalValueCalculator.controls['propertyvalue'].dirty || rentalValueCalculator.controls['propertyvalue'].touched)" >
+    <div *ngIf="rentalValueCalculator.controls['propertyvalue'].errors.required">*Property Value is required</div>
+    <div *ngIf="rentalValueCalculator.controls['propertyvalue'].errors.pattern ">* Only numbers are allowed</div>      
+</div>
+</div>
+  <div class="item-wrapper">
+  <ion-item class="loan-item" lines="none">    
+    <span class="loan-left-wrapper">
+    <label for="last-name">No. of years</label>    
+  </span>
+    <ion-input inputmode="numeric" type="number" formControlName="year"></ion-input>
+  </ion-item>
+  <div  class="web_error" *ngIf="rentalValueCalculator.controls['year'].invalid && (rentalValueCalculator.controls['year'].dirty || rentalValueCalculator.controls['year'].touched)" >
+    <div *ngIf="rentalValueCalculator.controls['year'].errors.required">*Numbers of Years is required</div>
+    <div *ngIf="rentalValueCalculator.controls['year'].errors.pattern ">* Only numbers are allowed</div>      
+</div> 
+</div>
+
+<div class="item-wrapper">
+  <ion-item class="loan-item" lines="none">
+    <span class="loan-left-wrapper">
+    <label for="last-name">Rate of rent</label>
+    <fa-icon  [icon]="faPercent"></fa-icon>
+  </span>
+    <ion-input inputmode="numeric" type="number" formControlName="rentrate"></ion-input>
+  </ion-item> 
+  <div  class="web_error" *ngIf="rentalValueCalculator.controls['rentrate'].invalid && (rentalValueCalculator.controls['rentrate'].dirty || rentalValueCalculator.controls['rentrate'].touched)" >
+    <div *ngIf="rentalValueCalculator.controls['rentrate'].errors.required">*Rate of interest is required</div> 
+  </div>
+</div>
+<ion-button class="loan-submit-btn" type="submit" [disabled]="!rentalValueCalculator.valid">Submit</ion-button>
+  </form>  
+  
+  <ion-button class="reset-btn" fill="clear" type="submit" (click)="resetSubmitForm()">Reset all fields</ion-button>
+  <span class="red-border"></span>
+  <Span class="result" *ngIf="calculatedRental">Result: {{calculatedRental}}</Span>
+</ion-content>

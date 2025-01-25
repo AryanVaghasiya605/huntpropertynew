@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar class="header-bg-color">    
+        <div class="header-title">Profile</div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar class="banner-bg">
+   <div class="user-avatar">
+    <fa-icon [icon]="faUser"></fa-icon>
+   </div>
+   <div class="user-details">
+    <span class="name">{{name}}</span>
+    <span class="email">{{email}}</span>
+   </div>
+    </ion-toolbar>
+
+    <ion-list class="profile-list" lines="none">
+      <div class="profile-list-innerwrapper">
+      <div class="list" routerLink="/messages">
+        <ion-img src="../../assets/images/icons/message.png"></ion-img>
+        <span class="message">My message</span>
+      </div>
+      <div class="list">
+        <ion-img src="../../assets/images/icons/package.png"></ion-img>
+        <span class="message">Packages</span>
+      </div>
+      <div class="list" routerLink="/posted-property">
+        <ion-img src="../../assets/images/icons/home.png"></ion-img>
+        <span class="message">Posted Properties</span>
+      </div>
+      <div class="list" routerLink="/messages">
+        <ion-img src="../../assets/images/icons/envelop.png"></ion-img>
+        <span class="message">Responses</span>
+      </div>
+    </div>
+    </ion-list>
+    
+</ion-content>

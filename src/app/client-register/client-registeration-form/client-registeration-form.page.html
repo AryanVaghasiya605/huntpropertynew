@@ -1,0 +1,226 @@
+<ion-header class="clients_header">
+  <ion-toolbar class="header-bg-color">    
+    <ion-icon slot="start" routerLink="/client-register" class="back-btn" name="arrow-back-outline"></ion-icon>
+    <ion-title slot="start" class="header-title">Client Registration Form</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup]="clientRegistraionForm" (ngSubmit)="onSubmit()">
+<div class="first-step-registration" *ngIf="steps === 1">
+  <ion-item lines="none">Client Details</ion-item>
+  <div class="client-form-list">  
+      <span>
+        <ion-label>Name</ion-label>
+        <ion-input formControlName="client_name"></ion-input>
+      </span>
+      <span>
+        <ion-label>Email</ion-label>
+        <ion-input formControlName="client_email"></ion-input>
+      </span>
+      <span>
+        <ion-label>Contact</ion-label>
+        <ion-input formControlName="client_phone"></ion-input>
+      </span>
+      <span>
+        <ion-label>Address</ion-label>
+        <ion-textarea formControlName="client_address"></ion-textarea>
+      </span>
+    
+  </div>
+  <ion-item lines="none">How do you get to know about us?</ion-item>
+  <div class="availableFormWrapper">
+    <ul>
+      <li>
+        <label class="container">
+          <input type="radio" formControlName="how_know" name="how_know" value="sms" >
+          SMS
+          <span class="checkmark"></span>
+        </label>
+      </li>
+      <li>
+        <label class="container">
+          <input type="radio" formControlName="how_know" name="how_know" value="Newspaper" >
+          Newspaper
+          <span class="checkmark"></span>
+        </label>
+      </li>
+      <li>
+        <label class="container">
+          <input type="radio" formControlName="how_know" name="how_know" value="Friend" >
+          Friend
+          <span class="checkmark"></span>
+        </label>
+      </li>
+      <li>
+        <label class="container">
+          <input type="radio" formControlName="how_know" name="how_know" value="Facebook" >
+          Facebook
+          <span class="checkmark"></span>
+        </label>
+      </li>
+      <li>
+        <label class="container">
+          <input type="radio" formControlName="how_know" name="how_know" value="Instagram" >
+          Instagram
+          <span class="checkmark"></span>
+        </label>
+      </li>
+      <li>
+        <label class="container">
+          <input type="radio" formControlName="how_know" name="how_know" value="Google" >
+          Google
+          <span class="checkmark"></span>
+        </label>
+      </li>
+      <li>
+        <label class="container">
+          <input type="radio" formControlName="how_know" name="how_know" value="Walk In" >
+          Walk In
+          <span class="checkmark"></span>
+        </label>
+      </li>
+    </ul>  
+  </div>
+  <ion-item lines="none">
+    <ion-text color="danger">
+      <p>All fields are mandatory. Please provide all informations</p>
+    </ion-text>
+  </ion-item>
+</div>
+<div class="second-step-registration" *ngIf="steps === 2">
+<ion-item lines="none">Project Looking for</ion-item>
+<div class="projectType">Please choose project type</div>
+<ion-item lines="none">
+  <div class="clients-btn" (click)="getProjectTypeId(projectTypes[0].Id, projectTypes[0].PropertyType)" [ngClass]="{'active': projectTypeTabActive == projectTypes[0].PropertyType || projectTypes[0].PropertyType == 
+  projectPurpose}">{{projectTypes[0].PropertyType}}</div>    
+  <div class="clients-btn" (click)="getProjectTypeId(projectTypes[1].Id, projectTypes[1].PropertyType)" [ngClass]="{'active': projectTypeTabActive == projectTypes[1].PropertyType}"> {{projectTypes[1].PropertyType}}</div>  
+</ion-item>
+<ion-item lines="none">  
+  <div class="clients-btn" (click)="getProjectTypeId(projectTypes[2].Id, projectTypes[2].PropertyType)" [ngClass]="{'active': projectTypeTabActive == projectTypes[2].PropertyType}">{{projectTypes[2].PropertyType}}</div> 
+  <div class="clients-btn" (click)="getProjectTypeId(projectTypes[3].Id, projectTypes[3].PropertyType)" [ngClass]="{'active': projectTypeTabActive == projectTypes[3].PropertyType}">{{projectTypes[3].PropertyType}}</div>    
+  <div class="clients-btn" (click)="getProjectTypeId(projectTypes[4].Id, projectTypes[4].PropertyType)" [ngClass]="{'active': projectTypeTabActive == projectTypes[4].PropertyType}"> {{projectTypes[4].PropertyType}}</div>
+</ion-item>
+<span class="monthlyRent color-black" slot="start">
+    Category
+  </span> 
+<ion-item lines="none">
+  <ion-select  placeholder="Select Category" value="{{getId}}" (ionChange)="getCategoryId($event)">
+    <ion-select-option *ngFor="let item of projectCatogery" value="{{item.Id}}">{{item.ProjectCategory}}</ion-select-option>      
+  </ion-select>  
+</ion-item>
+<span class="monthlyRent color-black" slot="start">
+  Subcategory
+</span>
+<ion-item lines="none">
+<ion-select placeholder="Select SubCategory" value="{{getSubCatId}}" (ionChange)="getSubcategoryId($event)">
+  <ion-select-option *ngFor="let item of projectSubCatogery" value="{{item.Id}}">{{item.ProjectSubCategory}}</ion-select-option>
+    
+</ion-select>
+</ion-item>
+
+<span class="monthlyRent color-black" slot="start">
+  Subcategory
+</span>
+<ion-item lines="none">
+<div class="purpose">
+  <a (click)="setActive('Investment')" [ngClass]="{ 'active':  activeTab == 'Investment'}">Investment</a>
+  <a (click)="setActive('selfUse')" [ngClass]="{ 'active': activeTab == 'selfUse' }">Self Use</a>
+  <a (click)="setActive('both')" [ngClass]="{ 'active': activeTab == 'both' }">Both</a>
+</div>
+</ion-item>
+<span class="monthlyRent color-black" slot="start">Size</span>
+<span class="monthlyRent color-black" slot="start">
+    Parameter
+  </span>
+<ion-item lines="none">
+  <ion-select type="text" placeholder="Select Category" value="SQFT" (ionChange)="getParaMeter($event)">
+    <ion-select-option value="SQFT">SQFT</ion-select-option>
+    <ion-select-option value="SQMTR">SQMTR</ion-select-option>
+    <ion-select-option value="SQYD">SQYD</ion-select-option>   
+  </ion-select>
+</ion-item>
+<span class="monthlyRent color-black" slot="start">
+  Property Size
+</span>
+<ion-item lines="none">
+<ion-input formControlName="size_property"></ion-input>
+</ion-item>
+<ion-item lines="none">
+  <ion-text color="danger">
+    <p>All fields are mandatory. Please provide all informations</p>
+  </ion-text>
+</ion-item>
+</div>
+<div class="second-step-registration" *ngIf="steps === 3">
+  
+  <div class="projectType">Possession Status</div>
+  <ion-item lines="none">
+    <div class="clients-btn" (click)="getPossessionStatus('Ready to move')" [ngClass]="{'active': possessionTabActive == 'Ready to move'}">Ready to move</div>    
+    <div class="clients-btn" (click)="getPossessionStatus('Under Construction')" [ngClass]="{'active': possessionTabActive == 'Under Construction'}">Under Construction</div>  
+  </ion-item>
+  <ion-item lines="none">  
+    <div class="clients-btn" (click)="getPossessionStatus('Within 6 months')" [ngClass]="{'active': possessionTabActive == 'Within 6 months'}">Within 6 months</div> 
+    <div class="clients-btn" (click)="getPossessionStatus('Within 9 months')" [ngClass]="{'active': possessionTabActive == 'Within 9 months'}">Within 9 months</div>
+  </ion-item>
+  <ion-item lines="none">
+    <div class="clients-btn" (click)="getPossessionStatus('Within 12 months')" [ngClass]="{'active': possessionTabActive == 'Within 12 months'}">Within 12 months</div>
+    <div class="clients-btn" (click)="getPossessionStatus('More Then Year')" [ngClass]="{'active': possessionTabActive == 'More Then Year'}">More Then Year </div>
+  </ion-item>
+  <span class="monthlyRent color-black" slot="start">
+      Location{{location[0].id}}
+    </span> 
+  <ion-item lines="none">    
+    <ion-select  placeholder="Select Location" value="{{location[0].id}}"  (ionChange)="getLocation($event)">
+      <ion-select-option *ngFor="let item of location" value="{{item.id}}">{{item.locationName}}</ion-select-option>      
+    </ion-select>  
+  </ion-item>
+  
+  <span class="monthlyRent color-black" slot="start">
+    Budget   
+  </span>
+  <ion-item lines="none" class="range">
+    <app-custom-range [min]="min" [max]="max" [step]="1" (sliderVal)="getRangeValue($event)"></app-custom-range>
+  </ion-item>
+  
+  <span class="monthlyRent color-black" slot="start">
+    Bank Loan
+  </span>
+  <ion-item lines="none">
+  <div class="purpose bankLoan">
+    <a (click)="bankLoanRequired('Yes')">Yes</a>
+    <a (click)="bankLoanRequired('No')">No</a>
+    <ion-item lines="none" *ngIf="loanRequired">
+      <ion-input placeholder="Self funding - %" maxlength="3" formControlName="self_funding_percent"></ion-input>
+      <ion-input placeholder="Bank Loan - %" maxlength="2" formControlName="bank_loan_funding_percent"></ion-input>
+      <span (click)="closeLoanRequiredInput()">X</span>
+    </ion-item>   
+  </div>
+  </ion-item>    
+  <div class="monthlyRent color-black">Close the Deal</div>
+  <ion-item lines="none">
+    <div class="clients-btn" (click)="closingDeal('With in a 2 to 3 Days')" [ngClass]="{'active': closingDealTab === 'With in a 2 to 3 Days'}">With in a 2 to 3 Days</div>    
+    <div class="clients-btn" (click)="closingDeal('With in a Weak')" [ngClass]="{'active': closingDealTab === 'With in a Weak'}">With in a Weak</div>  
+  </ion-item>
+  <ion-item lines="none">
+    <div class="clients-btn" (click)="closingDeal('With in a Month')" [ngClass]="{'active': closingDealTab === 'With in a Month'}">With in a Month</div>  
+    <div class="clients-btn" (click)="closingDeal('With in 2 Weeks')" [ngClass]="{'active': closingDealTab === 'With in 2 Weeks'}">With in 2 Weeks</div>
+  </ion-item>
+  <ion-item lines="none">
+    <div class="clients-btn" (click)="closingDeal('Other Plz Specify')" [ngClass]="{'active': closingDealTab === 'Other Plz Specify'}">Other Plz Specify</div> 
+  </ion-item>
+  <ion-item lines="none">
+    <ion-text color="danger">
+      <p>All fields are mandatory. Please provide all informations</p>
+    </ion-text>
+  </ion-item>
+  </div>
+<ion-item lines="none">
+  <ion-button *ngIf="steps > 1 && showPreviousBtn" class="nextBtn" type="button" (click)="goBack()">Previous</ion-button>
+  <ion-button *ngIf="hideNextBtn" class="nextBtn" type="submit">Next</ion-button>
+  <ion-button *ngIf="steps > 2  && showSubmitBtn" class="nextBtn submitBtn"  type="submit">Submit</ion-button>
+</ion-item>
+
+</form> 
+</ion-content>

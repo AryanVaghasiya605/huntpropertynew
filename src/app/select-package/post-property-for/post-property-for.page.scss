@@ -1,0 +1,68 @@
+.property-bg{
+ background: url('../../../assets/images/placeholder-01.png'); 
+ background-repeat: no-repeat;
+ background-position: 100% 100%;
+ background-size: contain;
+ background-color: #fff;
+ fa-icon{
+    font-size: 24px;
+    font-weight: 900;
+    margin-left: 20px;
+    margin-top: 20px;
+    display: inline-block;
+    color: #000;
+ }
+ div{
+    color: #000;
+    text-align: center;
+    border-bottom: solid 2px #e3e3e3;
+    width: 88%;
+    padding-bottom: 20px;
+    margin: 30px auto 0;
+    font-size: 16px;
+    font-weight: 500;
+    span{
+        color: red;
+    }
+ }
+ .property-image{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15px;
+        img{
+        height: 200px;
+    }
+    span{
+        color: #000;
+        margin-top: 15px;
+    }
+ }
+ .property-btn{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    margin-top: 15px;
+    .buy{
+        width: 120px;
+        height: 40px;
+        --background:#e3e3e3;
+        color:#fff;
+        text-decoration: underline;
+        text-transform:capitalize;
+        }
+    .rent{
+        width: 120px; 
+        height: 40px;
+        margin-left: 20px;
+        --background:#e3e3e3;
+        color:#fff;
+        text-decoration: underline;
+        text-transform:capitalize;
+    }
+ }
+}

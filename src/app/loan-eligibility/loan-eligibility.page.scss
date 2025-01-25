@@ -1,0 +1,78 @@
+.header-bg-color{
+    --background:#e14b4c;    
+    --padding-start: 15px;
+.back-btn{ color: #ffffff; font-size: 25px;}
+.header-title{
+    display: inline-block;
+}
+}
+ion-content{
+    --background:#ffffff;
+    --padding-top:50px;
+    .web_error{ color:#e14b4c;
+        display: flex;
+        align-items: end;
+    justify-content: end;
+    margin-top: -10px;
+    font-size: 12px;    
+    margin-right: 15px;} 
+.loan-item{
+    margin-bottom: 9px;
+    --background:#ffffff;
+    padding: 0;
+    --min-height:40px;
+    .loan-left-wrapper{
+        width: 50%;
+        text-align: end;
+            label{
+                color: #6a6a6a;
+                font-size: 12px;
+            }
+            fa-icon{ color: #6a6a6a;font-size: 12px; margin-left: 5px;}
+    }
+   ion-input[type="text"]{
+        --background: #ffffff;
+        border: solid 1px #e1e1e1;
+        margin-left: 20px;
+        border-radius: 5px;
+        --padding-start: 15px;
+        color: #6a6a6a;
+    } 
+    ion-input[type="number"]{
+        --background: #ffffff;
+        border: solid 1px #e1e1e1;
+        margin-left: 20px;
+        border-radius: 5px;
+        --padding-start: 15px;
+        color: #6a6a6a;
+    }    
+
+}
+.loan-submit-btn{
+    margin: auto;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --border-radius: 0;
+    height: 55px;
+}
+.reset-btn{
+    margin: auto;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --border-radius: 0;   
+    z-index: 9;
+    height: 55px;
+    left: 0;
+    right: 0
+}
+.red-border{ border: solid 2px #e5002d; width:80%; display: flex;margin: 34px auto 20px auto;}
+}
+.res{ color: #000;width: 80%;
+    margin: 0 auto;
+    display: block;}
+.resultLoanEle{ color: #000; text-align: center;font-size: 15px;
+    line-height: 21px;}

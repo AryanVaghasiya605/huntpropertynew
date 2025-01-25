@@ -1,0 +1,61 @@
+<ion-content>
+  <div class="login-bg property-bg">
+          <fa-icon [icon]="faArrowLeft" routerLink="/splash/tabs/home"></fa-icon>
+         
+          <div class="property-image">
+            <img src="../../../assets/images/icons/svg/building.svg" alt="image missing">
+
+            <span class="whatType">
+              What type of <span class="text-red">property</span> is it?
+            </span>
+          <span  class="list-type">
+          <label class="container">
+            <input type="radio" name="options" (click)="residentialsProperty()"
+            >
+            Residentail
+            <span class="checkmark"></span>
+          </label>
+          <label class="container" >
+            <input type="radio" name="options" (click)="commercialProp()"
+            >
+            Commercial
+            <span class="checkmark"></span>
+          </label>
+        </span>
+    
+        <span class="property-list" >  
+          <ul *ngIf="residentialsProp" id="residentialsProp">
+            <li *ngFor="let residentials of residentialsProp; let i = index">
+              <span (click)="propertyDetails(residentials.Id, propertyfor)">
+              <ion-img src="{{residentials.image}}" alt="image missing"></ion-img>
+              
+              </span>  
+              <p>{{residentials.PropertySubCategory}}</p>
+          </li>
+        </ul>
+        <ul *ngIf="commercialProperty" id="commercialProp">
+          <li *ngFor="let commercial of commercialProperty; let i = index">
+          <span (click)="propertyDetails(commercial.Id, propertyfor)">
+          <ion-img src="{{commercial.image}}" alt="image missing"></ion-img>
+          
+          </span>  
+          <p>{{commercial.PropertySubCategory}}</p>
+      </li>
+      </ul>
+           </span>
+
+           <!-- <span class="property-list">  
+            
+             </span> -->
+         
+        
+            <!-- <div class="property-btn">
+              <ion-button class="buy" routerLink="/select-package/property-type-list">Buy</ion-button>
+              <ion-button class="rent" routerLink="/select-package/property-type-list">Rent</ion-button>
+            </div> -->
+          </div>
+          
+          </div>
+          
+  
+  </ion-content>

@@ -1,0 +1,188 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Property Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="../../../assets/images/bg_property_listing_top_720.png"></ion-img>
+  
+  <form [formGroup]="rentForm" (ngSubmit)="onSubmit()">
+    <div class="form-steps" *ngIf="steps === 1">
+      <div class="formlist">
+        <ul *ngFor="let list of allAttributes">
+          <li>
+            <ion-item lines="none" slot="start">{{list.AttributeName}}              
+              <!-- <app-add-button *ngIf="list.AttributeName === 'Bedrooms' || list.AttributeName === 'Bathrooms' || list.AttributeName === 'Balconies'" slot="end" class="slide" (handlePlusEv)="handlePlus($event)"
+              (handleMinusEv)="handleMinus($event)" [form]="rentForm"
+              [control]="rentForm.get(list.AttributeName)" [AttributeName]="list.AttributeName" [AttributeId]="list.AttributeId" [Value]="list.Id"></app-add-button> -->
+             
+              <ion-select formControlName="{{list.AttributeCode}}" *ngIf="list.AttributeName === 'Bedrooms'" slot="end" value="select" placeholder="--Select--" (ionChange)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                <ion-select-option *ngFor="let item of bedroomsOpt; let i = index" value="{{item}}">{{item}}</ion-select-option>      
+              </ion-select>
+              <ion-select formControlName="{{list.AttributeCode}}" *ngIf="list.AttributeName === 'Bathrooms'" slot="end" value="" placeholder="--Select--" (ionChange)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                <ion-select-option *ngFor="let item of bathroomOpt; let i = index" value="{{item}}">{{item}}</ion-select-option>      
+              </ion-select>              
+              <ion-select formControlName="{{list.AttributeCode}}" *ngIf="list.AttributeName === 'Balconies'" slot="end" value="" placeholder="--Select--" (ionChange)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                <ion-select-option *ngFor="let item of balconiesOpt; let i = index" value="{{item}}">{{item}}</ion-select-option>      
+              </ion-select>
+                <ion-select formControlName="{{list.AttributeCode}}" slot="end" *ngIf="list.AttributeCode === 'FinishingStatus'" value="" placeholder="--Select--" (ionChange)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                <ion-select-option *ngFor="let item of finishingStatus; let i = index" value="{{item}}">{{item}}</ion-select-option>      
+              </ion-select>
+              <ion-select slot="end" *ngIf="list.AttributeCode === 'AgeOfConstruction'" formControlName="{{list.AttributeCode}}" value="{{ageOfCons[0]}}" placeholder="--Select--" (ionChange)="getAgeofConstruction($event)">
+                <ion-select-option *ngFor="let item of ageOfCons; let i = index" value="{{item}}">{{item}}</ion-select-option>      
+              </ion-select>
+              <ion-select slot="end" *ngIf="list.AttributeCode === 'TypeOfOwnership'" formControlName="{{list.AttributeCode}}" value="{{typeOfOwnerShip[0]}}" placeholder="--Select--" (ionChange)="getTypeOfOwnership($event)">
+                <ion-select-option *ngFor="let item of typeOfOwnerShip; let i = index" value="{{item}}">{{item}}</ion-select-option>      
+              </ion-select>
+              <ion-select slot="end" *ngIf="list.AttributeCode === 'Facing'" formControlName="{{list.AttributeCode}}" value="{{facing[0]}}" placeholder="--Select--" (ionChange)="getFacing($event)">
+                <ion-select-option *ngFor="let item of facing; let i = index" value="{{item}}">{{item}}</ion-select-option>      
+              </ion-select>
+              <ion-select slot="end" *ngIf="list.AttributeCode === 'State'" formControlName="{{list.AttributeCode}}" [value]="stateListIndex" placeholder="--Select--" (ionChange)="stateLisOnChange($event)">
+                <ion-select-option *ngFor="let item of stateList; let i = index" value="{{item.Id}}">{{item.State}}</ion-select-option>      
+              </ion-select>
+              <ion-select slot="end" *ngIf="list.AttributeCode === 'City'" formControlName="{{list.AttributeCode}}" [value]="cityListIndex" placeholder="--Select--" (ionChange)="getSubcategory($event)">
+                <ion-select-option *ngFor="let item of cityList; let i = index" value="{{item.Id}}">{{item.City}}</ion-select-option>      
+              </ion-select>
+              <ion-select slot="end" *ngIf="list.AttributeCode === 'AvailableFrom'" formControlName="{{list.AttributeCode}}" value="{{availableFrom[0]}}" placeholder="--Select--" (ionChange)="getAvailableFrom($event)">
+                <ion-select-option *ngFor="let item of availableFrom; let i = index" value="{{item}}">{{item}}</ion-select-option>      
+              </ion-select>
+              <ion-input type="text" slot="end" *ngIf="list.AttributeType === 'text'"  formControlName="{{list.AttributeCode}}"></ion-input>
+              <ion-input type="number" slot="end" *ngIf="list.AttributeType === 'number'" (ionBlur)="getInputField($event, list.AttributeId, list.AttributeName, list.AttributeCode)" formControlName="{{list.AttributeCode}}"></ion-input>
+              <div class="furnishing-list" slot="end">
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'TransactionType'">                
+                  <ul>
+                    <li *ngFor="let item of transactionType">
+                      <label class="container">
+                        <input type="radio" name="options1" >
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                                                        
+                  </ul>
+                </div>
+                <div slot="end" class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'PossessionStatus'">                
+                  <ul>                    
+                    <li  *ngFor="let item of possessionStatus">
+                      <label slot="end" class="container">
+                        <input type="radio" name="options2" >
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div>
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'CarParking'">                
+                  <ul>                    
+                    <li *ngFor="let item of carParking">
+                      <label class="container">
+                        <input type="radio" name="options3" >
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div>
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'Lift'">                
+                  <ul>                    
+                    <li *ngFor="let item of lift">
+                      <label class="container">
+                        <input type="radio" name="options4" >
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div>
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'StoreRoom'">                
+                  <ul>                    
+                    <li *ngFor="let item of storeRoom">
+                      <label class="container">
+                        <input type="radio" name="options5" >
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div>
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'ServantRoom'">                
+                  <ul>                    
+                    <li *ngFor="let item of servantRoom">
+                      <label class="container">
+                        <input type="radio" name="options6" >
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div>
+              </div>
+              
+            </ion-item>
+          </li>
+        </ul>
+        
+      </div>
+     
+      <ion-item lines="none">
+        <div *ngIf="!rentForm.invalid">
+          <ion-text color="danger">
+            <p>All fields are mandatory. Please provide all informations</p>
+          </ion-text>
+        </div>
+      </ion-item>
+    </div>
+    <div class="second-form-step" *ngIf="steps === 2">
+      <div class="checkboxList">
+        Amenties:
+        <ul>
+          <li *ngFor=" let list of allAmenties">
+            <input id="{{list.Name}}" type="checkbox" (change)="isCheckBoxSelected($event, list.Id)" class="styled-checkbox" name=""  value="{{list.Name}}">
+            <label for="{{list.Name}}">{{list.Name}}</label>
+          </li>
+        </ul>
+      </div>
+      <ion-item lines="none">
+        <span class="monthlyRent" slot="start">
+          Property Name
+        </span>
+        <ion-item class="input" lines="none">
+          <ion-input formControlName="propertyName"></ion-input>
+        </ion-item>
+      </ion-item>
+      <ion-item lines="none">
+        <span class="monthlyRent" slot="start">
+          Description
+        </span>
+        <ion-item class="input" lines="none">
+          <ion-textarea formControlName="propertyDescription"></ion-textarea>
+        </ion-item>
+      </ion-item>
+      
+      <ion-item lines="none">
+        
+        <div *ngIf="!rentForm.invalid">
+          <ion-text color="danger">
+            <p>All fields are mandatory. Please provide all informations</p>
+          </ion-text>
+        </div>
+      </ion-item>
+    </div>
+      
+      <div class="step-four" *ngIf="steps === 3">
+        <div class="upload-icon">
+          <img src="../../../assets/images/upload.png" alt="">
+          <input type="file" accept=".jpeg, .png" (click)="uploadAction($event)">
+        </div>
+      <div lines="none" class="choose-file" (click)="uploadAction($event)">Choose File</div>
+      <div class="supported_format">format accepted are .jpeg and .png</div>    
+      </div>
+      
+
+    <ion-item lines="none">      
+      <ion-button *ngIf="hideNextBtn" class="nextBtn" type="submit" >Next</ion-button>      
+      <ion-button *ngIf="steps > 2 && showSubmitBtn" class="nextBtn submitBtn" type="submit" disabled="!rentForm.invalid" (click)="submitButtonClicked()">Submit</ion-button>
+    </ion-item>
+  </form>
+</ion-content>

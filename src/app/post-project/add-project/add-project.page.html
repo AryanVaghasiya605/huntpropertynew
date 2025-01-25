@@ -1,0 +1,492 @@
+<ion-header class="clients_header">
+  <ion-toolbar class="header-bg-color">    
+    <ion-icon slot="start" routerLink="/post-project" class="back-btn" name="arrow-back-outline"></ion-icon>
+    <ion-title slot="start" class="header-title">Add Project</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup]="addProjectForm" (ngSubmit)="onSubmit()">
+<div class="first-step-registration" *ngIf="steps === 1">
+  <ion-item lines="none">Project info</ion-item>
+  <div class="client-form-list">
+      <span>
+        <ion-label>Type</ion-label>
+        <ion-select type="text" placeholder="Select Property Type" formControlName="ProjectTypeId" value="{{projectType[0]?.Id}}" (ionChange)="getprojectType($event)">
+          <ion-select-option *ngFor="let items of projectType" value="{{items.Id}}">{{items.PropertyType}}</ion-select-option>          
+        </ion-select>
+      </span>
+      <span>
+        <ion-label>Project Name</ion-label>
+        <ion-input formControlName="pname"></ion-input>
+        <div class="web_error"
+          *ngIf="addProjectForm.controls['pname'].invalid && (addProjectForm.controls['pname'].dirty || addProjectForm.controls['pname'].touched)">
+          <div *ngIf="addProjectForm.controls['pname'].errors.required">*Project name is required</div>
+        </div>
+      </span>
+      <span>
+        <ion-label>Project Rera Number</ion-label>
+        <ion-input formControlName="project_rera"></ion-input>
+        <div class="web_error"
+          *ngIf="addProjectForm.controls['project_rera'].invalid && (addProjectForm.controls['project_rera'].dirty || addProjectForm.controls['project_rera'].touched)">
+          <div *ngIf="addProjectForm.controls['project_rera'].errors.required">*Project Rera number is required</div>
+        </div>
+      </span>
+      <span>
+        <ion-label>Builder/Developer Name</ion-label>
+        <ion-input formControlName="builder_name"></ion-input>
+        <div class="web_error"
+          *ngIf="addProjectForm.controls['builder_name'].invalid && (addProjectForm.controls['builder_name'].dirty || addProjectForm.controls['builder_name'].touched)">
+          <div *ngIf="addProjectForm.controls['builder_name'].errors.required">*Builder number is required</div>
+        </div>
+      </span>
+      <span>
+        <ion-label>Builder/Developer Rera Number</ion-label>
+        <ion-input formControlName="builder_rera"></ion-input>
+        <div class="web_error"
+          *ngIf="addProjectForm.controls['builder_rera'].invalid && (addProjectForm.controls['builder_rera'].dirty || addProjectForm.controls['builder_rera'].touched)">
+          <div *ngIf="addProjectForm.controls['builder_rera'].errors.required">*Builder Rera number is required</div>
+        </div>
+      </span>
+      <span>
+        <ion-label>Description</ion-label>
+        <ion-textarea formControlName="description"></ion-textarea>
+        <div class="web_error"
+          *ngIf="addProjectForm.controls['description'].invalid && (addProjectForm.controls['description'].dirty || addProjectForm.controls['description'].touched)">
+          <div *ngIf="addProjectForm.controls['description'].errors.required">*Description is required</div>
+        </div>
+      </span>
+    
+  </div>
+  <ion-item lines="none">Location</ion-item>
+  <div class="client-form-list">
+        <span>
+          <ion-label>State</ion-label>
+          <ion-select type="text" formControlName="proj_state" [value]="stateListIndex" placeholder="Select State" (ionChange)="stateLisOnChange($event)">
+            <ion-select-option *ngFor="let list of stateList" value="{{list.Id}}">{{list.State}}</ion-select-option>
+           </ion-select>           
+        </span>
+        <span>
+          <ion-label>City</ion-label>
+          <ion-select type="text" formControlName="proj_city" [value]="cityListIndex" placeholder="Select State" (onChange)="getSubcategory()">
+            <ion-select-option  *ngFor="let list of cityList" value="{{list.Id}}">{{list.City}}</ion-select-option>
+          </ion-select>
+        </span>
+        <span>
+          <ion-label>Loacality</ion-label>
+          <ion-input formControlName="proj_locality"></ion-input>
+          <div class="web_error"
+            *ngIf="addProjectForm.controls['proj_locality'].invalid && (addProjectForm.controls['proj_locality'].dirty || addProjectForm.controls['proj_locality'].touched)">
+            <div *ngIf="addProjectForm.controls['proj_locality'].errors.required">*Project Locality is required</div>
+          </div>
+        </span>
+        <span>
+          <ion-label>Address</ion-label>
+          <ion-input formControlName="proj_address"></ion-input>
+          <div class="web_error"
+            *ngIf="addProjectForm.controls['proj_address'].invalid && (addProjectForm.controls['proj_address'].dirty || addProjectForm.controls['proj_address'].touched)">
+            <div *ngIf="addProjectForm.controls['proj_address'].errors.required">*Project Address is required</div>
+          </div>
+        </span>
+        <span>
+          <ion-label>Landmark</ion-label>
+          <ion-input formControlName="proj_landmark"></ion-input>
+          <div class="web_error"
+            *ngIf="addProjectForm.controls['proj_landmark'].invalid && (addProjectForm.controls['proj_landmark'].dirty || addProjectForm.controls['proj_landmark'].touched)">
+            <div *ngIf="addProjectForm.controls['proj_landmark'].errors.required">*Project Landmark is required</div>
+          </div>
+        </span>
+</div>
+<ion-item lines="none">
+  <div *ngIf="!addProjectForm.invalid">
+    <ion-text color="danger">
+      <p>All fields are mandatory. Please provide all informations</p>
+    </ion-text>
+  </div>
+</ion-item>
+</div>
+<div class="second-step-registration" *ngIf="steps === 2">
+  <ion-item lines="none">Cluster/Floor Plan</ion-item>
+  <div formArrayName="PropertyType" *ngFor="let item of propertyType.controls; let i = index;">
+    <div [formGroupName]="i">
+      <span class="monthlyRent color-black" slot="start">
+        Accomodation Type
+      </span>
+      <ion-item lines="none">
+        <ion-select type="text" placeholder="Accomodation Type" formControlName="accomodation_type"
+          (onChange)="getAccomodationType()">
+          <ion-select-option value="New Construction">New Construction</ion-select-option>
+          <ion-select-option value="Less than 5 years">Less than 5 years</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <span class="monthlyRent color-black" slot="start">
+        Size (SQFT)
+      </span>
+      <ion-item lines="none">
+        <ion-input formControlName="size_Sqft" type="text" placeholder="Item description"></ion-input>
+      </ion-item>
+      <span class="monthlyRent color-black" slot="start">
+        Site Plan
+      </span>
+      <ion-item lines="none">
+        <input  type="file" formControlName="site_plan"  (change)="sitePlan($event)">
+        <!-- <div class="web_error"
+            *ngIf="addProjectForm.controls['site_plan'].invalid && (addProjectForm.controls['site_plan'].dirty || addProjectForm.controls['site_plan'].touched)">
+            <div *ngIf="addProjectForm.controls['site_plan'].errors.required">*Site plan is required</div>
+          </div> -->
+        <span>
+          <ion-input type="text"  placeholder="choose site plan" readOnly></ion-input>
+          <fa-icon [icon]="faUpload"></fa-icon>
+        </span>
+      </ion-item>
+      <span class="monthlyRent color-black" slot="start">
+        Cluster Plan
+      </span>
+      <ion-item lines="none">
+        <input formControlName="cluster_plan" (change)="clusterPlan($event)" type="file">
+        <span>
+          <ion-input type="text" placeholder="choose site plan" readOnly></ion-input>
+          <fa-icon [icon]="faUpload"></fa-icon>
+        </span>
+      </ion-item>
+      <span class="monthlyRent color-black" slot="start">
+        Floor Plan
+      </span>
+      <ion-item lines="none">
+        <input formControlName="floor_plan" (change)="floorPlan($event)" type="file">
+        <span>
+          <ion-input type="text" placeholder="choose site plan" readOnly></ion-input>
+          <fa-icon [icon]="faUpload"></fa-icon>
+        </span>
+      </ion-item>
+      <span><a class="remove" (click)="removeItem(i)" *ngIf="i > 0">Remove</a></span>
+
+
+    </div>
+
+  </div>
+<span><a class="add" (click)="addItem()">Add</a></span>
+<div class="checkboxList">
+  Amenties:  
+  <ul>
+    <li *ngFor=" let list of checkBoxData">
+      <input  type="checkbox"  (change)="isCheckBoxSelected($event)" class="styled-checkbox" name="" id="{{list.id}}" value="{{list.id}}">
+      <label for="{{list.id}}">{{list.checkboxName}}</label>
+    </li>
+  </ul>
+</div>
+<ion-item lines="none">
+  <div *ngIf="!addProjectForm.invalid">
+    <ion-text color="danger">
+      <p>All fields are mandatory. Please provide all informations</p>
+    </ion-text>
+  </div>
+</ion-item>
+</div>
+<div class="third-step-registration" *ngIf="steps === 3">
+  <ion-item lines="none"></ion-item>
+  <div class="projectType">Please choose payments plan</div>
+  <div class="checkboxList">   
+    <ul>
+      <li *ngFor=" let list of paymentsPlan">
+        <input  type="radio"  (change)="isPaymentPlanSelected($event, list.checked)" [(ngModel)]="list.checked" [ngModelOptions]="{standalone: true}" class="styled-checkbox" name="" id="{{list.id}}" value="{{list.id}}">
+        <label for="{{list.id}}">{{list.checkboxName}}</label>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="isFlexiOpen === true">
+    <div class="projectType">
+      <h3>Flexi Payment Plan</h3>
+    </div>
+    <div class="projectType">Describe the Installment with % below.</div>
+    <div class="projectType">
+      <h6>BSP Amount</h6>
+    </div>
+    <ion-item lines="none">
+      <ion-input formControlName="bsp_amount_flexi"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-select type="text" formControlName="bsp_details_flexi"  value="Per SQFT" placeholder="per SQFT">
+        <ion-select-option value="Per SQFT">Per SQFT</ion-select-option>
+        <ion-select-option value="Per SQYD">Per SQYD</ion-select-option>
+        <ion-select-option value="Per SQMTR">Per SQMTR</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div formArrayName="flexiPayments" *ngFor="let item of flexiPaymentsArrayControl.controls; let i = index;">
+      <div [formGroupName]="i">
+        <ion-item class="payment_wrapper" lines="none">
+          <ion-input placeholder="Description" formControlName="payment_description"></ion-input>
+          <ion-input placeholder="Percent (%)" formControlName="payment_percent" maxLength="3"></ion-input>
+          <span><a class="remove" (click)="removeflexiPaymentPlan(i)">X</a></span>
+        </ion-item>
+    
+      </div>
+    
+    </div>
+    <span><a class="add" (click)="AddflexiPaymentPlan()">Add Row</a></span>
+    
+  </div>
+  <div *ngIf="downPayment === true">
+    <div class="projectType">
+      <h3>Down Payment Plan</h3>
+    </div>
+    
+    <div class="projectType">
+      <h6>BSP Amount</h6>
+    </div>
+    <ion-item lines="none">
+      <ion-input formControlName="bsp_amount_flexi"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-select type="text" formControlName="bsp_details_flexi" placeholder="per SQFT">
+        <ion-select-option value="Per SQFT">Per SQFT</ion-select-option>
+        <ion-select-option value="Per SQYD">Per SQYD</ion-select-option>
+        <ion-select-option value="Per SQMTR">Per SQMTR</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div formArrayName="downPayments" *ngFor="let item of downPaymentsArrayControl.controls; let i = index;">
+      <div [formGroupName]="i">
+        <ion-item class="payment_wrapper" lines="none">
+          <ion-input placeholder="Descriptionss" formControlName="payment_description"></ion-input>
+          <ion-input placeholder="Percent (%)" formControlName="payment_percent" maxLength="3"></ion-input>
+          <span><a class="remove" (click)="removeDownPaymentPlan(i)">X</a></span>
+        </ion-item>
+      </div>
+    
+    </div>
+    <span><a class="add" (click)="AddDownPaymentPlan()">Add Row</a></span>
+  </div>
+
+  <div *ngIf="special === true">
+    <div class="projectType">
+      <h3>Special Payment Plan</h3>
+    </div>
+    
+    <div class="projectType">
+      <h6>BSP Amount</h6>
+    </div>
+    <ion-item lines="none">
+      <ion-input formControlName="bsp_amount_flexi"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-select type="text" formControlName="bsp_details_flexi" placeholder="per SQFT">
+        <ion-select-option value="Per SQFT">Per SQFT</ion-select-option>
+        <ion-select-option value="Per SQYD">Per SQYD</ion-select-option>
+        <ion-select-option value="Per SQMTR">Per SQMTR</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div class="projectType">
+      <h6>You are requested to enter the number of EMI which you are required in Special Payment Plan.</h6>
+    </div>
+    <ion-item lines="none">
+      <!-- No payload is required for this input -->
+      <!-- <ion-input formControlName="installment_field"></ion-input> -->
+    </ion-item>
+    
+    <div formArrayName="specialPayments" *ngFor="let item of specialPaymentsArrayControl.controls; let i = index;">
+      <div [formGroupName]="i">
+        <ion-item class="payment_wrapper" lines="none">
+          <ion-input placeholder="Descriptionss" formControlName="installment_field"></ion-input>
+          <ion-input placeholder="Percent (%)" formControlName="payment_percent" maxLength="3"></ion-input>
+          <span><a class="remove" (click)="removeSpecialPaymentPlan(i)">X</a></span>
+        </ion-item>
+      </div>
+    
+    </div>
+    <span><a class="add" (click)="AddSpecialPaymentPlan()">Add Row</a></span>
+  </div>
+
+  <div *ngIf="isContructionPlan === true">
+    <div class="projectType">
+      <h3>Construction Link Plan</h3>
+    </div>
+    
+    <div class="projectType">
+      <h6>BSP Amount</h6>
+    </div>
+    <ion-item lines="none">
+      <ion-input formControlName="bsp_amount_flexi"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-select type="text" formControlName="bsp_details_flexi" placeholder="per SQFT">
+        <ion-select-option value="Per SQFT">Per SQFT</ion-select-option>
+        <ion-select-option value="Per SQYD">Per SQYD</ion-select-option>
+        <ion-select-option value="Per SQMTR">Per SQMTR</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div formArrayName="constructionLinkPayments" *ngFor="let item of constructionLinkPaymentsArrayControl.controls; let i = index;">
+      <div [formGroupName]="i">
+        <ion-item class="payment_wrapper" lines="none">
+          <ion-input placeholder="Descriptions" formControlName="payment_description"></ion-input>
+          <ion-input placeholder="Percent (%)" formControlName="payment_percent" maxLength="3"></ion-input>
+          <span><a class="remove" (click)="removeConstructionPaymentPlan(i)">X</a></span>
+        </ion-item>       
+      </div>
+    
+    </div>
+    <span><a class="add" (click)="AddConstructionPaymentPlan()">Add Row</a></span>
+  </div>
+   <ion-item lines="none">Kindly Mention the Other Charges which are included in the Above Cost.</ion-item>
+  <div class="availableFormWrapper">
+    <ul>
+      <li>
+        <label class="container">
+          <input type="radio" name="options" (change)="otherPaymentIncluded(true)" >
+          yes
+          <span class="checkmark"></span>
+        </label>
+      </li>
+      <li>
+        <label class="container">
+          <input type="radio" name="options" (change)="otherPaymentIncluded(false)" >
+          No
+          <span class="checkmark"></span>
+        </label>
+      </li>      
+    </ul>    
+  </div>
+  <div *ngIf="enableOtherPayments === true">
+    <div formArrayName="otherPayments" *ngFor="let item of otherPaymentsArrayControl.controls; let i = index;">
+      <div [formGroupName]="i">
+        <ion-item class="payment_wrapper" lines="none">
+          <ion-input placeholder="Descriptions" formControlName="other_payment_description"></ion-input>
+          <ion-input placeholder="Charges" formControlName="other_payment_charges"></ion-input>
+          <span><a class="remove" (click)="removeChargesOtherPayments(i)">X</a></span>
+        </ion-item> 
+        <ion-item lines="none">
+          <ion-select type="text" formControlName="other_payment_detail" placeholder="per SQFT">
+            <ion-select-option value="Per SQFT">Per SQFT</ion-select-option>
+            <ion-select-option value="Per SQYD">Per SQYD</ion-select-option>
+            <ion-select-option value="Per SQMTR">Per SQMTR</ion-select-option>
+            <ion-select-option value="Per KVA">Per KVA</ion-select-option>
+            <ion-select-option value="Per KWA">Per KWA</ion-select-option>
+            <ion-select-option value="Per FLAT">Per FLAT</ion-select-option>
+          </ion-select>
+          <ion-select type="text" formControlName="other_payment_detail2" placeholder="One Time">
+            <ion-select-option value="One Time">One Time</ion-select-option>
+            <ion-select-option value="Annually">Annually</ion-select-option>
+            <ion-select-option value="Per Month">Per Month</ion-select-option>
+            <ion-select-option value="Per Quater">Per Quater</ion-select-option>
+          </ion-select>
+        </ion-item>      
+      </div>
+    </div>
+    <span><a class="add" (click)="AddChargesOtherPayments()">Add Row</a></span>
+  </div>
+  <ion-item lines="none">Is there any other charges, you didn't included in BSP or mention above ?</ion-item>
+  <div class="availableFormWrapper">
+    <ul>
+      <li>
+        <label class="container">
+          <input type="radio" name="options" (change)="otherChargesIncluded(true)" >
+          yes
+          <span class="checkmark"></span>
+        </label>
+      </li>
+      <li>
+        <label class="container">
+          <input type="radio" name="options" (change)="otherChargesIncluded(false)" >
+          No
+          <span class="checkmark"></span>
+        </label>
+      </li>      
+    </ul>  
+  </div>
+  <div *ngIf="enableOtherCharges === true">
+    <div formArrayName="otherCharges" *ngFor="let item of otherChargesArrayControl.controls; let i = index;">
+      <div [formGroupName]="i">
+        <ion-item class="payment_wrapper" lines="none">
+          <ion-input placeholder="Descriptions" formControlName="chrg_other_bsp_description"></ion-input>
+          <ion-input placeholder="Charges" formControlName="chrg_other_bsp_charges"></ion-input>
+          <span><a class="remove" (click)="removeChargesOtherThenBsp(i)">X</a></span>
+        </ion-item> 
+        <ion-item lines="none">
+          <ion-select type="text" formControlName="chrg_other_bsp_detail" placeholder="per SQFT">
+            <ion-select-option value="Per SQFT">Per SQFT</ion-select-option>
+            <ion-select-option value="Per SQYD">Per SQYD</ion-select-option>
+            <ion-select-option value="Per SQMTR">Per SQMTR</ion-select-option>
+            <ion-select-option value="Per KVA">Per KVA</ion-select-option>
+            <ion-select-option value="Per KWA">Per KWA</ion-select-option>
+            <ion-select-option value="Per FLAT">Per FLAT</ion-select-option>
+          </ion-select>
+          <ion-select type="text" formControlName="chrg_other_bsp_detail2" placeholder="One Time">
+            <ion-select-option value="One Time">One Time</ion-select-option>
+            <ion-select-option value="Annually">Annually</ion-select-option>
+            <ion-select-option value="Per Month">Per Month</ion-select-option>
+            <ion-select-option value="Per Quater">Per Quater</ion-select-option>
+          </ion-select>
+        </ion-item>      
+      </div>
+    </div>
+    <span><a class="add" (click)="AddChargesOtherThenBsp()">Add Row</a></span>
+  </div>
+  
+  <div class="checkboxList termCondition">   
+    <ul>
+      <li>
+        <input  type="checkbox" class="styled-checkbox" formControlName="termAndCondition" name="" id="term">
+        <label for="term"> I agree to all the terms & conditions of the website.</label>
+      </li>
+    </ul>
+  </div>
+  <ion-item lines="none">
+    <div *ngIf="!addProjectForm.invalid">
+      <ion-text color="danger">
+        <p>All fields are mandatory. Please provide all informations</p>
+      </ion-text>
+    </div>
+  </ion-item>
+</div>
+<div class="four-step-registration" *ngIf="steps === 4">  
+    <div class="gallery">
+      <ul>
+        <li (click)="imageGallery('Exterior')">
+         <a [ngClass]="{ 'active':  activeTab == 'Exterior'}">Exterior</a>
+        </li>
+        <li (click)="imageGallery('LiftLobby')">
+          <a [ngClass]="{ 'active':  activeTab == 'LiftLobby'}">Lift & Lobby</a>
+         </li>
+         <li (click)="imageGallery('Entrance')">
+          <a [ngClass]="{ 'active':  activeTab == 'Entrance'}">Entrance</a>
+         </li>
+         <li (click)="imageGallery('Surrounding')">
+          <a [ngClass]="{ 'active':  activeTab == 'Surrounding'}">Surrounding</a>
+         </li>
+         <li (click)="imageGallery('Location')">
+          <a [ngClass]="{ 'active':  activeTab == 'Location'}">Location</a>
+         </li>
+         <li (click)="imageGallery('Master')">
+          <a [ngClass]="{ 'active':  activeTab == 'Master'}">Master</a>
+         </li>
+         <li (click)="imageGallery('Floor')">
+          <a [ngClass]="{ 'active':  activeTab == 'Floor'}">Floor</a>
+         </li>
+         <li (click)="imageGallery('Logo')">
+          <a [ngClass]="{ 'active':  activeTab == 'Logo'}">Logo</a>
+         </li>
+         <li (click)="imageGallery('Banner')">
+          <a [ngClass]="{ 'active':  activeTab == 'Banner'}">Banner</a>
+         </li>
+      </ul>
+    </div>
+    
+      <div class="projectType">
+          Upload photo and get upto <span class="boldRed">5X RESPONSE</span><br>
+          <strong> 80% of people</strong> get attracted to properties with photos!
+      </div>
+      
+        <div class="image_upload_btn">
+          <input hidden formControlName="image_category">
+          <input type="file" (change)="fileUpload($event, activeTab)" multiple formControlName="image_name">
+        </div>
+      
+  </div>
+<ion-item lines="none">
+  <ion-button *ngIf="steps > 1 && showPreviousBtn" class="nextBtn" type="button" (click)="goBack()">Previous</ion-button>
+  <ion-button *ngIf="hideNextBtn" class="nextBtn" type="submit">Next</ion-button>
+  <ion-button *ngIf="steps > 2 && showSubmitBtn" class="nextBtn submitBtn" type="submit" disabled="!addProjectForm.valid" (click)="submitButtonClicked()">Submit</ion-button>
+</ion-item>
+
+</form> 
+</ion-content>

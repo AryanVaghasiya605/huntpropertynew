@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar class="header-bg-color">    
+    <ion-icon routerLink="/splash/tabs/home" class="back-btn" name="arrow-back-outline"></ion-icon>
+    <ion-title class="header-title">Future Value calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="futureValueCalculator" (ngSubmit)="onSubmit()"> 
+<div class="item-wrapper">
+    <ion-item class="loan-item" lines="none">
+      <span class="loan-left-wrapper">
+    <label for="first-name">Current Property Value: </label>
+    <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+  </span>  
+    <ion-input inputmode="numeric" type="number"  formControlName="current_value"></ion-input>    
+  </ion-item>
+  <div  class="web_error" *ngIf="futureValueCalculator.controls['current_value'].invalid && (futureValueCalculator.controls['current_value'].dirty || futureValueCalculator.controls['current_value'].touched)" >
+    <div *ngIf="futureValueCalculator.controls['current_value'].errors.required">*Property Value is required</div>
+    <div *ngIf="futureValueCalculator.controls['current_value'].errors.pattern ">* Only numbers are allowed</div>      
+</div>
+</div>
+  <div class="item-wrapper">
+  <ion-item class="loan-item" lines="none">    
+    <span class="loan-left-wrapper">
+    <label for="last-name">No. of years</label>    
+  </span>
+    <ion-input inputmode="numeric" type="number" formControlName="future_year"></ion-input>
+  </ion-item>
+  <div  class="web_error" *ngIf="futureValueCalculator.controls['future_year'].invalid && (futureValueCalculator.controls['future_year'].dirty || futureValueCalculator.controls['future_year'].touched)" >
+    <div *ngIf="futureValueCalculator.controls['future_year'].errors.required">*Numbers of Years is required</div>
+    <div *ngIf="futureValueCalculator.controls['future_year'].errors.pattern ">* Only numbers are allowed</div>      
+</div> 
+</div>
+
+<div class="item-wrapper">
+  <ion-item class="loan-item" lines="none">
+    <span class="loan-left-wrapper">
+    <label for="last-name">Average appreciation</label>
+    <fa-icon  [icon]="faPercent"></fa-icon>
+  </span>
+    <ion-input inputmode="numeric" type="number" formControlName="avg_appr"></ion-input>
+  </ion-item> 
+  <div  class="web_error" *ngIf="futureValueCalculator.controls['avg_appr'].invalid && (futureValueCalculator.controls['avg_appr'].dirty || futureValueCalculator.controls['avg_appr'].touched)" >
+    <div *ngIf="futureValueCalculator.controls['avg_appr'].errors.required">*Rate of interest is required</div> 
+  </div>
+</div>
+<ion-button class="loan-submit-btn" type="submit" [disabled]="!futureValueCalculator.valid">Submit</ion-button>
+  </form>  
+  
+  <ion-button class="reset-btn" fill="clear" type="submit" (click)="resetSubmitForm()">Reset all fields</ion-button>
+  <span class="red-border"></span>
+  <Span class="result" *ngIf="futurevalue">Result: {{futurevalue}}</Span>
+</ion-content>

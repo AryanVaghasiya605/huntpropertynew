@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar class="header-bg-color">
+    <ion-title>List Property</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="isPageReady">
+  <div *ngIf="propertyList?.length > 0; else noData">
+  <ng-container *ngFor="let list of propertyList">
+  <div lines="none" class="property-list" (click)="propertyDetails(list.Id, list.Latitude, list.Longitude)">
+    <span class="pro-img">
+      <img alt="property image missing" src="../../assets/images/propertyImg.PNG" />
+    </span>
+    <span class="pro-text">
+    <h4>{{list.Name}}</h4>
+    <h6>{{list.Locality}}, {{list.State}}</h6>
+    <span class="bottom-button">
+       <a href="tel:{{list.UserMobile}}"><fa-icon  [icon]="faPhone" class="phone"></fa-icon></a>
+       <a routerLink="/messages/send-message"><fa-icon [icon]="faMessage" class="message"></fa-icon></a>
+    </span>
+  </span>
+  </div>
+</ng-container>
+</div>
+<ng-template #noData style="color: #000;"><span class="noData"> No data found</span></ng-template>
+</ion-content>
+
+
+  <ion-spinner class="loader" *ngIf="!showSpinner" name="lines-sharp"></ion-spinner>
+

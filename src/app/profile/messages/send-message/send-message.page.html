@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar class="header-bg-color">    
+    <ion-icon routerLink="/messages" class="back-btn" name="arrow-back-outline"></ion-icon>
+    <ion-title class="header-title">{{userName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <span class="content-box">
+      <ion-item *ngFor="let list of chatBoxList" lines="none">
+       <span class="mesg"> {{list.Message}}</span> 
+       <!-- <span class="created_on">{{list.Created_on | date: 'MMM d, y, h:mm a'}}</span> -->
+      </ion-item>
+      <ion-item lines="none"></ion-item>
+    </span>
+  </div>
+  <div class="send_message_wrapper">
+    <form [formGroup]="sendMessage" (ngSubmit)="onSubmit()">
+    <ion-input placeholder="Please enter your message" formControlName="message">
+
+    </ion-input>
+    <ion-button type="submit" [disabled]="!sendMessage.valid" class="send_mess-btn">
+      <ion-icon name="send"></ion-icon>
+     </ion-button>
+     </form>
+  </div>
+</ion-content>

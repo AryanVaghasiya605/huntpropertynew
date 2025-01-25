@@ -1,0 +1,20 @@
+<ion-header class="clients_header">
+  <ion-toolbar class="header-bg-color">    
+    <ion-icon slot="start" routerLink="/splash/tabs/home" class="back-btn" name="arrow-back-outline"></ion-icon>
+    <ion-title slot="start" class="header-title">Projects</ion-title>
+    <ion-label slot="end" (click)="addProject()">+</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none" *ngFor="let list of projectlist" (click)="projectDetails(list.project_id)">    
+      <ion-avatar slot="start">
+        <img src="../../assets/images/user.png" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{list.builder_name}}</h2>
+        <p>{{list.ProjectTypeId}}</p>
+        <p>{{list.proj_address}}, {{list.proj_city}}, {{list.proj_state}}</p>
+      </ion-label>    
+  </ion-item>
+</ion-content>

@@ -1,0 +1,110 @@
+.header-bg-color{
+    --background:#e14b4c;    
+    --padding-start: 15px;
+.back-btn{ color: #ffffff; font-size: 25px;}
+.header-title{
+    color: #ffffff;
+    text-align: left;
+}
+}
+ion-content{
+    --background: #e3e3e3;
+    .banner-bg{  
+        --background: none;
+       background-image: url('../../assets/images/home-banner-bg.png');
+       background-position: center center;
+       background-repeat: no-repeat;
+       background-size: 100% 100%;
+       .user-avatar{
+        width: 100px;
+        height: 100px;
+        background: #ffffff;
+        border-radius: 100%;
+        margin: 18px auto 20px auto;
+        position: relative;
+        overflow: hidden;
+        fa-icon{
+            color: #e3e3e3;
+            margin: auto;
+            display: block;
+            font-size: 70px;
+            position: absolute;
+            left: 18px;
+            bottom: -10px;
+            right: 0;
+        
+        }
+       }
+       .user-details{
+        background: #000000; opacity: 0.5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        .name{
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .email{
+            color: #ffffff;
+
+        }
+       }
+      
+    } 
+.profile-list{
+    padding: 15px 0;
+    background:#e3e3e3;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+    .profile-list-innerwrapper{
+        background:#e3e3e3;
+        display: inline-block;
+    .list{
+        width: 43%;
+        float: left;
+        background: #ffffff;
+        text-align: center;
+        height: 172px;        
+        margin-bottom: 30px;
+        float: left;
+        position: relative;
+        .message{
+            background: #818181;
+            color: #ffffff;
+            font-size: 12px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            right: 0;
+            line-height: 35px;
+        }
+        ion-img{
+            font-size: 50px;
+            width: 70px;
+            margin: 40px auto 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .list:nth-child(3), .list:nth-child(4){
+        margin-bottom: 0;
+    }
+}
+    .list-ios{ background: none;}
+    .list:nth-child(2n+1){
+        margin-right: 40px;
+       
+    }
+}
+.profile-list.list-ios{
+    background:#e3e3e3;
+    padding: 20px 0;
+}
+
+}

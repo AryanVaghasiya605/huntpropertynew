@@ -1,0 +1,28 @@
+
+<ion-content>
+  <ion-item lines="none" class="range_parent">  
+    
+    <div class="simulador">
+      <div class="contenedor">          
+          <div class="slider-container">
+              <div class="interno">
+                  <div class="slidecontainer">
+                    <input class="slider"
+                    type="range"
+                    [min]="min"
+                    [max]="max"
+                    [step]="step"
+                    [value]="value"
+                    (input)="updateSliderValue($event)"
+                  />
+                   <span>
+                    <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+                    <div *ngIf="!value">{{min}}</div>
+                    {{value}}Cr</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</ion-item>
+</ion-content>

@@ -1,0 +1,16 @@
+.addBtn{
+    height: 28px;
+    font-size: 12px;
+    margin: 0;
+    --background: rgb(254,19,0);
+    --border-radius: 5px;
+    .plusminus {
+        height: 100%;
+        width: 22px;
+        background: rgb(254,19,0);
+        color: #66e366;
+        font-size: 18px;
+        line-height: 22px;
+        vertical-align: middle;
+    }
+}

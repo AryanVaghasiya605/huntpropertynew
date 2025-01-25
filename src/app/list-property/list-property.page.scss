@@ -1,0 +1,63 @@
+.property-list{
+    background:#fff;
+    display: flex;
+    max-height: 130px;
+    margin-bottom: 15px;
+    .pro-img{
+        width: 30%;
+        img{
+            width: 100%;
+        }
+    }
+    .pro-text{
+       width: 70%;
+       padding-left: 20px;
+    h4{
+        color:#000;
+        margin: 10px 0 25px 0;
+        font-size: 16px;
+    }
+    h6{
+        color:#aaaaaa;
+        margin: 0;
+        font-size: 14px;
+    }
+    .bottom-button{
+        margin-top: 6px;
+        display: flex;
+        text-align: center;
+        a{
+            display: flex;
+        .phone{
+            width: 40px;
+            height:40px;
+            background: red;
+            padding: 10px;
+            color: #ffff;
+            border-radius: 50%;
+        }
+    }
+    a{
+        display: flex;
+        .message{
+            width: 40px;
+            height:40px;
+            background: red;
+            padding: 10px;
+            color: #ffff;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+    }
+    }
+}
+}
+
+    .noData{
+        color: #000;
+        font-size: 24px;
+        text-align: center;
+        margin-top: 20px;
+        display: block;
+    }
+

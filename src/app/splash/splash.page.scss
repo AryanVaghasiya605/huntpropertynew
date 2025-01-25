@@ -1,0 +1,14 @@
+ion-content{
+    --background:#fff;
+    position: relative;
+    // img:nth-child(1){ height: 100%;}
+    img{
+        position: absolute;
+        bottom: 0;
+    }
+    .video{
+        position: absolute;
+        top: 25%;
+        width: 98%;
+    }
+}

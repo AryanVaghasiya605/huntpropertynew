@@ -1,0 +1,220 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1 small
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+ <ion-toolbar class="banner-bg">
+ <ion-label class="home-button-wrrapper">
+  <span class="buy" routerLink="/splash/tabs/home/buy-property">
+    <ion-icon class="icon-white" lines="none" name="buy"></ion-icon>  
+   <span class="inner-span">BUY</span> 
+  </span>
+  <span class="rent" routerLink="/splash/tabs/home/buy-property">
+    <ion-icon class="icon-white" lines="none" name="rent"></ion-icon>  
+    <span class="inner-span">RENT</span> 
+  </span>
+ </ion-label>
+ <span class="inputwrapper">
+ <ion-input readonly type="text" class="inputText" placeholder="search your property here.."></ion-input>
+ <ion-icon name="location"></ion-icon>
+</span>
+ </ion-toolbar> 
+ <ion-item class="item" lines="none">
+  <div class="postProperty">
+    <span>
+      <ion-img src="../../assets/images/icons/posthome.png"></ion-img>
+      
+    </span>
+    <span routerLink="/select-package">
+      <h4 class="heading">Post Property</h4>
+      <p class="text">We've over15 lakh buyers for you!</p>
+      <p class="text">It's easy, it's simple, it's free</p>
+    </span>
+  </div>
+ </ion-item>
+ <ion-item class="item" lines="none">
+  <div class="postProperty">
+    <span>
+      <ion-img src="../../assets/images/icons/posthome.png"></ion-img>
+      
+    </span>
+    <span routerLink="/post-project">
+      <h4 class="heading">Post Project</h4>
+      <p class="text">We've over15 lakh buyers for you!</p>
+      <p class="text">It's easy, it's simple, it's free</p>
+    </span>
+  </div>
+ </ion-item>
+ <ion-item class="item" lines="none">
+  <div class="postProperty">
+    <span>
+      <ion-img src="../../assets/images/icons/posthome.png"></ion-img>
+      
+    </span>
+    <span (click)="clientRegister()">
+      <h4 class="heading">Client Register</h4>
+      <p class="text">Register yourself to reach 15 lakh buyers with us!</p>
+      <p class="text">It's easy, it's simple, it's free</p>
+    </span>
+  </div>
+ </ion-item>
+ <div class="post-slider">
+      <swiper   
+          [spaceBetween]="5"
+          [slidesPerView]="2.3"
+          [centeredSlides]="false"     
+          [navigation]="false"
+          [autoplay]="{
+            delay: 3000,
+            disableOnInteraction: false
+          }"
+          [loop]="true"
+          class="mySwiper post-sliderinner"    
+        >
+        
+          <ng-template swiperSlide *ngFor="let list of associates">
+            <div class="silderImage">
+              <a [href]=list.AssociateUrl target="_blank">
+                <ion-img  [src]="'https://www.huntproperty.com/dist/uploads/Associates/'+list.Img"></ion-img>
+                <p>{{list.Name}}</p>
+              </a>
+          </div>
+            </ng-template>
+            <!-- <ng-template swiperSlide>
+              <div class="silderImage">
+              <ion-img src="../../assets/images/home-banner-bg.png" alt="image missing"></ion-img>
+              <p>Hunt Property</p>
+            </div>
+              </ng-template>
+            <ng-template swiperSlide>
+              <div class="silderImage">
+                <ion-img src="../../assets/images/home-banner-bg.png" alt="image missing"></ion-img>
+                <p>Hunt Property</p>
+              </div>
+          </ng-template>  -->
+        </swiper>
+
+        <h2 class="calculators-heading">Calculators to help you decide better</h2>
+        <ion-item lines="none" routerLink="/loan-eligibility">
+         <div class="cal">
+          <span>
+          <h4 class="heading">Loan Eligibility</h4>
+      <p class="text">How much loan you are eligible for</p>
+    </span>
+    <span>
+      <ion-img src="../../assets/images/icons/loanElegibility.png" alt="image missing"></ion-img>
+    </span>
+  </div>
+        </ion-item>
+
+        <ion-item lines="none" routerLink="/emi-calculator">
+          <div class="cal">
+            <span>
+              <ion-img src="../../assets/images/icons/emi.png" alt="image missing"></ion-img>
+            </span>
+           <span>
+           <h4 class="heading">EMI Calculator</h4>
+       <p class="text">Find out how much EMI you have to pay</p>
+     </span>    
+   </div>
+         </ion-item>
+
+         <ion-item lines="none" routerLink="/future-value-calculator">
+          <div class="cal">
+           <span>
+           <h4 class="heading">Future Value Calculator</h4>
+       <p class="text">Find your property future value</p>
+     </span>
+     <span>
+       <ion-img src="../../assets/images/icons/futureValue.png" alt="image missing"></ion-img>
+     </span>
+   </div>
+         </ion-item>
+
+         <ion-item lines="none" routerLink="/rental-value-calculator">
+          <div class="cal">          
+     <span class="rental">
+       <ion-img src="../../assets/images/icons/rental.png" alt="image missing"></ion-img>
+     </span>
+     <span>
+      <h4 class="heading">Rental Value Calculator</h4>
+  <p class="text">Find your property rental value</p>
+</span>
+   </div>
+         </ion-item>
+         
+         <div class="slider-bottom">
+          
+          <swiper
+          [spaceBetween]="5"
+          [slidesPerView]="2.3"
+          [centeredSlides]="false"     
+          [navigation]="false"          
+          
+          class="mySwiper bottom-sliderinner">
+
+            <ng-template swiperSlide>
+              <span>
+              <a href="https://huntproperty.com/interior/">
+                <ion-img src="../../assets/images/icons/svg/interior-design.svg" alt="image missing"></ion-img>
+                <p>Interior design</p>
+              </a>
+            </span>
+            </ng-template>
+            <ng-template swiperSlide>
+              <span>
+              <a href="https://www.huntproperty.com/website/channelpartner" target="_blank">
+                <ion-img src="../../assets/images/icons/svg/channel-partner.svg" alt="image missing"></ion-img>
+                <p>Channel Partner</p>
+            </a>
+            </span>
+            </ng-template>
+            <ng-template swiperSlide>
+              <span>
+              <a href="https://www.huntproperty.com/rera" target="_blank">
+                <ion-img src="../../assets/images/icons/svg/rera.svg" alt="image missing"></ion-img>
+                <p>Rera</p>
+              </a>
+            </span>
+            </ng-template>
+            <ng-template swiperSlide>
+              <span>
+                <a href="https://www.huntproperty.com/legal-documents" target="_blank">
+                  <ion-img src="../../assets/images/icons/svg/legal-advisory.svg" alt="image missing"></ion-img>
+                  <p>Legal Advisory</p>
+                </a>
+            </span>
+            </ng-template>
+            <ng-template swiperSlide>
+              <span>
+                <a href="https://www.loansby24.com/" target="_blank">
+                  <ion-img src="../../assets/images/icons/svg/home-loan.svg" alt="image missing"></ion-img>
+                  <p>Home Loan</p>
+                </a>
+            </span>
+            </ng-template>
+            <ng-template swiperSlide>
+              <span>
+                <a href="https://www.huntproperty.com/news" target="_blank">
+                  <ion-img src="../../assets/images/icons/svg/property-news.svg" alt="image missing"></ion-img>
+                  <p>Property News</p>
+                </a>
+            </span>
+            </ng-template>
+            <ng-template swiperSlide>
+              <span>
+                <a href="https://huntproperty.com/vaastu/" target="_blank">
+                  <ion-img src="../../assets/images/icons/svg/vaastu.svg" alt="image missing"></ion-img>
+                  <p>Vaastu</p>
+                </a>
+            </span>
+            </ng-template>
+          </swiper>
+         </div>
+</div>
+
+</ion-content>

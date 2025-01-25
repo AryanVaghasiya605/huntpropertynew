@@ -1,0 +1,255 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1 small
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar class="banner-bg">
+    <ion-label class="home-button-wrrapper">
+      <span class="buy active" routerLink="/splash/tabs/home/buy-property" (click)="buyPropertyTab('buy')"
+      [ngClass]="{'active': updateBackground == 'buy'}">
+        <ion-icon class="icon-white" lines="none" name="buy"></ion-icon>
+        <span class="inner-span">BUY</span>
+        <span *ngIf="showCaretBuy">         
+          <fa-icon class="faCarrot" [icon]="faCarrot"></fa-icon>               
+        </span>
+      </span>
+      <span class="rent" routerLink="/splash/tabs/home/buy-property"
+      (click)="buyPropertyTab('rent')"
+      [ngClass]="{'active': updateBackground == 'rent'}">
+        <ion-icon class="icon-white" lines="none" name="rent"></ion-icon>
+        <span class="inner-span">RENT</span>
+        <span *ngIf="showCaretRent">         
+          <fa-icon class="faCarrot" [icon]="faCarrot"></fa-icon>               
+        </span>
+      </span>
+    </ion-label>
+    <span class="inputwrapper">
+      <ion-input type="text" class="inputText" (keyup)="SearchProperty($event)" value="{{filteredDataValue}}"  placeholder="search your property here.."></ion-input>
+      <ion-icon name="location" (click)="getCurrentLocation()"></ion-icon>      
+    </span>
+  </ion-toolbar>
+  <div class="list_bg list-bg-segment" lines="none">
+    <span class="list_filter" *ngIf="showFilter">
+      <ul  *ngFor="let items of filteredData | filter :filteredDataValue">
+        <li (click)="selectFileredValue(items.value)">
+          {{items.value}}
+        </li>
+    </ul>
+    </span>
+    <ion-segment [(ngModel)]="segment" (ionChange)="segmentChanged($event)">    
+      <ion-segment-button value="Residential">
+        Residential
+      </ion-segment-button>
+      <ion-segment-button value="Commercial">
+        Commercial
+      </ion-segment-button>
+      
+  
+    </ion-segment>
+  
+  
+    <div [ngSwitch]="segment">
+      
+        <div class="slider-bottom list_bg" *ngSwitchCase="'Residential'">
+          
+          <swiper
+          [spaceBetween]="5"
+          [slidesPerView]="4.9"
+          [centeredSlides]="false"     
+          [navigation]="false"          
+          
+          class="mySwiper buy-property-slider"  >
+          <ng-container *ngFor="let residentials of residentialsProp; let i = index">
+            <ng-template  swiperSlide>
+              <span  (click)="clickEvent(i, residentials.PropertyTypeID)">              
+              <ion-img src="{{residentials.image}}" alt="image missing"></ion-img>           
+              <p>{{residentials.PropertySubCategory}}</p>
+              <fa-icon *ngIf="status == i" class="active" [icon]="faCheck"></fa-icon>
+             
+            </span>
+            </ng-template>
+            <span slot="wrapper-end">Wrapper End</span>
+          </ng-container>
+          </swiper>
+          <form [formGroup]="residentialsProperty" (ngSubmit)="onSubmitResidential()">
+                    <div class="buy-range list_bg">
+                      <ion-label>Price Range</ion-label>
+                        
+                    <ion-item lines="none">      
+                      <ion-item lines="none" class="padd-0">
+                        <ion-input inputmode="numeric" type="number" placeholder="Min" formControlName="min_ExpectedPrice"></ion-input>
+                        <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+                      </ion-item>                      
+                      <ion-item lines="none" class="padd-0 inner-padding-end-0">
+                        <ion-input inputmode="numeric" type="number" placeholder="Max" formControlName="max_ExpectedPrice"></ion-input>
+                        <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+                      </ion-item>                      
+                    </ion-item>
+                    <ion-label>
+                      <div  class="web_error" *ngIf="residentialsProperty.controls['min_ExpectedPrice'].invalid && (residentialsProperty.controls['min_ExpectedPrice'].dirty || residentialsProperty.controls['min_ExpectedPrice'].touched)" >
+                      <div *ngIf="residentialsProperty.controls['min_ExpectedPrice'].errors.required">*Min expected price is required</div>            
+                      </div>
+                    </ion-label>
+                  <ion-label>
+                    <div  class="web_error" *ngIf="residentialsProperty.controls['max_ExpectedPrice'].invalid && (residentialsProperty.controls['max_ExpectedPrice'].dirty || residentialsProperty.controls['max_ExpectedPrice'].touched)" >
+                      <div *ngIf="residentialsProperty.controls['max_ExpectedPrice'].errors.required">*Max expected price is required</div>            
+                    </div>
+                  </ion-label>
+                  
+                  </div>
+       
+                    <div class="buy-range list_bg">   
+                        <ion-label>Area</ion-label>   
+                      
+                      <ion-item lines="none">      
+                        <ion-item lines="none" class="padd-0">
+                          <ion-input inputmode="numeric" type="number" placeholder="Min" formControlName="minArea"></ion-input>
+                          <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+                        </ion-item>                        
+                        <ion-item lines="none" class="padd-0 inner-padding-end-0">
+                          <ion-input inputmode="numeric" type="number" placeholder="Max" formControlName="maxArea"></ion-input>
+                          <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+                        </ion-item>                        
+                      </ion-item>
+                      <ion-label>
+                        <div  class="web_error" *ngIf="residentialsProperty.controls['minArea'].invalid && (residentialsProperty.controls['minArea'].dirty || residentialsProperty.controls['minArea'].touched)" >
+                          <div *ngIf="residentialsProperty.controls['minArea'].errors.required">*Min area is required</div>            
+                        </div>
+                      </ion-label>
+                      <ion-label>
+                        <div  class="web_error" *ngIf="residentialsProperty.controls['maxArea'].invalid && (residentialsProperty.controls['maxArea'].dirty || residentialsProperty.controls['maxArea'].touched)" >
+                          <div *ngIf="residentialsProperty.controls['maxArea'].errors.required">*Max area is required</div>            
+                      </div>
+                      </ion-label>
+                    </div>
+
+         <div class="buy-range list_bg"> 
+         
+        <span class="bedrooms" *ngIf="showBedrooms === true">
+          <ion-label><ion-img src="../../assets/images/icons/svg/bedrooms.svg" alt="image missing"></ion-img>
+            Bedrooms</ion-label>            
+        </span> 
+        <ng-container *ngIf="showBedrooms === true">
+        <span *ngFor="let property of typeOfProperty">
+          <span class="property-type">{{property.ProjectSubCategory}}</span>
+        </span>
+      </ng-container>
+      
+      </div>
+      <ion-item lines="none">
+        <ion-text color="danger">
+          <p>All fields are mandatory. Please provide all informations</p>
+        </ion-text>
+      </ion-item>
+      <ion-button type="submit" class="submitBtn" >Submit</ion-button>
+    </form>
+         </div>
+      
+    
+      <div class="slider-bottom list_bg" *ngSwitchCase="'Commercial'">
+        <swiper
+        [spaceBetween]="5"
+        [slidesPerView]="4.9"
+        [centeredSlides]="false"     
+        [navigation]="false"          
+        
+        class="mySwiper buy-property-slider">
+
+        <ng-container *ngFor="let residentials of commercialProp; let i = index">
+          <ng-template  swiperSlide>
+            <span  (click)="clickEvent(i, residentials.PropertyTypeID)">              
+            <ion-img src="{{residentials.image}}" alt="image missing"></ion-img>           
+            <p>{{residentials.PropertySubCategory}}</p>
+            <fa-icon *ngIf="status == i" class="active" [icon]="faCheck"></fa-icon>
+            <!-- <span *ngIf="status == i" class="active">
+              
+            </span> -->
+          </span>
+          </ng-template>
+          <span slot="wrapper-end">Wrapper End</span>
+        </ng-container>
+        </swiper>
+        <form [formGroup]="commercialProperty" (ngSubmit)="onSubmitCommercial()">
+        <div class="buy-range list_bg">
+          <ion-label>Price Range</ion-label>
+            
+         <ion-item lines="none">      
+           <ion-item lines="none" class="padd-0">
+             <ion-input inputmode="numeric" type="number" placeholder="Min" formControlName="min_ExpectedPrice"></ion-input>
+             <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+           </ion-item>           
+           <ion-item lines="none" class="padd-0 inner-padding-end-0">
+             <ion-input inputmode="numeric" type="number" placeholder="Max" formControlName="max_ExpectedPrice"></ion-input>
+             <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+           </ion-item>           
+         </ion-item>
+         <ion-label>
+            <div  class="web_error" *ngIf="commercialProperty.controls['min_ExpectedPrice'].invalid && (commercialProperty.controls['min_ExpectedPrice'].dirty || commercialProperty.controls['min_ExpectedPrice'].touched)" >
+              <div *ngIf="commercialProperty.controls['min_ExpectedPrice'].errors.required">*Min Expected price is required</div>            
+          </div>
+         </ion-label>
+         <ion-label>
+            <div  class="web_error" *ngIf="commercialProperty.controls['max_ExpectedPrice'].invalid && (commercialProperty.controls['max_ExpectedPrice'].dirty || commercialProperty.controls['max_ExpectedPrice'].touched)" >
+              <div *ngIf="commercialProperty.controls['max_ExpectedPrice'].errors.required">*Max Expected price is required</div>            
+            </div>
+         </ion-label>
+       </div>
+     
+       <div class="buy-range list_bg">   
+           <ion-label>Area</ion-label>   
+        
+         <ion-item lines="none">      
+           <ion-item lines="none" class="padd-0">
+             <ion-input inputmode="numeric" type="number" placeholder="Min" formControlName="minArea"></ion-input>
+             <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+           </ion-item>
+           
+           <ion-item lines="none" class="padd-0 inner-padding-end-0">
+             <ion-input inputmode="numeric" type="number" placeholder="Max" formControlName="maxArea"></ion-input>
+             <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+           </ion-item>
+           
+         </ion-item> 
+         <ion-label>
+          <div  class="web_error" *ngIf="commercialProperty.controls['minArea'].invalid && (commercialProperty.controls['minArea'].dirty || commercialProperty.controls['minArea'].touched)" >
+            <div *ngIf="commercialProperty.controls['minArea'].errors.required">*Min area is required</div>            
+          </div>
+         </ion-label>
+         <ion-label>
+          <div  class="web_error" *ngIf="commercialProperty.controls['maxArea'].invalid && (commercialProperty.controls['maxArea'].dirty || commercialProperty.controls['maxArea'].touched)" >
+            <div *ngIf="commercialProperty.controls['maxArea'].errors.required">*Max area is required</div>            
+          </div>
+         </ion-label>        
+       </div>
+       <div class="buy-range list_bg"> 
+         
+        <span class="bedrooms" *ngIf="showBedrooms === true">
+          <ion-label><ion-img src="../../assets/images/icons/svg/bedrooms.svg" alt="image missing"></ion-img>
+            Bedrooms</ion-label>            
+        </span> 
+        <ng-container *ngIf="showBedrooms === true">
+        <span *ngFor="let property of typeOfProperty">
+          <span class="property-type">{{property.ProjectSubCategory}}</span>
+        </span>
+      </ng-container>
+      <ion-item lines="none">
+        <ion-text color="danger">
+          <p>All fields are mandatory. Please provide all informations</p>
+        </ion-text>
+      </ion-item>
+      </div>
+       <ion-button type="submit" class="submitBtn">Submit</ion-button>
+        </form>
+      </div>
+  
+      </div>
+  </div>
+  
+  
+  
+
+</ion-content>

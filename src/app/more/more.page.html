@@ -1,0 +1,33 @@
+<ion-header class="clients_header">
+  <ion-toolbar class="header-bg-color"> 
+    <ion-title slot="start" class="header-title">More</ion-title>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item lines="full" (click)="rateUs()">
+    <ion-icon name="rateus"></ion-icon>
+    <span class="more_list">Rate Us</span>
+  </ion-item>
+  <ion-item lines="full" (click)="sShare()">
+    <ion-icon name="share"></ion-icon>
+    <span class="more_list">Share this app</span>
+  </ion-item>
+  <ion-item lines="full" (click)="rateUs()">
+    <ion-icon name="feedback"></ion-icon>
+    <span class="more_list">Feedback</span>
+  </ion-item>
+  <ion-item lines="full" (click)="contactUs()">
+    <ion-icon name="feedback"></ion-icon>
+    <span class="more_list">Contact Us</span>
+  </ion-item>
+  <ion-item lines="full" (click)="login()" *ngIf="!isLoggedIn">
+    <ion-icon name="login"></ion-icon>
+    <span class="more_list">Login</span>    
+  </ion-item>
+  <ion-item lines="full" (click)="logOut()" *ngIf="isLoggedIn">
+    <ion-icon name="login"></ion-icon>   
+    <span class="more_list" >Logout</span>
+  </ion-item>
+
+</ion-content>

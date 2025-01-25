@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar class="header-bg-color">    
+    <ion-icon routerLink="/splash/tabs/home" class="back-btn" name="arrow-back-outline"></ion-icon>
+    <ion-title class="header-title">EMI calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="emiCalculator" (ngSubmit)="onSubmit()"> 
+<div class="item-wrapper">
+    <ion-item class="loan-item" lines="none">
+      <span class="loan-left-wrapper">
+    <label for="first-name">Loan Amount: </label>
+    <fa-icon [icon]="faIndianRupeeSign"></fa-icon>
+  </span>  
+    <ion-input inputmode="numeric" type="number"  formControlName="amount"></ion-input>    
+  </ion-item>
+  <div  class="web_error" *ngIf="emiCalculator.controls['amount'].invalid && (emiCalculator.controls['amount'].dirty || emiCalculator.controls['amount'].touched)" >
+    <div *ngIf="emiCalculator.controls['amount'].errors.required">*Loan amount is required</div>
+    <div *ngIf="emiCalculator.controls['amount'].errors.pattern ">* Only numbers are allowed</div>      
+</div>
+</div>
+  <div class="item-wrapper">
+  <ion-item class="loan-item" lines="none">    
+    <span class="loan-left-wrapper">
+    <label for="last-name">Loan tenure<br>(in years)</label>
+    <fa-icon  [icon]="faIndianRupeeSign"></fa-icon>
+  </span>
+    <ion-input inputmode="numeric" type="number" formControlName="tenure"></ion-input>
+  </ion-item>
+  <div  class="web_error" *ngIf="emiCalculator.controls['tenure'].invalid && (emiCalculator.controls['tenure'].dirty || emiCalculator.controls['tenure'].touched)" >
+    <div *ngIf="emiCalculator.controls['tenure'].errors.required">*Loan tenure is required</div>
+    <div *ngIf="emiCalculator.controls['tenure'].errors.pattern ">* Only numbers are allowed</div>      
+</div> 
+</div>
+
+<div class="item-wrapper">
+  <ion-item class="loan-item" lines="none">
+    <span class="loan-left-wrapper">
+    <label for="last-name">Rate of Interest </label>
+    <fa-icon  [icon]="faPercent"></fa-icon>
+  </span>
+    <ion-input inputmode="numeric" type="number" formControlName="rateofintrest"></ion-input>
+  </ion-item> 
+  <div  class="web_error" *ngIf="emiCalculator.controls['rateofintrest'].invalid && (emiCalculator.controls['rateofintrest'].dirty || emiCalculator.controls['rateofintrest'].touched)" >
+    <div *ngIf="emiCalculator.controls['rateofintrest'].errors.required">*Rate of interest is required</div> 
+  </div>
+</div>
+<ion-button class="loan-submit-btn" type="submit" >Submit</ion-button>
+  </form>  
+  
+  <ion-button class="reset-btn" fill="clear" type="submit" (click)="resetSubmitForm()">Reset all fields</ion-button>
+  <span class="red-border"></span>
+  <Span class="result" *ngIf="calculatedEMI">Result: {{calculatedEMI}}</Span>
+</ion-content>

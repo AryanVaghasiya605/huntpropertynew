@@ -1,0 +1,74 @@
+ion-content{
+    --background: #fff;
+    ion-item{
+        --background: #fff;
+        input{width: 100%;}
+        .simulador {
+            display: inline-block;
+            width: 100%;
+            .slidecontainer{
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                span{
+                    position: absolute;
+                    right: 0;
+                    z-index: 99;
+                    display: flex;
+                    width: 50px;
+                    color: red;
+                    fa-icon{
+                        color: red;
+                    }
+                }
+            }           
+         
+          .slider-container .interno .slidecontainer {
+            width: 100%;
+            padding-top: 0px;
+            
+          }
+          .slider-container .interno .slidecontainer output {
+            font-family: 'museo700';
+            margin-bottom: 0px;
+            position: absolute;
+            padding: .5em;
+            background: transparent;
+            color: #FF2323;
+            top: -3px;
+          }
+          .slider-container .interno .slider {
+            -webkit-appearance: none;
+            width: 85%;
+            height: 5px;
+            border-radius: 2.5px;
+            background: #FF2323;
+            outline: none;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+            border: 0;
+          }
+          .slider-container .interno .slider:hover {
+            opacity: 1;
+          }
+          .slider-container .interno .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #FF2323;
+            cursor: pointer;
+            border: 3.5px solid #FF2323;
+          }
+          .slider-container .interno .slider ::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #FF2323;
+            cursor: pointer;
+            border: 3.5px solid #FF2323;
+          }
+    }
+}
+}

@@ -1,0 +1,17 @@
+.clients_header{
+    display: flex;
+    flex-direction: row;
+    ion-title{
+       margin-left: 10px;
+    }
+    ion-label{ margin-right: 10px; font-size: 40px;}
+}
+ion-content{
+    --background:#fff;
+    ion-item{
+        --background:#fff;
+        ion-label{
+            h2{ color: #000;}
+        }
+    }
+}

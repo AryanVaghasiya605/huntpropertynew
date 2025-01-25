@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar class="header-bg-color">    
+    <div class="header-title">Profile</div>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item  *ngFor="let list of inboxList">    
+      <ion-avatar slot="start">
+        <img alt="Silhouette of a person's head" src="../../../assets/images/icons/message-default-img.png" />
+      </ion-avatar>
+      <ion-label class="list_text" (click)="showChat(list.user, list.Name)">{{list.Name}}
+        <ion-label class="list_text_bottom">{{list.Message}}</ion-label>
+      </ion-label>
+    </ion-item>
+  <!-- <ion-item>
+    <ion-avatar slot="start">
+      <img alt="Silhouette of a person's head" src="../../../assets/images/icons/message-default-img.png" />
+    </ion-avatar>
+    <ion-label class="list_text">tejasavi Kapoor
+      <ion-label class="list_text_bottom">Hello</ion-label>
+    </ion-label>    
+  </ion-item>
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="Silhouette of a person's head" src="../../../assets/images/icons/message-default-img.png" />
+    </ion-avatar>
+    <ion-label class="list_text">T Kapoor
+      <ion-label class="list_text_bottom">Hi</ion-label>
+    </ion-label>    
+  </ion-item>
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="Silhouette of a person's head" src="../../../assets/images/icons/message-default-img.png" />
+    </ion-avatar>
+    <ion-label class="list_text">Naveen
+      <ion-label class="list_text_bottom">hello</ion-label>
+    </ion-label>    
+  </ion-item> -->
+</ion-content>
