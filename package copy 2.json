@@ -1,6 +1,6 @@
 {
   "name": "huntproperty",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
@@ -15,7 +15,6 @@
   "private": true,
   "dependencies": {
     "@angular-slider/ngx-slider": "^2.0.3",
-    "@angular/cli": "^14.0.0",
     "@angular/common": "^13.3.1",
     "@angular/core": "^13.3.1",
     "@angular/forms": "^13.3.1",
@@ -28,8 +27,11 @@
     "@awesome-cordova-plugins/http": "^5.46.0",
     "@awesome-cordova-plugins/native-storage": "^5.46.0",
     "@awesome-cordova-plugins/social-sharing": "^6.4.0",
-    "@fortawesome/angular-fontawesome": "^0.10.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/angular-fontawesome": "^0.11.1",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@fortawesome/free-regular-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@ionic-native/camera": "^5.36.0",
     "@ionic-native/diagnostic": "^5.36.0",
     "@ionic-native/http": "^5.36.0",
@@ -92,7 +94,7 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
-    "typescript": "^4.6.4"
+    "typescript": "~4.7.3"
   },
   "description": "An Ionic project",
   "cordova": {
@@ -109,9 +111,7 @@
       "cordova-plugin-camera": {
         "ANDROIDX_CORE_VERSION": "1.6.+"
       },
-      "cordova-plugin-geolocation": {
-        "GPS_REQUIRED": "true"
-      },
+      "cordova-plugin-geolocation": {},
       "cordova-plugin-x-socialsharing": {}
     },
     "platforms": [

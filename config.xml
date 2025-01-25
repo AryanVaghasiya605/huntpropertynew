@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="2" id="hunt.property" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="2.0.1" id="hunt.property" version="2.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>huntproperty</name>
     <description>An real estate app.</description>
     <author email="tejasvikapoor@huntproperty.com" href="https://www.huntproperty.com/">Ionic Framework Team</author>
@@ -19,7 +19,8 @@
     <preference name="SplashScreen" value="none" />
     <preference name="SplashScreenDelay" value="0" />
     <preference name="orientation" value="portrait" />
-    <preference name="android-buildToolsVersion" value="33.0.2" />
+    <preference name="android-buildToolsVersion" value="34.0" />
+    <preference name="android-minSdkVersion" value="21" />
     <platform name="android">
         <preference name="Scheme" value="http" />
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
