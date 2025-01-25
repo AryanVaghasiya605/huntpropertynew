@@ -16,11 +16,11 @@ export class PostPropertyForPage implements OnInit {
   ngOnInit() {
   }
   sellProperty(data: string) {
-    console.log(data)
+   // console.log(data)
     this._router.navigate(['/select-package/property-type-list', { id: data }]);
   }
   rentProperty(data: string) {
-    console.log(data)
+ //   console.log(data)
     this._router.navigate(['/select-package/property-type-list', { id: data }]);
   }
 

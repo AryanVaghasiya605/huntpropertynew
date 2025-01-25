@@ -26,7 +26,7 @@
         <span class="property-list" >  
           <ul *ngIf="residentialsProp" id="residentialsProp">
             <li *ngFor="let residentials of residentialsProp; let i = index">
-              <span (click)="propertyDetails(residentials.Id, propertyfor)">
+              <span (click)="propertyDetails(residentials.PropertyTypeID, propertyfor)">
               <ion-img src="{{residentials.image}}" alt="image missing"></ion-img>
               
               </span>  
@@ -35,7 +35,7 @@
         </ul>
         <ul *ngIf="commercialProperty" id="commercialProp">
           <li *ngFor="let commercial of commercialProperty; let i = index">
-          <span (click)="propertyDetails(commercial.Id, propertyfor)">
+          <span (click)="propertyDetails(commercial.PropertyTypeID, propertyfor)">
           <ion-img src="{{commercial.image}}" alt="image missing"></ion-img>
           
           </span>  

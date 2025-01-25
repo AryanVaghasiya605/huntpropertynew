@@ -118,7 +118,7 @@ export class ClientRegisterationFormPage implements OnInit {
       
   }
   getRangeValue(ev:number){
-      console.log(ev)  
+      //console.log(ev)  
       this.budget = ev;
     }
     
@@ -134,15 +134,15 @@ export class ClientRegisterationFormPage implements OnInit {
       this.projectCatogery = parseData.data;
      this.getId = this.projectCatogery[0].Id;
      this.ProjectCategory = this.projectCatogery[0].ProjectCategory;
-     console.log('this.getId', this.getId);
+    // console.log('this.getId', this.getId);
      this.getCategoryId(this.getId)   
     })
   }
   updateValue(ev:any){
-    console.log('event', ev.target.value)
+   // console.log('event', ev.target.value)
   }
   getCategoryId(ev:any){ 
-    console.log(ev)
+   // console.log(ev)
     let data = {
       projectcategoryid: ''
     }
@@ -150,34 +150,34 @@ export class ClientRegisterationFormPage implements OnInit {
       // debugger;
       data.projectcategoryid = ev;
     } else if(ev.target.value != ''){
-      console.log('else')
+     // console.log('else')
       data.projectcategoryid = ev.target.value;
       this.projectCatogery.forEach(element => {
-        console.log(element)
+       // console.log(element)
         if(ev.target.value === element.Id){
           this.ProjectCategory = element.ProjectCategory; 
           // break;         
         }
       });
-      console.log(' this.ProjectCategory',  this.ProjectCategory)
+     // console.log(' this.ProjectCategory',  this.ProjectCategory)
     }
-    console.log(data)
+    //console.log(data)
     this._main.getProjectSubCatogery(data).then((data)=>{
       let parseData = JSON.parse(data.data);
       console.group(parseData.data)
       this.projectSubCatogery = parseData.data;
      this.getSubCatId = this.projectSubCatogery[0].Id;
      this.ProjectSubCategory = this.projectSubCatogery[0].ProjectSubCategory;
-     console.log('this.getSubCatId', this.getSubCatId);
+    // console.log('this.getSubCatId', this.getSubCatId);
     })
   }
   getSubcategoryId(ev:any){   
-    console.log('sub',ev)    
+   // console.log('sub',ev)    
     if(ev === this.getSubCatId){
       // debugger;
       this.getSubCatId = ev;
     } else if(ev.target.value != ''){
-      console.log('else')
+    //  console.log('else')
       this.getSubCatId = ev.target.value;
       this.projectSubCatogery.forEach(element => {
         if(ev.target.value === element.Id){
@@ -190,30 +190,30 @@ export class ClientRegisterationFormPage implements OnInit {
   }
   
   setActive(tab: string) {
-    console.log(tab)
+   // console.log(tab)
     this.projectPurpose = tab
     return this.activeTab = tab;
   }
   getPossessionStatus(tab:string){
-    console.log(tab)
+   // console.log(tab)
     this.clientRegistraionForm.get('property_possession').setValue(tab);
   return this.possessionTabActive = tab;
   }
   getLocation(ev:any){
-    console.log(ev.target.value)
+   // console.log(ev.target.value)
     this.location.forEach((ele)=>{
-      console.log(ele)
+    //  console.log(ele)
       if(ev.target.value == ele.id){
-        console.log('ghgh')
+      //  console.log('ghgh')
        return this.setLocation = ele.locationName;
         
         // this.clientRegistraionForm.get('property_location').setValue(ele.locationName); 
       }
     })
-    console.log(this.setLocation)
+  //  console.log(this.setLocation)
   }
   getParaMeter(ev: any) {
-    console.log(ev.target.value)
+   // console.log(ev.target.value)
     this.clientRegistraionForm.get('size_property_unit').setValue(ev.target.value);
   }
   bankLoanRequired(val:string){
@@ -256,21 +256,21 @@ export class ClientRegisterationFormPage implements OnInit {
         createdBy: this.clientRegistraionForm.get('createdBy').value        
       },
       this._nativeStorage.setItem('formData', this.payload);     
-    console.log(this.payload);
-    console.log(this.clientRegistraionForm.value);
+    //console.log(this.payload);
+    //console.log(this.clientRegistraionForm.value);
     if(this.steps === 4){
       this.showPreviousBtn = false
       this.hideNextBtn = false;
       this.showSubmitBtn = false;      
       let formData = this._nativeStorage.getItem('formData').then((payload)=>{
-        console.log(payload);
+      //  console.log(payload);
         this._main.clientRegistration(payload).then((data) => {
           this.hideNextBtn = false;
           this.showSubmitBtn = false;
           this.showPreviousBtn = false;
-          console.log(data)
+         // console.log(data)
           if (data.status === 200) {
-            console.log('success')
+           // console.log('success')
             this._router.navigateByUrl('/client-register');
             this._utilService.presentToast('Data is inserted successfully', 'toaster-background')
 
@@ -282,7 +282,7 @@ export class ClientRegisterationFormPage implements OnInit {
    
   }
   submitButtonClicked(){
-    console.log('clicked')
+  //  console.log('clicked')
     this.steps = 0;
     this.showPreviousBtn = false;
     

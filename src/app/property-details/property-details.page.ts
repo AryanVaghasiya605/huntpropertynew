@@ -38,20 +38,20 @@ map:any;
   }
   ionViewWillEnter(){
     this._route.params.subscribe((data)=>{
-      console.log(data)
+     // console.log(data)
       let parseData = JSON.parse(data.id);
       this.lat = data.lat;
       this.long = data.long;
      let getId = {
         Id:parseData
       }     
-      console.log('listing', parseData);      
+   //   console.log('listing', parseData);      
       this._mainSvc.getPropertyDetails(getId).then((data)=>{        
         let parseData = JSON.parse(data.data);
         this.propertyDetails = parseData;
-        console.log('propertyDetails', this.propertyDetails)
+     //   console.log('propertyDetails', this.propertyDetails)
         this.propertyDetails.attr.forEach(element => {
-          console.log(element); 
+      //    console.log(element); 
           if (element.AttributeName == 'Expected Price') {
             return this.expectedPrice = element.value;
           } else if (element.AttributeName == 'Floor Number') {

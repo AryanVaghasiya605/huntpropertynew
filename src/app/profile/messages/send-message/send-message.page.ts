@@ -29,12 +29,12 @@ export class SendMessagePage implements OnInit {
       message:['']
     })
     this._nativeStorage.getItem('token').then((token)=>{
-      console.log(token)
+     // console.log(token)
     })
   }
   ionViewWillEnter(){
     this._activatedRoute.params.subscribe((param)=>{
-      console.log(param)
+    //  console.log(param)
       this.userName = param.name;
       this.chatId = {
         user_id : param.id
@@ -43,12 +43,12 @@ export class SendMessagePage implements OnInit {
         let parseData = JSON.parse(data.data);
         this.chatBoxList = parseData.data;
         this.chatBoxList.sort((a,b) => 0 - (a > b ? -1 : 1));
-        console.log(this.chatBoxList);
+      //  console.log(this.chatBoxList);
       })
     })
   }
 onSubmit(){
-  console.log(this.chatId)
+ // console.log(this.chatId)
   let formdata = {    
       "to_user_id":this.chatId.user_id,
       "msg":this.sendMessage.value.message
@@ -57,7 +57,7 @@ onSubmit(){
   console.log(formdata)
   this._mainSVC.sendMessage(formdata).then(
     (data)=>{
-      console.log('data', data);
+    //  console.log('data', data);
       this.ionViewWillEnter();
       this.sendMessage.reset();
     }

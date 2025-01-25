@@ -29,7 +29,7 @@ export class PostedPropertyPage implements OnInit {
                 this.propertyList = getData.data;                
                 this.showSpinner = true;
                 this.isPageReady = true;
-                console.log('serch', this.propertyList);
+              //  console.log('serch', this.propertyList);
       }
     )
   }

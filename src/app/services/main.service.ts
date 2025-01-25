@@ -32,7 +32,7 @@ export class MainService {
   }
   getMessageInbox(data){
     return this._nativeStorage.getItem('token').then((_token) => {
-      console.log(_token)
+     // console.log(_token)
       let http = this._http.post(
         `${environment.API_URL}v1/App/ChatConversation/inbox`,
         data,
@@ -42,13 +42,13 @@ export class MainService {
           'Content-Type': 'application/json',
         }
       );
-      console.log(http)
+    //  console.log(http)
       return http;
     });
   }
   getChatBoxList(data){
     return this._nativeStorage.getItem('token').then((_token) => {
-      console.log(_token)
+    //  console.log(_token)
       let http = this._http.post(
         `${environment.API_URL}v1/App/ChatConversation/chatBox`,
         data,
@@ -58,13 +58,13 @@ export class MainService {
           'Content-Type': 'application/json',
         }
       );
-      console.log(http)
+    //  console.log(http)
       return http;
     });
   }
   sendMessage(data) {      
     return this._nativeStorage.getItem('token').then((_token) => {
-      console.log(_token)
+    //  console.log(_token)
       let http = this._http.post(
         `${environment.API_URL}v1/App/ChatConversation/sendMessage`,
         data,
@@ -74,13 +74,13 @@ export class MainService {
           'Content-Type': 'application/json',
         }
       );
-      console.log(http)
+     // console.log(http)
       return http;
     });
   }
   postProperty(data){     
     return this._nativeStorage.getItem('token').then((_token) => {
-      console.log(_token)
+     // console.log(_token)
       let http = this._http.post(
         `${environment.API_URL}v1/App/PostProperty/postproperty`,
         data,
@@ -90,12 +90,12 @@ export class MainService {
           'Content-Type': 'application/json',
         }
       );
-      console.log(http)
+     // console.log(http)
       return http;
     });
   }
   getResidentialPropertyList(data) { 
-    console.log('residencitail', data)  
+   // console.log('residencitail', data)  
     this._http.setDataSerializer('json');         
       return this._http.post(
         `${environment.API_URL}v1/App/PropertyAttributes/propertyList`,
@@ -171,7 +171,7 @@ getPropertyList(data:any){
 
 getPostedPropertyList(){     
   return this._nativeStorage.getItem('token').then((_token) => {
-    console.log(_token)
+   // console.log(_token)
     let http = this._http.post(
       `${environment.API_URL}v1/App/Property/userpostedproperty`,
       {},
@@ -181,7 +181,7 @@ getPostedPropertyList(){
         'Content-Type': 'application/json',
       }
     );
-    console.log(http)
+   // console.log(http)
     return http;
   });
 }
@@ -281,7 +281,7 @@ projectListing(data){
       'Content-Type': 'application/json',
     }
   )
-  console.log('http', http);
+ // console.log('http', http);
   return http;
 }
 clientRegistration(data){  
@@ -293,7 +293,7 @@ clientRegistration(data){
       'Content-Type': 'application/json',
     }
   )
-  console.log(http)
+ // console.log(http)
   return http;
 }
 

@@ -19,7 +19,7 @@ export class StrictNumberOnlyDirective {
     //     return false;
     // }
     if (!pattern.test(inputChar) && event.key === 'Unidentified') {
-        console.log('inputChar', inputChar)
+       // console.log('inputChar', inputChar)
       // invalid character, prevent input
       event.preventDefault();
       return false;

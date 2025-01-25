@@ -24,7 +24,7 @@ export class AppComponent {
     // Subscribe to the back button event
     this.platform.backButton.subscribeWithPriority(10, async () => {
       const currentRoute = this.router.url;
-      console.log('Currentroute', currentRoute)
+     // console.log('Currentroute', currentRoute)
       // Check if the current route is '/home' or any specific route where you want to close the app
       if (currentRoute === '/splash/tabs/home') {
         // Show a confirmation dialog before closing the app

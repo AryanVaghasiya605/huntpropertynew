@@ -45,7 +45,7 @@ export class BuyPropertyPage implements OnInit {
   }
 
   ngOnInit() {
-    console.log('byeeee');
+   // console.log('byeeee');
     this.residentialsProperty = this.fb.group({
       PropertyFor: "Sell",
       Location: [''],
@@ -56,7 +56,7 @@ export class BuyPropertyPage implements OnInit {
       "limit": 10,
       "offset": 0
     });
-    console.log('byeeee2');
+   // console.log('byeeee2');
     this.commercialProperty = this.fb.group({
       min_ExpectedPrice: ['', Validators.required],
       max_ExpectedPrice: ['', Validators.required],
@@ -67,13 +67,13 @@ export class BuyPropertyPage implements OnInit {
        propertyfor: 'sell',
        propertytype: 'Residential'
     }
-    console.log('byeeee3');
+   // console.log('byeeee3');
     this._mainSVC.getResidentialPropertyList(residentialData).then(
       (data) => {
-        console.log(data);
-        console.log('byeeee4');        
+      //  console.log(data);
+      //  console.log('byeeee4');        
         let parseData = JSON.parse(data.data);
-        console.log('parseData', parseData);
+       // console.log('parseData', parseData);
         this.residentialsProp = parseData.PropertyCategory;
       },
       (error)=>{
@@ -86,9 +86,9 @@ export class BuyPropertyPage implements OnInit {
     }
     this._mainSVC.getCommercialPropertyList(commercialData).then(
       (data) => {
-        console.log(data);
+       // console.log(data);
         let parseData = JSON.parse(data.data);
-        console.log('parseData', parseData.data);
+      //  console.log('parseData', parseData.data);
         this.commercialProp = parseData.PropertyCategory;
         // if(data == 200){}
       }
@@ -97,7 +97,7 @@ export class BuyPropertyPage implements OnInit {
 
   }
   buyPropertyTab(tabIndex:string){
-    console.log(tabIndex)
+   // console.log(tabIndex)
     this.updateBackground = tabIndex;
     switch (tabIndex) {
       case 'buy':
@@ -116,14 +116,14 @@ export class BuyPropertyPage implements OnInit {
   }
   SearchProperty(ev:any){
     this.showFilter = true;    
-    console.log(ev.target.value)   
+   // console.log(ev.target.value)   
     this.filteredDataValue = ev.target.value; 
     this.inputData = {
       search: ev.target.value
     }
     this._mainSVC.searchProperty(this.inputData).then((data)=>{     
       let parseData = JSON.parse(data.data);
-      console.log(parseData.suggestions)
+    //  console.log(parseData.suggestions)
       this.filteredData = parseData.suggestions;
     })
     
@@ -135,9 +135,9 @@ export class BuyPropertyPage implements OnInit {
     this.showFilter = false;
   }
   getCurrentLocation(){
-    console.log('clicked');
+  //  console.log('clicked');
     this.geolocation.getCurrentPosition().then((resp) => {
-      console.log(resp.coords.latitude)
+   //   console.log(resp.coords.latitude)
       resp.coords.latitude
       resp.coords.longitude
      }).catch((error) => {
@@ -154,12 +154,12 @@ export class BuyPropertyPage implements OnInit {
   }
   clickEvent(i, PropertyTypeID) {
     this.status = i;
-    console.log(i, PropertyTypeID);
+   // console.log(i, PropertyTypeID);
     this._mainSVC.listProjectTypeSubCatageory(PropertyTypeID).then(
       (data) => {
 
         let parseData = JSON.parse(data.data);
-        console.log('listData', parseData.data);
+     //   console.log('listData', parseData.data);
         this.typeOfProperty = parseData.data;
         this.showBedrooms = true;
       }
@@ -168,13 +168,13 @@ export class BuyPropertyPage implements OnInit {
   }
 
   segmentChanged(event) {
-    console.log('event', event.target.value);
+   // console.log('event', event.target.value);
     this.status = -1;
   }
 
   onSubmitResidential() {
-    console.log(this.residentialsProperty.value);
-    console.log('control',this.residentialsProperty)    ;
+   // console.log(this.residentialsProperty.value);
+   // console.log('control',this.residentialsProperty)    ;
     this.residentialsProperty.statusChanges.subscribe(status => console.log('Form status: ', status));
 
     // this.residentialsProperty.get('Location').setValue(this.filteredDataValue);
@@ -183,7 +183,7 @@ export class BuyPropertyPage implements OnInit {
   }
 
   onSubmitCommercial() {
-    console.log(this.commercialProperty.value);
+   // console.log(this.commercialProperty.value);
     localStorage.setItem('propertyType', this.residentialsProp.value);
     this._route.navigate(['list-property', { residential: JSON.stringify(this.commercialProperty.value) }])
   }

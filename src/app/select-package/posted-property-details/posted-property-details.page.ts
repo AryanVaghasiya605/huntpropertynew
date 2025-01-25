@@ -60,6 +60,20 @@ export class PostedPropertyDetailsPage implements OnInit {
   lift = [];
   storeRoom = [];
   servantRoom = [];
+  anyConstructionDone = [];
+  boudaryWallMade = [];
+  occupancy = [];
+  sharedOfficeSpace = [];
+  personalWashroom = [];
+  pantry = [];
+  attachedBathroom=[];
+  attachedBalcony=[];
+  howoldisthePG=[];
+  furnishingDetails=[];
+  electricity=[];
+  laundry=[];
+  commonArea=[];
+  tenantsYouPrefer=[];
   // yearValue= format(new Date(), 'yyyy-MM-dd',) + 'T09:00:00.00z';
   checkBoxData = [];
   selectedBedrooms: number;
@@ -78,7 +92,7 @@ export class PostedPropertyDetailsPage implements OnInit {
   ) {
     this.radioItems = ['Residential', 'Commercial'];
     this.propertyFor =  this._activatedRoute.snapshot.params['propertyfor'];  
-    console.log('propertyFor', this.propertyFor);
+   // console.log('propertyFor======>', this.propertyFor);
   }
   
 
@@ -89,7 +103,7 @@ export class PostedPropertyDetailsPage implements OnInit {
       Balconies: [],
       totalFloor: [],
       totalNumber: [],
-      // FinishingStatus: [],
+      FinishingStatus: [],
       FloorNumber: [],
       TotalFloors: [],
       SuperArea: [],
@@ -124,11 +138,25 @@ export class PostedPropertyDetailsPage implements OnInit {
       propertyForId: [],
       propertyFor:[],
       propertyName:[],
+      propertyTitle:[],
       propertyDescription:[],
       Attributes: [''],
       MonthlyRent:[''],
-      SecurityAmount:['']
-
+      SecurityAmount:[''],
+      AnyConstructionDone:[],
+      BoudaryWallMade:[],
+      Occupancy : [],
+      SharedOfficeSpace:[],
+      PersonalWashroom:[],
+      Pantry : [],
+      AttachedBathroom:[],
+      AttachedBalcony:[],
+      HowoldisthePG:[],
+      Electricity:[],
+      Laundry:[],
+      FurnishingDetails:[],
+      CommonArea:[],
+      TenantsYouPrefer:[]
     })
     this.checkBoxData = [
       {checkboxName:"Car Parking", id:"parking"},
@@ -150,7 +178,7 @@ export class PostedPropertyDetailsPage implements OnInit {
       "propertycategoryid":this.activeRouteData
   }
   
-  console.log(id);
+  //console.log("ID LIST=================================>",id);
     this.attriButeList(id);
     this.rentForm.get('propertyForId').setValue(this.activeRouteData);
     this.rentForm.get('propertyFor').setValue(this.propertyFor);
@@ -159,7 +187,7 @@ export class PostedPropertyDetailsPage implements OnInit {
     this.getState()
   }
   stateLisOnChange(ev:any){
-    console.log(ev.target.value);
+   // console.log(ev.target.value);
     let stateId = {
       stateid:ev.target.value
     }
@@ -167,24 +195,24 @@ export class PostedPropertyDetailsPage implements OnInit {
   }
   getCityListOnChange(stateId){
     this._maniSVC.getCityList(stateId).then((data)=>{
-      console.log(data)
+   //   console.log(data)
       let parseData = JSON.parse(data.data);
       this.cityList = parseData;
       this.cityListIndex = this.cityList[0]?.Id;
-      console.log(parseData)
+    //  console.log(parseData)
     })
   }
   attriButeList(id){
     this._maniSVC.getAttributeListById(id).then((data)=>{      
       if (data.status == 200) {
         let parseData = JSON.parse(data.data);
-        console.log(parseData);
+       // console.log(parseData);
         if(parseData.Status === true){
           this.allAmenties = parseData.allAmenities;
           this.allAttributes = parseData.allAttributes;
-          console.log(this.allAmenties, this.allAttributes);
+        //  console.log("Attributes====>",this.allAmenties, this.allAttributes);
           this.allAttributes.forEach(element => {
-            // console.log(element)
+             console.log(element)
             switch (element.AttributeCode) {
               case 'Bedrooms':
                 this.bedroomsOpt = element.AttributeOption.split(',');
@@ -218,7 +246,7 @@ export class PostedPropertyDetailsPage implements OnInit {
                 break;
               case 'TransactionType':
                 this.transactionType = element.AttributeOption.split(',');
-                console.log(this.transactionType);
+               // console.log(this.transactionType);
                 break;
               case 'PossessionStatus':
                 this.possessionStatus = element.AttributeOption.split(',');
@@ -235,6 +263,39 @@ export class PostedPropertyDetailsPage implements OnInit {
               case 'ServantRoom':
                 this.servantRoom = element.AttributeOption.split(',');
                 break;  
+              case 'AnyConstructionDone':
+                  this.anyConstructionDone = element.AttributeOption.split(',');
+                  break;    
+              case 'BoudaryWallMade':
+                  this.boudaryWallMade = element.AttributeOption.split(',');
+                   break;   
+              case 'Occupancy':
+                 this.occupancy = element.AttributeOption.split(',');
+                 break;  
+              case 'SharedOfficeSpace':
+                  this.sharedOfficeSpace = element.AttributeOption.split(',');
+                  break;    
+              case 'PersonalWashroom':
+                  this.personalWashroom = element.AttributeOption.split(',');
+                  break;   
+              case 'Pantry':
+                  this.pantry = element.AttributeOption.split(',');
+                  break;  
+              case 'HowoldisthePG':
+                  this.howoldisthePG = element.AttributeOption.split(',');
+                  break;    
+              case 'AttachedBathroom':
+                  this.attachedBathroom = element.AttributeOption.split(',');
+                  break;   
+              case 'AttachedBalcony':
+                  this.attachedBalcony = element.AttributeOption.split(',');
+                  break;   
+              case 'FurnishingDetails':
+                this.furnishingDetails = element.AttributeOption.split(',');
+                break;  
+              case 'CommonArea':
+                  this.commonArea = element.AttributeOption.split(',');
+                  break;              
               default:
                 break;
             }
@@ -246,13 +307,13 @@ export class PostedPropertyDetailsPage implements OnInit {
     })
   }
   isCheckBoxSelected(ev: any, id:number) {
-    console.log(ev,ev.target.value);
+   // console.log(ev,ev.target.value);
     let amenitiesData = {
       "AmenityId": id,"AmenityName": ev.target.value
     }
     this.amentiesSelectedData.push(amenitiesData);
     this.rentForm.get('amenities').setValue(this.amentiesSelectedData)
-    console.log(this.amentiesSelectedData);
+   // console.log(this.amentiesSelectedData);
   }
   createAttributeList(){
     return this._fb.group({
@@ -265,10 +326,10 @@ export class PostedPropertyDetailsPage implements OnInit {
     if (!this.selectedBedroomArray.includes(this.selectedBedrooms)) {
       this.selectedBedroomArray.push(this.selectedBedrooms);
     }
-    console.log(this.selectedBedroomArray)
+   // console.log(this.selectedBedroomArray)
   }
   getFinishingStatus(ev:any, AttributeName:any, AttributeId:any){
-    console.log(ev.target.value);  
+   // console.log(ev.target.value);  
     this.attaributeData = {
     AttributeId: AttributeId,
     AttributeName: AttributeName,
@@ -284,28 +345,45 @@ export class PostedPropertyDetailsPage implements OnInit {
  
    
   }
-  getInputField(ev:any, AttributeId:any, AttributeName:any, AttributeCode:any){
-    console.log("value",AttributeId, AttributeName, AttributeCode);
-    this.attaributeData = {
-      AttributeId: AttributeId,
-      AttributeName: AttributeName,
-      Value: this.rentForm.get(AttributeCode)?.value
-     }
-     this.attributesArray.push(this.attaributeData);  
-     console.log(this.attributesArray) 
-     this.rentForm.get('Attributes').setValue(this.attributesArray)
-    // this.getFinishingStatus("ev.target.value", "AttributeId", "AttributeName"  )
-    
 
+  
+  getInputField(ev: any, AttributeId: any, AttributeName: any, AttributeCode: any) {
+   // console.log("value==>", AttributeId, AttributeName, AttributeCode);
+   // console.log("vvv", this.rentForm.get(AttributeCode)?.value);
+  
+    // Find if the AttributeCode already exists in the array
+    const existingIndex = this.attributesArray.findIndex(
+      (item) => item.AttributeId === AttributeId
+    );
+  
+    const newValue = this.rentForm.get(AttributeCode)?.value;
+  
+    if (existingIndex !== -1) {
+      // Update existing entry
+      this.attributesArray[existingIndex].Value = newValue;
+    } else {
+      // Add new entry if it doesn't exist
+      this.attaributeData = {
+        AttributeId: AttributeId,
+        AttributeName: AttributeName,
+        Value: newValue
+      };
+      this.attributesArray.push(this.attaributeData);
+    }
+  
+   // console.log("Updated Attributes Array:", this.attributesArray);
+  
+    // Update the form's Attributes value
+    this.rentForm.get('Attributes')?.setValue(this.attributesArray);
   }
   getAgeofConstruction(ev:any){
-    console.log(ev.target.value);
+   // console.log(ev.target.value);
   }
   getTypeOfOwnership(ev:any){
-    console.log(ev.target.value);
+   // console.log(ev.target.value);
   }
   getFacing(ev:any){
-    console.log(ev.target.value);
+    //console.log(ev.target.value);
   }
   getState(){
     // console.log(ev.target.value);
@@ -317,10 +395,10 @@ export class PostedPropertyDetailsPage implements OnInit {
     })
   }
   getCity(ev:any){
-    console.log(ev.target.value);
+   // console.log(ev.target.value);
   }
   getAvailableFrom(ev:any){
-    console.log(ev.target.value);
+   // console.log(ev.target.value);
   }
   addProduct(){
     this.plusMinus = true;
@@ -338,7 +416,7 @@ export class PostedPropertyDetailsPage implements OnInit {
   //   this.getFinishingStatus(ev,AttributeId, AttributeName)
   // }
   handleMinus(ev, AttributeId:any, AttributeName:any) {
-    console.log('removeBedRooms',ev, AttributeId, AttributeName);
+   // console.log('removeBedRooms',ev, AttributeId, AttributeName);
     this.attaributeData = {
       AttributeId: AttributeId,
       AttributeName: AttributeName,
@@ -349,14 +427,14 @@ export class PostedPropertyDetailsPage implements OnInit {
     this.showYearDropDown = true;
   }
   constructionAgeOnChange(event) {
-    console.log('year', event.target.value);
+   // console.log('year', event.target.value);
     this.year = moment(event.target.value).format("YYYY"); 
     this.showYearDropDown = false;
   }
   
   onSubmit(){
-    console.log(this.rentForm.value);
-    console.log(this.steps);    
+   // console.log(this.rentForm.value);
+   // console.log(this.steps);    
     if (this.steps === 2) {
       this.hideNextBtn = false;
       this.showSubmitBtn = true;
@@ -368,7 +446,7 @@ export class PostedPropertyDetailsPage implements OnInit {
   submitButtonClicked(){
     // this.formSubmitted = false
     this._maniSVC.postProperty(this.rentForm.value).then((data)=>{
-      console.log(data)
+    //  console.log(data)
       if(data.status === 200){
         this._utilService.presentToast('Data is inserted successfully', 'toaster-background')
         setTimeout(()=>{
@@ -381,7 +459,7 @@ export class PostedPropertyDetailsPage implements OnInit {
   
   
   uploadAction(ev:any){
-   console.log(ev);
+  // console.log(ev);
    this.progressInfos = [];
     this.selectedFiles = ev.target.files;
 
@@ -397,7 +475,11 @@ export class PostedPropertyDetailsPage implements OnInit {
         reader.readAsDataURL(this.selectedFiles[i]);
       }
     }
-    console.log(this.previews)
+   // console.log(this.previews)
   }
   
+
+  getSubcategory(ev:any){
+
+  }
 }

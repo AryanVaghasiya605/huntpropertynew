@@ -31,14 +31,14 @@ export class HomePage implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log('init')    
+   // console.log('init')    
     this.getCurrentLocation();
     this.getAssociateList();
   }
   getPosition()
   {
     navigator.geolocation.getCurrentPosition((showPos)=>{
-      console.log('clicked', showPos) 
+      //console.log('clicked', showPos) 
     })
     
     // navigator.geolocation.getCurrentPosition(resp => {   
@@ -49,14 +49,14 @@ export class HomePage implements OnInit {
   }
   
   getAssociateList() {
-    console.log('data');
+   // console.log('data');
     this._mainSVC.getAssociate().then(
       (data) => {
-        console.log('data', data);
+    //    console.log('data', data);
         let parseData = JSON.parse(data.data);
-        console.log('parseData', parseData.data);
+     //   console.log('parseData', parseData.data);
         this.associates = parseData.data;
-        console.log('data', this.associates);
+      //  console.log('data', this.associates);
       }
     )
   }
@@ -66,25 +66,25 @@ export class HomePage implements OnInit {
   }
   SearchProperty(ev:any){
     this.showFilter = true;    
-    console.log(ev.target.value)   
+   // console.log(ev.target.value)   
     this.filteredDataValue = ev.target.value; 
     this.inputData = {
       search: ev.target.value
     }
     this._mainSVC.searchProperty(this.inputData).then((data)=>{     
       let parseData = JSON.parse(data.data);
-      console.log(parseData.suggestions)      
+    //  console.log(parseData.suggestions)      
       this.filteredData = parseData.suggestions;
     })
     
   }
   selectFileredValue(val:string){
-    console.log(val)
+   // console.log(val)
     this.filteredDataValue = val;
     this.showFilter = false;
   }
   getCurrentLocation(){
-    console.log('clicked');
+   // console.log('clicked');
     this.geolocation.getCurrentPosition().then((resp) => {
       // console.log(resp.coords.latitude)
       resp.coords.latitude
@@ -102,7 +102,7 @@ export class HomePage implements OnInit {
      });
   }
   buyPropertyTab(tabIndex:string){
-    console.log(tabIndex)
+   // console.log(tabIndex)
     this.updateBackground = tabIndex;
     switch (tabIndex) {
       case 'buy':

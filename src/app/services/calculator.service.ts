@@ -25,7 +25,7 @@ export class CalculatorService {
     }
 
     LoanCalculator(data){
-      console.log(data);
+     // console.log(data);
       return this._http.post(`${environment.API_URL}/v1/App/Auth/loaneligibility`, data, {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ export class CalculatorService {
     }
    
     emiCalculator(data){
-      console.log(data);
+    //  console.log(data);
       return this._http.post(`${environment.API_URL}/v1/App/Auth/emicalculator`, data, {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ export class CalculatorService {
     }
 
     rentalValueCal(data){
-      console.log(data);
+      //console.log(data);
       return this._http.post(`${environment.API_URL}v1/App/Auth/rentalvaluecal`, data, {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ export class CalculatorService {
     }
 
     futureValueCal(data){
-      console.log(data);
+    //  console.log(data);
       return this._http.post(`${environment.API_URL}v1/App/Auth/futurevaluecal`, data, {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json'

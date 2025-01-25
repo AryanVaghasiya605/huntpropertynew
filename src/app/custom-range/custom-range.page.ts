@@ -43,7 +43,7 @@ export class CustomRangePage implements ControlValueAccessor, OnInit {
     this.value = newValue;
     this.onChange(newValue);
     this.onTouch();
-    console.log(this.value);
+   // console.log(this.value);
   }
   updateSliderValue(event: Event) {
     const newValue = Number((event.target as HTMLInputElement).value);

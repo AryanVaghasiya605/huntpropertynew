@@ -19,9 +19,9 @@ export class TabsPage {
     setTimeout(() => {
       this.splashScreen = true;
     }, 3000);
-    console.log('event', event);
+   // console.log('event', event);
     this.selectedTab = this.tabs.getSelected();
-    console.log(this.selectedTab === this.selectedTab)
+    //console.log(this.selectedTab === this.selectedTab)
     if(this.selectedTab == 'home'){
       this.showhomeBtn = true;
       this.showProfile = false;

@@ -39,10 +39,10 @@ export class PropertyTypeListPage implements OnInit {
       "propertytype":"Residential"
   }
     this._mainSVC.getResidentialPropertyList(residentialData).then((data) => {
-      console.log(data);
+    //  console.log("MyData",data);
       if (data.status == 200) {
         let parseData = JSON.parse(data.data);
-        console.log('parseData', parseData.PropertyCategory);
+     //   console.log('parseData', parseData.PropertyCategory);
         this.residentialsProp = parseData.PropertyCategory;
         // var commercialDom = document.getElementById('commercialProp');
         // if(commercialDom != null && commercialDom != undefined){
@@ -68,10 +68,10 @@ export class PropertyTypeListPage implements OnInit {
       "propertytype":"Commercial"
   };
     this._mainSVC.getCommercialPropertyList(commercialData).then((data) => {
-      console.log(data);
+     // console.log(data);
       if (data.status == 200) {
         let parseData = JSON.parse(data.data);
-        console.log('parseData', parseData.PropertyCategory);
+      //  console.log('parseData111', parseData);
         this.commercialProperty = parseData.PropertyCategory;
         //  var residentialsProp = document.getElementById('#residentialsProp').style.height = 'auto';
 
@@ -82,6 +82,7 @@ export class PropertyTypeListPage implements OnInit {
   }
 
   propertyDetails(id:any, propertyfor:any) {
+   // console.log("id",id,"propertyfor",propertyfor)
     this._router.navigate(['/select-package/posted-property-details', { id: id , propertyfor: propertyfor}]);
   }
 }

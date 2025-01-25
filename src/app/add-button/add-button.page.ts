@@ -22,7 +22,7 @@ export class AddButtonPage implements OnInit {
   @Input() AttributeName: string;
   @Input() AttributeId: string;
   @Input() Value: string;
-  @Input() control: AbstractControl<any, any> = new FormControl();
+  @Input() control: AbstractControl = new FormControl();
   constructor(
     private _fb:FormBuilder
   ) { }
@@ -45,15 +45,15 @@ export class AddButtonPage implements OnInit {
     this.showAddBtn = true;
     this.value = 1;
     }
-    console.log(this.value);
+   // console.log(this.value);
   }
   handlePlus(){
     // console.log('before', this.value);
     this.value++;
-    console.log('iddd', this.AttributeName, this.AttributeId)
+   // console.log('iddd', this.AttributeName, this.AttributeId)
     this.handlePlusEv.emit({AttributeName: this.AttributeName, AttributeId: this.AttributeId, Value:this.value});
-    console.log('iddd');
-    console.log('after', this.value);
+   // console.log('iddd');
+//console.log('after', this.value);
 
   }
 }

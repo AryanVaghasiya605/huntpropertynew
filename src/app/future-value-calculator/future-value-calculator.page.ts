@@ -28,10 +28,10 @@ export class FutureValueCalculatorPage implements OnInit {
   onSubmit(){
     this.calSvc.futureValueCal(this.futureValueCalculator.value).then(
       (data)=>{
-        console.log('dataRecieved', JSON.parse(data.data));
+        //console.log('dataRecieved', JSON.parse(data.data));
         let parseData = JSON.parse(data.data);
         this.futurevalue = parseData.Result;
-        console.log('dataRecieved',  this.futurevalue);
+       // console.log('dataRecieved',  this.futurevalue);
       }
     )
   }

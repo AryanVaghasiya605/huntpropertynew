@@ -101,7 +101,7 @@ export class AddProjectPage implements OnInit {
   }
   ionViewWillEnter() {
     this._nativeStorage.getItem('userId').then((userId)=>{
-      console.log(userId)
+     // console.log(userId)
       this.addProjectForm.get('userId')?.setValue(userId)
     })
 
@@ -186,10 +186,10 @@ export class AddProjectPage implements OnInit {
   isCheckBoxSelected(ev:any){
       this.amentiesSelectedData.push(ev.target.value)
       this.addProjectForm.get('amenities').setValue(this.amentiesSelectedData)
-      console.log(this.amentiesSelectedData)
+      //console.log(this.amentiesSelectedData)
   }
   stateLisOnChange(ev:any){
-    console.log(ev.target.value);
+   // console.log(ev.target.value);
     let stateId = {
       stateid:ev.target.value
     }
@@ -197,11 +197,11 @@ export class AddProjectPage implements OnInit {
   }
   getCityListOnChange(stateId){
     this._main.getCityList(stateId).then((data)=>{
-      console.log(data)
+   //   console.log(data)
       let parseData = JSON.parse(data.data);
       this.cityList = parseData;
       this.cityListIndex = this.cityList[0]?.Id;
-      console.log(parseData)
+     // console.log(parseData)
     })
   }
   createBspInputforFlexi(){
@@ -299,7 +299,7 @@ export class AddProjectPage implements OnInit {
     }
   }
   otherChargesIncluded(val:any){
-    console.log(val) 
+   // console.log(val) 
       
     val === true ? this.enableOtherCharges = true : this.enableOtherCharges = false;
   }
@@ -319,7 +319,7 @@ export class AddProjectPage implements OnInit {
   }
   removeChargesOtherPayments(i:number){
     this.otherPayments = this.addProjectForm.get('otherPayments') as FormArray;
-    console.log(i) 
+    //console.log(i) 
     this.otherPayments.removeAt(i)    
     if(i < 1 ){
       this.enableOtherPayments = false;
@@ -330,18 +330,18 @@ export class AddProjectPage implements OnInit {
     
   }
   otherPaymentIncluded(val:any){
-    console.log(val) 
+   // console.log(val) 
     val === true ? this.enableOtherPayments = true : this.enableOtherPayments = false;
     
   }
   clusterPlan(ev:any){
-    console.log(ev)
+    //console.log(ev)
   }
   floorPlan(ev:any){
-    console.log(ev)
+   // console.log(ev)
   }
   isPaymentPlanSelected(ev:any, checked:string){
-    console.log(ev.target.value, checked)
+    //console.log(ev.target.value, checked)
     if(checked === 'flexi'){
       this.isFlexiOpen = true;
     } else {
@@ -363,13 +363,13 @@ export class AddProjectPage implements OnInit {
       this.isContructionPlan = false;
     }
     
-    console.log(this.addProjectForm.value)
+    //console.log(this.addProjectForm.value)
    }
   addPerson() {
     // this.persons.push(new Person());
   }
   getprojectType(ev:any){
-    console.log(ev.target.value);
+   // console.log(ev.target.value);
   }
   getPlanTypeId(){
 
@@ -382,13 +382,13 @@ export class AddProjectPage implements OnInit {
     return this.activeTab = tab
   }
   sitePlan(ev:any){
-    console.log(ev.target.files)
+   // console.log(ev.target.files)
     let sitePlanImag;
     for (let index = 0; index < ev.target.files.length; index++) {
       sitePlanImag = ev.target.files[index];
-      console.log(sitePlanImag);
+     // console.log(sitePlanImag);
       this.storeSitePlanImg.push(sitePlanImag)
-      console.log(this.storeSitePlanImg, 'length', this.storeSitePlanImg.length);   
+     // console.log(this.storeSitePlanImg, 'length', this.storeSitePlanImg.length);   
      
     }
     let imageData = {      
@@ -399,15 +399,15 @@ export class AddProjectPage implements OnInit {
       imageData = {
         image_name:this.storeSitePlanImg[i]
       }
-      console.log(this.storeSitePlanImg[0]);
+      //console.log(this.storeSitePlanImg[0]);
       this.finalImageData.push(imageData);
       this.createItem().get('site_plan').setValue(this.finalImageData);
       break;
     }
-   console.log(this.addProjectForm.value)
+  // console.log(this.addProjectForm.value)
   }
   fileUpload(ev:any, activeTab:string){
-    console.log(ev.target.files, activeTab)
+  //  console.log(ev.target.files, activeTab)
     // this.selectedFiles = ev.target.File;
     this.imageCatagory.push(activeTab);
     // this.imageName.push(this.selectedFiles[0].name)
@@ -417,13 +417,13 @@ export class AddProjectPage implements OnInit {
     this.progressInfos = [];
     for (let index = 0; index < ev.target.files.length; index++) {
       this.selectedFiles = ev.target.files[index];
-      console.log(this.selectedFiles)
+    //  console.log(this.selectedFiles)
       // this.previews = [];
       this.previews.push( this.selectedFiles)
       
     }
-    console.log(this.previews[0])
-    console.log(this.previews.length, ev.target.files.length)
+   // console.log(this.previews[0])
+   // console.log(this.previews.length, ev.target.files.length)
     let imageData = {
       image_category:'',
       image_name:''
@@ -434,13 +434,13 @@ export class AddProjectPage implements OnInit {
         image_category: activeTab,
         image_name:this.previews[i]
       }
-      console.log(imageData)      
+     // console.log(imageData)      
       this.finalImageData.push(imageData);
       
     }
-    console.log(this.finalImageData)
+   // console.log(this.finalImageData)
     this.addProjectForm.get('image_category').setValue(this.finalImageData)
-    console.log(this.addProjectForm.value)
+  //  console.log(this.addProjectForm.value)
     // if (this.selectedFiles && this.selectedFiles[0]) {
     //   const numberOfFiles = this.selectedFiles.length;
     //   for (let i = 0; i < numberOfFiles; i++) {
@@ -469,12 +469,12 @@ export class AddProjectPage implements OnInit {
     
   }
   submitButtonClicked(){
-    console.log('clicked')
+    //console.log('clicked')
     this.steps = 0;
     this.showPreviousBtn = false;
-    console.log(this.addProjectForm.value);
+   // console.log(this.addProjectForm.value);
     this._main.postProject(this.addProjectForm.value).then((data)=>{
-          console.log(data)
+     //     console.log(data)
           if(data.status === 200){
             this._utilService.presentToast('Data is inserted successfully', 'toaster-background')
             setTimeout(()=>{

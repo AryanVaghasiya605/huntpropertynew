@@ -23,11 +23,11 @@ export class ClientRegisterPage implements OnInit {
   ionViewWillEnter(){
     this._nativeStorage.getItem('userId').then((data)=>{       
       this._mainSvc.clientListing(46).then((data)=>{
-        console.log('dsadsa',data);
+       // console.log('dsadsa',data);
         if(data.status == 200){
           let parseData = JSON.parse(data.data);
           this.clientList = parseData.data;
-          console.log(parseData.data);
+       //   console.log(parseData.data);
         }
        
       })
@@ -35,7 +35,7 @@ export class ClientRegisterPage implements OnInit {
   }
 
   clientRegistration() {
-    console.log('clicked')
+   // console.log('clicked')
     this._router.navigateByUrl('client-register/client-registeration-form');
   }
 

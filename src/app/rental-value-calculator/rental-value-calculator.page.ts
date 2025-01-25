@@ -27,10 +27,10 @@ export class RentalValueCalculatorPage implements OnInit {
   ngOnInit() {
   }
   getAssociateList(){
-    console.log('data');
+    //console.log('data');
     this._mainSVC.getAssociate().then(
       (data)=>{
-        console.log('data', data);
+    //    console.log('data', data);
       }
     )
   }
@@ -38,10 +38,10 @@ export class RentalValueCalculatorPage implements OnInit {
     this.getAssociateList();
     this.calSvc.rentalValueCal(this.rentalValueCalculator.value).then(
       (data)=>{
-        console.log('dataRecieved', JSON.parse(data.data));
+   //     console.log('dataRecieved', JSON.parse(data.data));
         let parseData = JSON.parse(data.data);
         this.calculatedRental = parseData.Result;
-        console.log('dataRecieved',  this.calculatedRental);
+    //    console.log('dataRecieved',  this.calculatedRental);
       }
     )
   }

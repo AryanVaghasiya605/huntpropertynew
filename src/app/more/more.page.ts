@@ -17,7 +17,7 @@ export class MorePage {
   
   ionViewWillEnter(){        
    this.isLoggedIn = localStorage.getItem('isLoggedIn');
-   console.log('ion', this.isLoggedIn);
+  // console.log('ion', this.isLoggedIn);
   }
   login(){
    this._router.navigateByUrl('login');

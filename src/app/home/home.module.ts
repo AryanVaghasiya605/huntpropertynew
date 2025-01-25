@@ -6,7 +6,7 @@ import { HomePage } from './home.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 import { SwiperModule } from "swiper/angular";
 import { HomePageRoutingModule } from './home-routing.module';
-import { FilterPipe } from '../pipe/filter.pipe';
+
 
 @NgModule({
   imports: [
@@ -17,6 +17,6 @@ import { FilterPipe } from '../pipe/filter.pipe';
     HomePageRoutingModule,
     SwiperModule
   ],
-  declarations: [HomePage, FilterPipe]
+  declarations: [HomePage]
 })
 export class HomePageModule {}

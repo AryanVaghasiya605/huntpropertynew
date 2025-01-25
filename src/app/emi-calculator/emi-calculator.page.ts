@@ -27,10 +27,10 @@ export class EmiCalculatorPage implements OnInit {
   onSubmit(){
     this.calSvc.emiCalculator(this.emiCalculator.value).then(
       (data)=>{
-        console.log('dataRecieved', JSON.parse(data.data));
+       // console.log('dataRecieved', JSON.parse(data.data));
         let parseData = JSON.parse(data.data);
         this.calculatedEMI = parseData.Result;
-        console.log('dataRecieved',  this.calculatedEMI);
+       // console.log('dataRecieved',  this.calculatedEMI);
       }
     )
   }

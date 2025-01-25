@@ -29,13 +29,13 @@
                 <ion-select formControlName="{{list.AttributeCode}}" slot="end" *ngIf="list.AttributeCode === 'FinishingStatus'" value="" placeholder="--Select--" (ionChange)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
                 <ion-select-option *ngFor="let item of finishingStatus; let i = index" value="{{item}}">{{item}}</ion-select-option>      
               </ion-select>
-              <ion-select slot="end" *ngIf="list.AttributeCode === 'AgeOfConstruction'" formControlName="{{list.AttributeCode}}" value="{{ageOfCons[0]}}" placeholder="--Select--" (ionChange)="getAgeofConstruction($event)">
+              <ion-select slot="end" *ngIf="list.AttributeCode === 'AgeOfConstruction'" formControlName="{{list.AttributeCode}}" value="{{ageOfCons[0]}}" placeholder="--Select--" (ionChange)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
                 <ion-select-option *ngFor="let item of ageOfCons; let i = index" value="{{item}}">{{item}}</ion-select-option>      
               </ion-select>
-              <ion-select slot="end" *ngIf="list.AttributeCode === 'TypeOfOwnership'" formControlName="{{list.AttributeCode}}" value="{{typeOfOwnerShip[0]}}" placeholder="--Select--" (ionChange)="getTypeOfOwnership($event)">
+              <ion-select slot="end" *ngIf="list.AttributeCode === 'TypeOfOwnership'" formControlName="{{list.AttributeCode}}" value="{{typeOfOwnerShip[0]}}" placeholder="--Select--" (ionChange)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
                 <ion-select-option *ngFor="let item of typeOfOwnerShip; let i = index" value="{{item}}">{{item}}</ion-select-option>      
               </ion-select>
-              <ion-select slot="end" *ngIf="list.AttributeCode === 'Facing'" formControlName="{{list.AttributeCode}}" value="{{facing[0]}}" placeholder="--Select--" (ionChange)="getFacing($event)">
+              <ion-select slot="end" *ngIf="list.AttributeCode === 'Facing'" formControlName="{{list.AttributeCode}}" value="{{facing[0]}}" placeholder="--Select--" (ionChange)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
                 <ion-select-option *ngFor="let item of facing; let i = index" value="{{item}}">{{item}}</ion-select-option>      
               </ion-select>
               <ion-select slot="end" *ngIf="list.AttributeCode === 'State'" formControlName="{{list.AttributeCode}}" [value]="stateListIndex" placeholder="--Select--" (ionChange)="stateLisOnChange($event)">
@@ -44,17 +44,30 @@
               <ion-select slot="end" *ngIf="list.AttributeCode === 'City'" formControlName="{{list.AttributeCode}}" [value]="cityListIndex" placeholder="--Select--" (ionChange)="getSubcategory($event)">
                 <ion-select-option *ngFor="let item of cityList; let i = index" value="{{item.Id}}">{{item.City}}</ion-select-option>      
               </ion-select>
-              <ion-select slot="end" *ngIf="list.AttributeCode === 'AvailableFrom'" formControlName="{{list.AttributeCode}}" value="{{availableFrom[0]}}" placeholder="--Select--" (ionChange)="getAvailableFrom($event)">
+              <ion-select slot="end" *ngIf="list.AttributeCode === 'AvailableFrom'" formControlName="{{list.AttributeCode}}" value="{{availableFrom[0]}}" placeholder="--Select--" (ionChange)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
                 <ion-select-option *ngFor="let item of availableFrom; let i = index" value="{{item}}">{{item}}</ion-select-option>      
               </ion-select>
-              <ion-input type="text" slot="end" *ngIf="list.AttributeType === 'text'"  formControlName="{{list.AttributeCode}}"></ion-input>
+
+              <ion-select slot="end" *ngIf="list.AttributeCode === 'HowoldisthePG'" formControlName="{{list.AttributeCode}}" value="{{availableFrom[0]}}" placeholder="--Select--" (ionChange)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                <ion-select-option *ngFor="let item of howoldisthePG; let i = index" value="{{item}}">{{item}}</ion-select-option>      
+              </ion-select>
+
+              <ion-select slot="end" *ngIf="list.AttributeCode === 'TenantsYouPrefer'" formControlName="{{list.AttributeCode}}" value="{{availableFrom[0]}}" placeholder="--Select--" (ionChange)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                <ion-select-option *ngFor="let item of tenantsYouPrefer; let i = index" value="{{item}}">{{item}}</ion-select-option>      
+              </ion-select>
+
+              <ion-input type="text" slot="end" *ngIf="list.AttributeType === 'text'" (ionBlur)="getInputField($event, list.AttributeId, list.AttributeName, list.AttributeCode)" formControlName="{{list.AttributeCode}}"></ion-input>
               <ion-input type="number" slot="end" *ngIf="list.AttributeType === 'number'" (ionBlur)="getInputField($event, list.AttributeId, list.AttributeName, list.AttributeCode)" formControlName="{{list.AttributeCode}}"></ion-input>
+              
+              <ion-select formControlName="{{list.Occupancy}}" *ngIf="list.AttributeName === 'Occupancy'" slot="end" value="select" placeholder="--Select--" (ionChange)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                <ion-select-option *ngFor="let item of occupancy; let i = index" value="{{item}}">{{item}}</ion-select-option>      
+              </ion-select>
               <div class="furnishing-list" slot="end">
                 <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'TransactionType'">                
                   <ul>
                     <li *ngFor="let item of transactionType">
                       <label class="container">
-                        <input type="radio" name="options1" >
+                        <input type="radio" name="options1" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
                         {{item}}
                         <span class="checkmark"></span>
                       </label>
@@ -66,7 +79,7 @@
                   <ul>                    
                     <li  *ngFor="let item of possessionStatus">
                       <label slot="end" class="container">
-                        <input type="radio" name="options2" >
+                        <input type="radio" name="options2" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
                         {{item}}
                         <span class="checkmark"></span>
                       </label>
@@ -77,7 +90,7 @@
                   <ul>                    
                     <li *ngFor="let item of carParking">
                       <label class="container">
-                        <input type="radio" name="options3" >
+                        <input type="radio" name="options3" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
                         {{item}}
                         <span class="checkmark"></span>
                       </label>
@@ -88,7 +101,7 @@
                   <ul>                    
                     <li *ngFor="let item of lift">
                       <label class="container">
-                        <input type="radio" name="options4" >
+                        <input type="radio" name="options4" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
                         {{item}}
                         <span class="checkmark"></span>
                       </label>
@@ -99,7 +112,7 @@
                   <ul>                    
                     <li *ngFor="let item of storeRoom">
                       <label class="container">
-                        <input type="radio" name="options5" >
+                        <input type="radio" name="options5" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
                         {{item}}
                         <span class="checkmark"></span>
                       </label>
@@ -110,13 +123,124 @@
                   <ul>                    
                     <li *ngFor="let item of servantRoom">
                       <label class="container">
-                        <input type="radio" name="options6" >
+                        <input type="radio" name="options6" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
                         {{item}}
                         <span class="checkmark"></span>
                       </label>
                     </li>                                                        
                   </ul>
                 </div>
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'AnyConstructionDone'">                
+                  <ul>                    
+                    <li *ngFor="let item of anyConstructionDone">
+                      <label class="container">
+                        <input type="radio" name="options7" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div>
+
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'BoudaryWallMade'">                
+                  <ul>                    
+                    <li *ngFor="let item of boudaryWallMade">
+                      <label class="container">
+                        <input type="radio" name="options8" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)" >
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div>
+
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'SharedOfficeSpace'">                
+                  <ul>                    
+                    <li *ngFor="let item of sharedOfficeSpace">
+                      <label class="container">
+                        <input type="radio" name="options9" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div>
+
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'PersonalWashroom'">                
+                  <ul>                    
+                    <li *ngFor="let item of personalWashroom">
+                      <label class="container">
+                        <input type="radio" name="options10" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div>
+
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'Pantry'">                
+                  <ul>                    
+                    <li *ngFor="let item of pantry">
+                      <label class="container">
+                        <input type="radio" name="options11" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div>
+
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'AttachedBathroom'">                
+                  <ul>                    
+                    <li *ngFor="let item of attachedBathroom">
+                      <label class="container">
+                        <input type="radio" name="options12" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div>
+
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'AttachedBalcony'">                
+                  <ul>                    
+                    <li *ngFor="let item of attachedBalcony">
+                      <label class="container">
+                        <input type="radio" name="options13" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div>
+
+               
+
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'CommonArea'">                
+                  <ul>                    
+                    <li *ngFor="let item of commonArea">
+                      <label class="container">
+                        <input type="radio" name="options15" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div>  
+
+                <div class="furnishing-wrapper radio-list" *ngIf="list.AttributeCode === 'FurnishingDetails'">                
+                  <ul>                    
+                    <li *ngFor="let item of furnishingDetails">
+                      <label class="container">
+                        <input type="radio" name="options16" (change)="getFinishingStatus($event, list.AttributeName, list.AttributeId)">
+                        {{item}}
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>                                                        
+                  </ul>
+                </div> 
+               
+               
               </div>
               
             </ion-item>
@@ -153,6 +277,14 @@
       </ion-item>
       <ion-item lines="none">
         <span class="monthlyRent" slot="start">
+          Property Title
+        </span>
+        <ion-item class="input" lines="none">
+          <ion-input formControlName="propertyTitle"></ion-input>
+        </ion-item>
+      </ion-item>
+      <ion-item lines="none">
+        <span class="monthlyRent" slot="start">
           Description
         </span>
         <ion-item class="input" lines="none">
@@ -181,8 +313,8 @@
       
 
     <ion-item lines="none">      
-      <ion-button *ngIf="hideNextBtn" class="nextBtn" type="submit" >Next</ion-button>      
-      <ion-button *ngIf="steps > 2 && showSubmitBtn" class="nextBtn submitBtn" type="submit" disabled="!rentForm.invalid" (click)="submitButtonClicked()">Submit</ion-button>
+      <ion-button *ngIf="hideNextBtn" class="nextBtn" type="submit" >Next1</ion-button>      
+      <ion-button *ngIf="steps > 2 && showSubmitBtn" class="nextBtn submitBtn" type="submit"  (click)="submitButtonClicked()">Submit</ion-button>
     </ion-item>
   </form>
 </ion-content>

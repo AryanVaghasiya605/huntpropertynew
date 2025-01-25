@@ -27,12 +27,12 @@ public inboxList:any;
      this._mainSvc.getMessageInbox(userData).then((data)=>{
       let parseData = JSON.parse(data.data);
       this.inboxList = parseData.data;
-      console.log(this.inboxList);
+     // console.log(this.inboxList);
      })
     })
   }
   showChat(id:number, name:string){
-    console.log(id)
+   // console.log(id)
     this._ngZone.run(()=>{
       this._router.navigate(['/messages/send-message', {id:id, name:name}]);
     })

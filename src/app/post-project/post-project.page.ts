@@ -33,12 +33,12 @@ projectlist:any;
   ionViewWillEnter(){
     this._nativeStorage.getItem('userId').then((data)=>{       
       this._mainSvc.projectListing(47).then((data)=>{
-        console.log('dsadsa',data);
+       // console.log('dsadsa',data);
         this.showLoading();
         if(data.status == 200){
           let parseData = JSON.parse(data.data);
           this.projectlist = parseData.data;
-          console.log(parseData.data);
+        //  console.log(parseData.data);
         }
        
       })
@@ -48,7 +48,7 @@ projectlist:any;
     this._router.navigateByUrl('/post-project/add-project');
   }
   projectDetails(id:any){
-console.log(id)
+//console.log(id)
 this._router.navigate(['/post-project/project-details', {project_id: id}]);
   }
 

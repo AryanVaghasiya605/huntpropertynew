@@ -19,14 +19,14 @@ projectDetails:any;
   }
   ionViewWillEnter(){
 this._activateRoute.params.subscribe((params)=>{
-  console.log('params', params.project_id);
+ // console.log('params', params.project_id);
   let id = params.project_id;
   id = 4
   this._mainSvc.clientDetails(id).then((data)=>{
-    console.log(data)
+  //  console.log(data)
     if(data.status === 200){
       let parseData = JSON.parse(data.data);
-      console.log(parseData.data);
+  //    console.log(parseData.data);
       this.projectDetails = parseData.data;
     }
   })
