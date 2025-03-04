@@ -77,7 +77,7 @@ export class BuyPropertyPage implements OnInit {
         this.residentialsProp = parseData.PropertyCategory;
       },
       (error)=>{
-        console.log(error)
+       // console.log(error)
       }
     );
     const commercialData = {
@@ -141,7 +141,7 @@ export class BuyPropertyPage implements OnInit {
       resp.coords.latitude
       resp.coords.longitude
      }).catch((error) => {
-       console.log('Error getting location', error);
+      // console.log('Error getting location', error);
      });
      
      let watch = this.geolocation.watchPosition();
@@ -175,7 +175,7 @@ export class BuyPropertyPage implements OnInit {
   onSubmitResidential() {
    // console.log(this.residentialsProperty.value);
    // console.log('control',this.residentialsProperty)    ;
-    this.residentialsProperty.statusChanges.subscribe(status => console.log('Form status: ', status));
+    this.residentialsProperty.statusChanges.subscribe(status => {});
 
     // this.residentialsProperty.get('Location').setValue(this.filteredDataValue);
     localStorage.setItem('propertyType', this.residentialsProp.value);

@@ -11,7 +11,7 @@ export class StrictNumberOnlyDirective {
   onKeyDown(event: any) {
    
     var key = event.charCode ? event.charCode : event.keyCode;
-    console.log(event.key)
+    //console.log(event.key)
     const pattern = /[0-9]/; // without ., for integer only
     let inputChar = String.fromCharCode(event.which ? event.which : event.keyCode);
     // if(event.key == 'Unidentified'){

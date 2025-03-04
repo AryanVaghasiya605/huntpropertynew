@@ -212,7 +212,7 @@ export class PostedPropertyDetailsPage implements OnInit {
           this.allAttributes = parseData.allAttributes;
         //  console.log("Attributes====>",this.allAmenties, this.allAttributes);
           this.allAttributes.forEach(element => {
-             console.log(element)
+           //  console.log(element)
             switch (element.AttributeCode) {
               case 'Bedrooms':
                 this.bedroomsOpt = element.AttributeOption.split(',');

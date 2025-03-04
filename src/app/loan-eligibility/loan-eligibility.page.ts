@@ -34,12 +34,12 @@ export class LoanEligibilityPage implements OnInit {
   onSubmit() {
 
     // TODO: Use EventEmitter with form value
-    console.log(this.loanElegibility.value);
+   // console.log(this.loanElegibility.value);
     this.calSvc.LoanCalculator(this.loanElegibility.value)
     .then((data)=>{
       
       let parseData = JSON.parse(data.data);
-      console.log('data', parseData);
+     // console.log('data', parseData);
       this.loanEle = parseData;
       if(parseData.status === true){
         this.LoanAmount = parseData.LoanAmount;
