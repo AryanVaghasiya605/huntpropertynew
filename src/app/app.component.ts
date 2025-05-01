@@ -36,7 +36,7 @@ export class AppComponent {
               text: 'Cancel',
               role: 'cancel',
               handler: () => {
-                console.log('Exit canceled');
+                //console.log('Exit canceled');
               }
             },
             {

@@ -55,17 +55,17 @@ export class LoginPage implements OnInit {
   //    "email": 'inspector@greenfundindia.com',
   //    "password": '123456'
   //  }
-    console.log(formData);
+   // console.log(formData);
     this.authSVC.login(formData).then(data=>{     
      let Newdata = data;
      this.loginData = JSON.parse(Newdata.data); 
-     console.log("loginD", this.loginData);
+    // console.log("loginD", this.loginData);
      if(this.loginData.status === false) {      
       this._utilService.presentToast('Invalid credentials','toaster-background');
     }
     //  this.token = this.loginData.data.token;
     this.token = this.loginData.data.AuthToken;
-     console.log('token',this.token);
+   //  console.log('token',this.token);
       if(this.loginData.status === true){     
          this._nativeStorage.setItem('token', {tokenPara:this.token})
          this._nativeStorage.setItem('userType', this.loginData.data.Type);
@@ -79,9 +79,9 @@ export class LoginPage implements OnInit {
         this._router.navigateByUrl('/splash/tabs/Profile');       
       }      
     }, (err)=>{
-      console.log(err)
+      //console.log(err)
       let errorType = JSON.parse(err.error);
-      console.log('error', errorType)
+      //console.log('error', errorType)
       if(errorType.success != true){       
         this._utilService.presentToast('Invalid credentials','toaster-background');
       }
@@ -92,18 +92,18 @@ export class LoginPage implements OnInit {
    registerWith(){
     this.showregisterModal = true;
     this.steps = 1;
-    console.group('clicked')
+   // console.group('clicked')
    }
    onRegister(){
   console.group(this.register.value)
   this.steps++;
   let pass = this.register.get('password').value;
-  console.log(pass);
+ // console.log(pass);
   if(pass != ""){
   this.authSVC.register(this.register.value).then((data=>{
-    console.log(data);
+  //  console.log(data);
     let parseData = JSON.parse(data.data);
-    console.log(parseData)
+  //  console.log(parseData)
     if(parseData.status === true){
       this.showregisterModal = false;
       this._utilService.presentToast(parseData.msg,'toaster-background');

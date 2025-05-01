@@ -54,7 +54,7 @@ onSubmit(){
       "msg":this.sendMessage.value.message
   
   }
-  console.log(formdata)
+ // console.log(formdata)
   this._mainSVC.sendMessage(formdata).then(
     (data)=>{
     //  console.log('data', data);
