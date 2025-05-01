@@ -1,0 +1,83 @@
+"use strict";
+(self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["default-src_app_post-project_floor-plan_floor-plan_page_ts"],{
+
+/***/ 19851:
+/*!************************************************************!*\
+  !*** ./src/app/post-project/floor-plan/floor-plan.page.ts ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FloorPlanPage": () => (/* binding */ FloorPlanPage)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 42321);
+/* harmony import */ var _floor_plan_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./floor-plan.page.html?ngResource */ 72543);
+/* harmony import */ var _floor_plan_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./floor-plan.page.scss?ngResource */ 64083);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 90587);
+
+
+
+
+
+let FloorPlanPage = class FloorPlanPage {
+    constructor(formBuilder) {
+        this.formBuilder = formBuilder;
+    }
+    ngOnInit() {
+        this.orderForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroup({
+            items: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormArray([])
+        });
+    }
+    createItem() {
+        return this.formBuilder.group({
+            name: '',
+            description: '',
+            price: ''
+        });
+    }
+    get itemsArrayControl() {
+        return this.items = this.orderForm.get('items');
+    }
+    addItem() {
+        this.items.push(this.createItem());
+    }
+};
+FloorPlanPage.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormBuilder }
+];
+FloorPlanPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
+        selector: 'app-floor-plan',
+        template: _floor_plan_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+        styles: [_floor_plan_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
+    })
+], FloorPlanPage);
+
+
+
+/***/ }),
+
+/***/ 64083:
+/*!*************************************************************************!*\
+  !*** ./src/app/post-project/floor-plan/floor-plan.page.scss?ngResource ***!
+  \*************************************************************************/
+/***/ ((module) => {
+
+module.exports = "ion-item, ion-content {\n  --background:#fff;\n  color: #000;\n}\n\nion-input, ion-textarea {\n  border: solid 1px #E4E4E4;\n  --padding-start: 15px;\n  color: #000;\n}\n\nion-input {\n  padding-left: 15px !important;\n}\n\n.client-form-list {\n  padding: 0 15px;\n}\n\n.client-form-list ion-label {\n  color: #000;\n  margin-bottom: 5px;\n  display: block;\n}\n\n.client-form-list ion-item {\n  --background:#fff;\n  color: #000;\n}\n\n.client-form-list span {\n  margin-bottom: 20px;\n  display: inline-block;\n  width: 100%;\n}\n\n.client-form-list ion-select {\n  border: solid 1px #E4E4E4;\n  --padding-start: 15px;\n  color: #000;\n}\n\n.availableFormWrapper {\n  padding: 0 15px;\n  color: #000;\n  display: flex;\n}\n\n.availableFormWrapper ul {\n  padding-left: 0px;\n}\n\n.availableFormWrapper ul li {\n  color: #000;\n  list-style: none;\n  margin: 0 8px;\n  float: left;\n  width: 40%;\n  margin-bottom: 20px;\n}\n\n.availableFormWrapper ul li label {\n  position: relative;\n}\n\n.availableFormWrapper ul li label input[type=radio] {\n  margin-right: 5px;\n}\n\n.availableFormWrapper ul li label .checkmark {\n  position: absolute;\n  top: -2px;\n  height: 20px;\n  width: 20px;\n  background-color: #fff;\n  border-radius: 50%;\n  left: -1px;\n  border: solid 1px #C5C5C5;\n}\n\n.availableFormWrapper ul li label .checkmark:after {\n  content: \"\";\n  position: absolute;\n  display: none;\n}\n\n.availableFormWrapper ul li label input:checked ~ .checkmark:after {\n  display: block;\n}\n\n.availableFormWrapper ul li label .checkmark:after {\n  top: 4px;\n  left: 4px;\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  background: #FE1300;\n}\n\n.nextBtn {\n  width: 100%;\n  height: 40px;\n}\n\n.projectType {\n  color: #000;\n  padding-left: 15px;\n}\n\n.clients-btn {\n  width: 50%;\n  line-height: 30px;\n  display: inline-block;\n  text-align: center;\n  margin: 0 6px;\n  background: #fff;\n  color: #000;\n  border: solid 1px #E4E4E4;\n}\n\n.monthlyRent.color-black {\n  padding-left: 16px;\n  margin-top: 20px;\n  display: block;\n}\n\n.color-black {\n  color: #000;\n}\n\nion-item ion-select {\n  width: 100%;\n  border: solid 1px #E4E4E4;\n  --padding-start: 10px;\n  border-radius: 5px;\n}\n\n.purpose a {\n  border: solid 1px #E4E4E4;\n  display: inline-block;\n  border-radius: 5px;\n  margin: 0px 3px;\n  color: #bebcbc;\n  width: 100px;\n  text-align: center;\n  line-height: 31px;\n  text-decoration: underline;\n}\n\nion-input {\n  padding-left: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZsb29yLXBsYW4ucGFnZS5zY3NzIiwiLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcbmF2ZWVuJTIwa3VtYXIlMjBrYXRpeWFyXFxPbmVEcml2ZVxcRGVza3RvcFxcaHVudG5ld1xcaHVudHByb3BlcnR5bmV3XFxzcmNcXGFwcFxccG9zdC1wcm9qZWN0XFxmbG9vci1wbGFuXFxmbG9vci1wbGFuLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUF1QixpQkFBQTtFQUFrQixXQUFBO0FDR3pDOztBREZBO0VBQ0kseUJBQUE7RUFDQSxxQkFBQTtFQUNBLFdBQUE7QUNLSjs7QURIQTtFQUFXLDZCQUFBO0FDT1g7O0FETkE7RUFDSSxlQUFBO0FDU0o7O0FEUkk7RUFBVyxXQUFBO0VBQWEsa0JBQUE7RUFBb0IsY0FBQTtBQ2FoRDs7QURaSTtFQUFVLGlCQUFBO0VBQW1CLFdBQUE7QUNnQmpDOztBRGZJO0VBQ0ksbUJBQUE7RUFBcUIscUJBQUE7RUFBc0IsV0FBQTtBQ21CbkQ7O0FEakJJO0VBQ0kseUJBQUE7RUFDQSxxQkFBQTtFQUNBLFdBQUE7QUNtQlI7O0FEZkE7RUFBdUIsZUFBQTtFQUNuQixXQUFBO0VBQ0EsYUFBQTtBQ21CSjs7QURsQkk7RUFDSSxpQkFBQTtBQ29CUjs7QURuQlE7RUFDSSxXQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsV0FBQTtFQUNBLFVBQUE7RUFDQSxtQkFBQTtBQ3FCWjs7QURwQlk7RUFDSSxrQkFBQTtBQ3NCaEI7O0FEckJnQjtFQUNJLGlCQUFBO0FDdUJwQjs7QURyQmdCO0VBQ0ksa0JBQUE7RUFDQSxTQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxzQkFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLHlCQUFBO0FDdUJwQjs7QURwQmdCO0VBQ0ksV0FBQTtFQUNBLGtCQUFBO0VBQ0EsYUFBQTtBQ3NCcEI7O0FEbkJtQjtFQUNDLGNBQUE7QUNxQnBCOztBRGxCa0I7RUFDRSxRQUFBO0VBQ0EsU0FBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtBQ29CcEI7O0FEZEE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtBQ2lCSjs7QURmQTtFQUFjLFdBQUE7RUFBYSxrQkFBQTtBQ29CM0I7O0FEbkJBO0VBQ0ksVUFBQTtFQUNBLGlCQUFBO0VBQ0EscUJBQUE7RUFDQSxrQkFBQTtFQUNBLGFBQUE7RUFDQSxnQkFBQTtFQUNBLFdBQUE7RUFDQSx5QkFBQTtBQ3NCSjs7QURwQkE7RUFDSSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQ3VCSjs7QURyQkE7RUFDUSxXQUFBO0FDd0JSOztBRHJCSTtFQUNJLFdBQUE7RUFDQSx5QkFBQTtFQUNBLHFCQUFBO0VBQ0Esa0JBQUE7QUN3QlI7O0FEcEJJO0VBQ0kseUJBQUE7RUFDQSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLGNBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxpQkFBQTtFQUNBLDBCQUFBO0FDdUJSOztBRG5CQTtFQUFVLGtCQUFBO0FDdUJWIiwiZmlsZSI6ImZsb29yLXBsYW4ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWl0ZW0sIGlvbi1jb250ZW50eyAtLWJhY2tncm91bmQ6I2ZmZjtjb2xvcjogIzAwMDt9XHJcbmlvbi1pbnB1dCxpb24tdGV4dGFyZWF7XHJcbiAgICBib3JkZXI6IHNvbGlkIDFweCAjRTRFNEU0O1xyXG4gICAgLS1wYWRkaW5nLXN0YXJ0OiAxNXB4O1xyXG4gICAgY29sb3I6ICMwMDA7XHJcbn1cclxuaW9uLWlucHV0eyBwYWRkaW5nLWxlZnQ6MTVweCAhaW1wb3J0YW50O31cclxuLmNsaWVudC1mb3JtLWxpc3R7XHJcbiAgICBwYWRkaW5nOiAwIDE1cHg7XHJcbiAgICBpb24tbGFiZWx7IGNvbG9yOiAjMDAwOyBtYXJnaW4tYm90dG9tOiA1cHg7IGRpc3BsYXk6IGJsb2NrO31cclxuICAgIGlvbi1pdGVteyAtLWJhY2tncm91bmQ6I2ZmZjsgY29sb3I6ICMwMDA7fVxyXG4gICAgc3BhbntcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAyMHB4OyBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7d2lkdGg6IDEwMCU7XHJcbiAgICB9XHJcbiAgICBpb24tc2VsZWN0e1xyXG4gICAgICAgIGJvcmRlcjogc29saWQgMXB4ICNFNEU0RTQ7XHJcbiAgICAgICAgLS1wYWRkaW5nLXN0YXJ0OiAxNXB4O1xyXG4gICAgICAgIGNvbG9yOiAjMDAwO1xyXG4gICAgfVxyXG59XHJcblxyXG4uYXZhaWxhYmxlRm9ybVdyYXBwZXJ7IHBhZGRpbmc6IDAgMTVweDtcclxuICAgIGNvbG9yOiAjMDAwO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIHVsIHtcclxuICAgICAgICBwYWRkaW5nLWxlZnQ6IDBweDtcclxuICAgICAgICBsaSB7XHJcbiAgICAgICAgICAgIGNvbG9yOiAjMDAwO1xyXG4gICAgICAgICAgICBsaXN0LXN0eWxlOiBub25lO1xyXG4gICAgICAgICAgICBtYXJnaW46IDAgOHB4O1xyXG4gICAgICAgICAgICBmbG9hdDogbGVmdDtcclxuICAgICAgICAgICAgd2lkdGg6IDQwJTtcclxuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMjBweDtcclxuICAgICAgICAgICAgbGFiZWx7XHJcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAgICAgICAgICAgICBpbnB1dFt0eXBlPVwicmFkaW9cIl17XHJcbiAgICAgICAgICAgICAgICAgICAgbWFyZ2luLXJpZ2h0OiA1cHg7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAuY2hlY2ttYXJre1xyXG4gICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTsgICAgICAgICAgICAgICAgICAgICAgICBcclxuICAgICAgICAgICAgICAgICAgICB0b3A6IC0ycHg7XHJcbiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAyMHB4O1xyXG4gICAgICAgICAgICAgICAgICAgIHdpZHRoOiAyMHB4O1xyXG4gICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbiAgICAgICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgICAgICAgICAgICAgICAgIGxlZnQ6IC0xcHg7XHJcbiAgICAgICAgICAgICAgICAgICAgYm9yZGVyOiBzb2xpZCAxcHggI0M1QzVDNTtcclxuICAgICAgICAgICAgICAgICAgICBcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIC5jaGVja21hcms6YWZ0ZXIge1xyXG4gICAgICAgICAgICAgICAgICAgIGNvbnRlbnQ6IFwiXCI7XHJcbiAgICAgICAgICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6IG5vbmU7XHJcbiAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgICAgICAgICBpbnB1dDpjaGVja2VkIH4gLmNoZWNrbWFyazphZnRlciB7XHJcbiAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgICAgICAgIC5jaGVja21hcms6YWZ0ZXIge1xyXG4gICAgICAgICAgICAgICAgICAgIHRvcDogNHB4O1xyXG4gICAgICAgICAgICAgICAgICAgIGxlZnQ6IDRweDtcclxuICAgICAgICAgICAgICAgICAgICB3aWR0aDogMTBweDtcclxuICAgICAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwcHg7XHJcbiAgICAgICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQ6ICNGRTEzMDA7XHJcbiAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuICAgIH1cclxufVxyXG4ubmV4dEJ0bntcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiA0MHB4O1xyXG59XHJcbi5wcm9qZWN0VHlwZXsgY29sb3I6ICMwMDA7IHBhZGRpbmctbGVmdDogMTVweDt9XHJcbi5jbGllbnRzLWJ0bntcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBsaW5lLWhlaWdodDogMzBweDtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbjowIDZweDtcclxuICAgIGJhY2tncm91bmQ6ICNmZmY7XHJcbiAgICBjb2xvcjogIzAwMDtcclxuICAgIGJvcmRlcjogc29saWQgMXB4ICNFNEU0RTQ7XHJcbn1cclxuLm1vbnRobHlSZW50LmNvbG9yLWJsYWNre1xyXG4gICAgcGFkZGluZy1sZWZ0OiAxNnB4O1xyXG4gICAgbWFyZ2luLXRvcDogMjBweDtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG59XHJcbi5jb2xvci1ibGFja3tcclxuICAgICAgICBjb2xvcjogIzAwMDtcclxuICAgIH1cclxuaW9uLWl0ZW17XHJcbiAgICBpb24tc2VsZWN0e1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIGJvcmRlcjogc29saWQgMXB4ICNFNEU0RTQ7XHJcbiAgICAgICAgLS1wYWRkaW5nLXN0YXJ0OiAxMHB4O1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgIH1cclxufVxyXG4ucHVycG9zZSB7XHJcbiAgICBhe1xyXG4gICAgICAgIGJvcmRlcjogc29saWQgMXB4ICNFNEU0RTQ7ICAgICAgIFxyXG4gICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICAgICAgbWFyZ2luOiAwcHggM3B4O1xyXG4gICAgICAgIGNvbG9yOiAjYmViY2JjO1xyXG4gICAgICAgIHdpZHRoOiAxMDBweDtcclxuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgbGluZS1oZWlnaHQ6IDMxcHg7XHJcbiAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XHJcbiAgICAgICAgXHJcbiAgICB9XHJcbn1cclxuaW9uLWlucHV0e3BhZGRpbmctbGVmdDogMTVweDt9XHJcbiIsImlvbi1pdGVtLCBpb24tY29udGVudCB7XG4gIC0tYmFja2dyb3VuZDojZmZmO1xuICBjb2xvcjogIzAwMDtcbn1cblxuaW9uLWlucHV0LCBpb24tdGV4dGFyZWEge1xuICBib3JkZXI6IHNvbGlkIDFweCAjRTRFNEU0O1xuICAtLXBhZGRpbmctc3RhcnQ6IDE1cHg7XG4gIGNvbG9yOiAjMDAwO1xufVxuXG5pb24taW5wdXQge1xuICBwYWRkaW5nLWxlZnQ6IDE1cHggIWltcG9ydGFudDtcbn1cblxuLmNsaWVudC1mb3JtLWxpc3Qge1xuICBwYWRkaW5nOiAwIDE1cHg7XG59XG4uY2xpZW50LWZvcm0tbGlzdCBpb24tbGFiZWwge1xuICBjb2xvcjogIzAwMDtcbiAgbWFyZ2luLWJvdHRvbTogNXB4O1xuICBkaXNwbGF5OiBibG9jaztcbn1cbi5jbGllbnQtZm9ybS1saXN0IGlvbi1pdGVtIHtcbiAgLS1iYWNrZ3JvdW5kOiNmZmY7XG4gIGNvbG9yOiAjMDAwO1xufVxuLmNsaWVudC1mb3JtLWxpc3Qgc3BhbiB7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgd2lkdGg6IDEwMCU7XG59XG4uY2xpZW50LWZvcm0tbGlzdCBpb24tc2VsZWN0IHtcbiAgYm9yZGVyOiBzb2xpZCAxcHggI0U0RTRFNDtcbiAgLS1wYWRkaW5nLXN0YXJ0OiAxNXB4O1xuICBjb2xvcjogIzAwMDtcbn1cblxuLmF2YWlsYWJsZUZvcm1XcmFwcGVyIHtcbiAgcGFkZGluZzogMCAxNXB4O1xuICBjb2xvcjogIzAwMDtcbiAgZGlzcGxheTogZmxleDtcbn1cbi5hdmFpbGFibGVGb3JtV3JhcHBlciB1bCB7XG4gIHBhZGRpbmctbGVmdDogMHB4O1xufVxuLmF2YWlsYWJsZUZvcm1XcmFwcGVyIHVsIGxpIHtcbiAgY29sb3I6ICMwMDA7XG4gIGxpc3Qtc3R5bGU6IG5vbmU7XG4gIG1hcmdpbjogMCA4cHg7XG4gIGZsb2F0OiBsZWZ0O1xuICB3aWR0aDogNDAlO1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufVxuLmF2YWlsYWJsZUZvcm1XcmFwcGVyIHVsIGxpIGxhYmVsIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuLmF2YWlsYWJsZUZvcm1XcmFwcGVyIHVsIGxpIGxhYmVsIGlucHV0W3R5cGU9cmFkaW9dIHtcbiAgbWFyZ2luLXJpZ2h0OiA1cHg7XG59XG4uYXZhaWxhYmxlRm9ybVdyYXBwZXIgdWwgbGkgbGFiZWwgLmNoZWNrbWFyayB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAtMnB4O1xuICBoZWlnaHQ6IDIwcHg7XG4gIHdpZHRoOiAyMHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIGxlZnQ6IC0xcHg7XG4gIGJvcmRlcjogc29saWQgMXB4ICNDNUM1QzU7XG59XG4uYXZhaWxhYmxlRm9ybVdyYXBwZXIgdWwgbGkgbGFiZWwgLmNoZWNrbWFyazphZnRlciB7XG4gIGNvbnRlbnQ6IFwiXCI7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgZGlzcGxheTogbm9uZTtcbn1cbi5hdmFpbGFibGVGb3JtV3JhcHBlciB1bCBsaSBsYWJlbCBpbnB1dDpjaGVja2VkIH4gLmNoZWNrbWFyazphZnRlciB7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuLmF2YWlsYWJsZUZvcm1XcmFwcGVyIHVsIGxpIGxhYmVsIC5jaGVja21hcms6YWZ0ZXIge1xuICB0b3A6IDRweDtcbiAgbGVmdDogNHB4O1xuICB3aWR0aDogMTBweDtcbiAgaGVpZ2h0OiAxMHB4O1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIGJhY2tncm91bmQ6ICNGRTEzMDA7XG59XG5cbi5uZXh0QnRuIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNDBweDtcbn1cblxuLnByb2plY3RUeXBlIHtcbiAgY29sb3I6ICMwMDA7XG4gIHBhZGRpbmctbGVmdDogMTVweDtcbn1cblxuLmNsaWVudHMtYnRuIHtcbiAgd2lkdGg6IDUwJTtcbiAgbGluZS1oZWlnaHQ6IDMwcHg7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBtYXJnaW46IDAgNnB4O1xuICBiYWNrZ3JvdW5kOiAjZmZmO1xuICBjb2xvcjogIzAwMDtcbiAgYm9yZGVyOiBzb2xpZCAxcHggI0U0RTRFNDtcbn1cblxuLm1vbnRobHlSZW50LmNvbG9yLWJsYWNrIHtcbiAgcGFkZGluZy1sZWZ0OiAxNnB4O1xuICBtYXJnaW4tdG9wOiAyMHB4O1xuICBkaXNwbGF5OiBibG9jaztcbn1cblxuLmNvbG9yLWJsYWNrIHtcbiAgY29sb3I6ICMwMDA7XG59XG5cbmlvbi1pdGVtIGlvbi1zZWxlY3Qge1xuICB3aWR0aDogMTAwJTtcbiAgYm9yZGVyOiBzb2xpZCAxcHggI0U0RTRFNDtcbiAgLS1wYWRkaW5nLXN0YXJ0OiAxMHB4O1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG59XG5cbi5wdXJwb3NlIGEge1xuICBib3JkZXI6IHNvbGlkIDFweCAjRTRFNEU0O1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgbWFyZ2luOiAwcHggM3B4O1xuICBjb2xvcjogI2JlYmNiYztcbiAgd2lkdGg6IDEwMHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGxpbmUtaGVpZ2h0OiAzMXB4O1xuICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbn1cblxuaW9uLWlucHV0IHtcbiAgcGFkZGluZy1sZWZ0OiAxNXB4O1xufSJdfQ== */";
+
+/***/ }),
+
+/***/ 72543:
+/*!*************************************************************************!*\
+  !*** ./src/app/post-project/floor-plan/floor-plan.page.html?ngResource ***!
+  \*************************************************************************/
+/***/ ((module) => {
+
+module.exports = "<!-- <span class=\"monthlyRent color-black\" slot=\"start\">\n    Accomodation Type\n  </span>\n<ion-item lines=\"none\">\n  <ion-select type=\"text\" placeholder=\"Select Category\" (onChange)=\"getCategory()\">\n    <ion-select-option value=\"New Construction\">New Construction</ion-select-option>\n    <ion-select-option value=\"Less than 5 years\">Less than 5 years</ion-select-option>    \n  </ion-select>\n</ion-item>\n<span class=\"monthlyRent color-black\" slot=\"start\">\n  Size(SQFT)\n</span>\n<ion-item lines=\"none\">\n<ion-input></ion-input>\n</ion-item>\n<span class=\"monthlyRent color-black\" slot=\"start\">\n  Site plan\n</span>\n<ion-item lines=\"none\">\n<ion-input></ion-input>\n</ion-item>\n<span class=\"monthlyRent color-black\" slot=\"start\">\n  Cluster Plan\n</span>\n<ion-item lines=\"none\">\n<ion-input></ion-input>\n</ion-item>\n<span class=\"monthlyRent color-black\" slot=\"start\">\n  Floor Plan\n</span>\n<ion-item lines=\"none\">\n<ion-input></ion-input>\n</ion-item>\n -->\n <div formArrayName=\"items\"\n  *ngFor=\"let item of itemsArrayControl.controls; let i = index;\">\n  <div [formGroupName]=\"i\">\n    <input formControlName=\"name\" placeholder=\"Item name\">\n    <input formControlName=\"description\" placeholder=\"Item description\">\n    <input formControlName=\"price\" placeholder=\"Item price\">\n  </div>\n\n  Chosen name: {{ itemsArrayControl[i].controls.name.value }}\n</div>\n";
+
+/***/ })
+
+}]);
+//# sourceMappingURL=default-src_app_post-project_floor-plan_floor-plan_page_ts.js.map
