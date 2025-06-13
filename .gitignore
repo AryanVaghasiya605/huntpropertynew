@@ -1,44 +1,84 @@
-# Specifies intentionally untracked files to ignore when using Git
-# http://git-scm.com/docs/gitignore
-
+# ===========================
+# General
+# ===========================
 *~
 *.sw[mnpcod]
 .tmp
 *.tmp
-*.tmp.*
-*.sublime-project
-*.sublime-workspace
+.tmp.
 .DS_Store
 Thumbs.db
-UserInterfaceState.xcuserstate
 $RECYCLE.BIN/
-
 *.log
 log.txt
 npm-debug.log*
 
-/.angular
+# ===========================
+# macOS System Files
+# ===========================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ===========================
+# Editor Files
+# ===========================
+*.sublime-project
+*.sublime-workspace
 /.idea
-/.ionic
-/.sass-cache
-/.sourcemaps
-/.versions
 /.vscode/*
 !/.vscode/extensions.json
-/coverage
-/dist
-/node_modules
-/platforms
-/plugins
+
+# ===========================
+# Node.js / npm
+# ===========================
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# ===========================
+# Angular / Ionic / Cordova
+# ===========================
+.angular/
+.ionic/
+.sass-cache/
+.sourcemaps/
+.versions/
+coverage/
+dist/
+platforms/
+plugins/
+www/
+build/
+
+# ===========================
+# iOS / Xcode
+# ===========================
+Pods/
+Podfile.lock
+*.xcworkspace
+*.xcuserstate
+DerivedData/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+
+# ===========================
+# Binaries / Media / Misc
+# ===========================
 *.exe
 *.bin
 *.jar
 *.war
 *.mp3
 *.mp4
+*.apk
+*.ipa
 
-# Ignore Gradle project-specific cache directory
-.gradle
-
-# Ignore Gradle build output directory
-build
+# ===========================
+# Gradle (Android)
+# ===========================
+.gradle/
+build/
