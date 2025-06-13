@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_profile_messages_send-message_send-message_module_ts"],{
 
-/***/ 89670:
+/***/ 79367:
 /*!******************************************************************************!*\
   !*** ./src/app/profile/messages/send-message/send-message-routing.module.ts ***!
   \******************************************************************************/
@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _send_message_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./send-message.page */ 65524);
+/* harmony import */ var _send_message_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./send-message.page */ 12120);
 
 
 
@@ -38,7 +38,7 @@ SendMessagePageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)
 
 /***/ }),
 
-/***/ 96360:
+/***/ 28397:
 /*!**********************************************************************!*\
   !*** ./src/app/profile/messages/send-message/send-message.module.ts ***!
   \**********************************************************************/
@@ -53,8 +53,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _send_message_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./send-message-routing.module */ 89670);
-/* harmony import */ var _send_message_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./send-message.page */ 65524);
+/* harmony import */ var _send_message_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./send-message-routing.module */ 79367);
+/* harmony import */ var _send_message_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./send-message.page */ 12120);
 
 
 
@@ -81,7 +81,7 @@ SendMessagePageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 65524:
+/***/ 12120:
 /*!********************************************************************!*\
   !*** ./src/app/profile/messages/send-message/send-message.page.ts ***!
   \********************************************************************/
@@ -97,8 +97,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 20070);
-/* harmony import */ var src_app_services_main_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/main.service */ 42735);
+/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 55916);
+/* harmony import */ var src_app_services_main_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/main.service */ 91557);
 
 
 
@@ -146,7 +146,7 @@ let SendMessagePage = class SendMessagePage {
             "to_user_id": this.chatId.user_id,
             "msg": this.sendMessage.value.message
         };
-        console.log(formdata);
+        // console.log(formdata)
         this._mainSVC.sendMessage(formdata).then((data) => {
             //  console.log('data', data);
             this.ionViewWillEnter();
@@ -178,7 +178,7 @@ SendMessagePage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
   \*********************************************************************************/
 /***/ ((module) => {
 
-module.exports = ".header-bg-color {\n  --background:#e14b4c;\n  --padding-start: 15px;\n}\n.header-bg-color .back-btn {\n  color: #ffffff;\n  font-size: 25px;\n}\n.header-bg-color .header-title {\n  display: inline-block;\n}\nion-content {\n  --background: #ffff;\n}\nion-content .content .content-box {\n  height: 90%;\n  margin-top: 20px;\n  display: inline-block;\n  width: 100%;\n}\nion-content .content .content-box ion-item {\n  --background:#fff;\n  color: #000;\n}\nion-content .content .content-box ion-item .mesg {\n  width: 60%;\n  text-overflow: wrap;\n}\nion-content .content .content-box ion-item .created_on {\n  width: 40%;\n  margin-left: 20px;\n  color: #e3e3e3;\n}\nion-content .send_message_wrapper {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  display: flex;\n  z-index: 99;\n  background: #fff;\n}\nion-content .send_message_wrapper form {\n  display: flex;\n  width: 100%;\n}\nion-content .send_message_wrapper form ion-input {\n  color: #000;\n  border: solid 1px #e3e3e3;\n  flex-grow: 1;\n}\nion-content .send_message_wrapper form .send_mess-btn {\n  height: 40px;\n  margin: 0;\n}\nion-content .send_message_wrapper form .send_mess-btn ion-icon {\n  font-size: 26px;\n  color: #fff;\n  margin: 5px 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlbmQtbWVzc2FnZS5wYWdlLnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcbmF2ZWVuJTIwa3VtYXIlMjBrYXRpeWFyXFxPbmVEcml2ZVxcRGVza3RvcFxcaHVudG5ld1xcaHVudHByb3BlcnR5bmV3XFxzcmNcXGFwcFxccHJvZmlsZVxcbWVzc2FnZXNcXHNlbmQtbWVzc2FnZVxcc2VuZC1tZXNzYWdlLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG9CQUFBO0VBQ0EscUJBQUE7QUNDSjtBREFBO0VBQVcsY0FBQTtFQUFnQixlQUFBO0FDSTNCO0FERkE7RUFDSSxxQkFBQTtBQ0lKO0FEREE7RUFDSSxtQkFBQTtBQ0lKO0FERlE7RUFDSSxXQUFBO0VBQ0EsZ0JBQUE7RUFDQSxxQkFBQTtFQUNBLFdBQUE7QUNJWjtBREhZO0VBQVMsaUJBQUE7RUFBbUIsV0FBQTtBQ094QztBRE5ZO0VBQ0ksVUFBQTtFQUNBLG1CQUFBO0FDUWhCO0FETlk7RUFDSSxVQUFBO0VBQ0EsaUJBQUE7RUFDQSxjQUFBO0FDUWhCO0FERkk7RUFDSSxlQUFBO0VBQ0EsU0FBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsYUFBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtBQ0lSO0FESFE7RUFDSSxhQUFBO0VBQ0EsV0FBQTtBQ0taO0FESlE7RUFDSSxXQUFBO0VBQ0EseUJBQUE7RUFDRCxZQUFBO0FDTVg7QURIUTtFQUNJLFlBQUE7RUFDQSxTQUFBO0FDS1o7QURKUTtFQUNJLGVBQUE7RUFDQSxXQUFBO0VBQ0EsZ0JBQUE7QUNNWiIsImZpbGUiOiJzZW5kLW1lc3NhZ2UucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWRlci1iZy1jb2xvcntcclxuICAgIC0tYmFja2dyb3VuZDojZTE0YjRjOyAgICBcclxuICAgIC0tcGFkZGluZy1zdGFydDogMTVweDtcclxuLmJhY2stYnRueyBjb2xvcjogI2ZmZmZmZjsgZm9udC1zaXplOiAyNXB4O31cclxuXHJcbi5oZWFkZXItdGl0bGV7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbn1cclxufVxyXG5pb24tY29udGVudHtcclxuICAgIC0tYmFja2dyb3VuZDogI2ZmZmY7XHJcbiAgICAuY29udGVudHtcclxuICAgICAgICAuY29udGVudC1ib3h7XHJcbiAgICAgICAgICAgIGhlaWdodDogOTAlO1xyXG4gICAgICAgICAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgICAgICBpb24taXRlbXstLWJhY2tncm91bmQ6I2ZmZjsgY29sb3I6ICMwMDA7XHJcbiAgICAgICAgICAgIC5tZXNne1xyXG4gICAgICAgICAgICAgICAgd2lkdGg6IDYwJTtcclxuICAgICAgICAgICAgICAgIHRleHQtb3ZlcmZsb3c6IHdyYXA7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgLmNyZWF0ZWRfb257XHJcbiAgICAgICAgICAgICAgICB3aWR0aDogNDAlO1xyXG4gICAgICAgICAgICAgICAgbWFyZ2luLWxlZnQ6IDIwcHg7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjogI2UzZTNlMztcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgXHJcbiAgICAuc2VuZF9tZXNzYWdlX3dyYXBwZXJ7XHJcbiAgICAgICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICBsZWZ0OiAwIDtcclxuICAgICAgICByaWdodDogMDtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIHotaW5kZXg6IDk5O1xyXG4gICAgICAgIGJhY2tncm91bmQ6ICNmZmY7XHJcbiAgICAgICAgZm9ybXtcclxuICAgICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgaW9uLWlucHV0e1xyXG4gICAgICAgICAgICBjb2xvcjogIzAwMDtcclxuICAgICAgICAgICAgYm9yZGVyOiBzb2xpZCAxcHggI2UzZTNlMztcclxuICAgICAgICAgICBmbGV4LWdyb3c6IDE7XHJcblxyXG4gICAgICAgIH1cclxuICAgICAgICAuc2VuZF9tZXNzLWJ0bntcclxuICAgICAgICAgICAgaGVpZ2h0OiA0MHB4O1xyXG4gICAgICAgICAgICBtYXJnaW46IDA7XHJcbiAgICAgICAgaW9uLWljb257XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMjZweDtcclxuICAgICAgICAgICAgY29sb3I6ICNmZmY7XHJcbiAgICAgICAgICAgIG1hcmdpbjogNXB4IDE1cHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgfVxyXG4gICAgfVxyXG59IiwiLmhlYWRlci1iZy1jb2xvciB7XG4gIC0tYmFja2dyb3VuZDojZTE0YjRjO1xuICAtLXBhZGRpbmctc3RhcnQ6IDE1cHg7XG59XG4uaGVhZGVyLWJnLWNvbG9yIC5iYWNrLWJ0biB7XG4gIGNvbG9yOiAjZmZmZmZmO1xuICBmb250LXNpemU6IDI1cHg7XG59XG4uaGVhZGVyLWJnLWNvbG9yIC5oZWFkZXItdGl0bGUge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG59XG5cbmlvbi1jb250ZW50IHtcbiAgLS1iYWNrZ3JvdW5kOiAjZmZmZjtcbn1cbmlvbi1jb250ZW50IC5jb250ZW50IC5jb250ZW50LWJveCB7XG4gIGhlaWdodDogOTAlO1xuICBtYXJnaW4tdG9wOiAyMHB4O1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHdpZHRoOiAxMDAlO1xufVxuaW9uLWNvbnRlbnQgLmNvbnRlbnQgLmNvbnRlbnQtYm94IGlvbi1pdGVtIHtcbiAgLS1iYWNrZ3JvdW5kOiNmZmY7XG4gIGNvbG9yOiAjMDAwO1xufVxuaW9uLWNvbnRlbnQgLmNvbnRlbnQgLmNvbnRlbnQtYm94IGlvbi1pdGVtIC5tZXNnIHtcbiAgd2lkdGg6IDYwJTtcbiAgdGV4dC1vdmVyZmxvdzogd3JhcDtcbn1cbmlvbi1jb250ZW50IC5jb250ZW50IC5jb250ZW50LWJveCBpb24taXRlbSAuY3JlYXRlZF9vbiB7XG4gIHdpZHRoOiA0MCU7XG4gIG1hcmdpbi1sZWZ0OiAyMHB4O1xuICBjb2xvcjogI2UzZTNlMztcbn1cbmlvbi1jb250ZW50IC5zZW5kX21lc3NhZ2Vfd3JhcHBlciB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgYm90dG9tOiAwO1xuICBsZWZ0OiAwO1xuICByaWdodDogMDtcbiAgZGlzcGxheTogZmxleDtcbiAgei1pbmRleDogOTk7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG59XG5pb24tY29udGVudCAuc2VuZF9tZXNzYWdlX3dyYXBwZXIgZm9ybSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIHdpZHRoOiAxMDAlO1xufVxuaW9uLWNvbnRlbnQgLnNlbmRfbWVzc2FnZV93cmFwcGVyIGZvcm0gaW9uLWlucHV0IHtcbiAgY29sb3I6ICMwMDA7XG4gIGJvcmRlcjogc29saWQgMXB4ICNlM2UzZTM7XG4gIGZsZXgtZ3JvdzogMTtcbn1cbmlvbi1jb250ZW50IC5zZW5kX21lc3NhZ2Vfd3JhcHBlciBmb3JtIC5zZW5kX21lc3MtYnRuIHtcbiAgaGVpZ2h0OiA0MHB4O1xuICBtYXJnaW46IDA7XG59XG5pb24tY29udGVudCAuc2VuZF9tZXNzYWdlX3dyYXBwZXIgZm9ybSAuc2VuZF9tZXNzLWJ0biBpb24taWNvbiB7XG4gIGZvbnQtc2l6ZTogMjZweDtcbiAgY29sb3I6ICNmZmY7XG4gIG1hcmdpbjogNXB4IDE1cHg7XG59Il19 */";
+module.exports = ".header-bg-color {\n  --background:#e14b4c;\n  --padding-start: 15px;\n}\n.header-bg-color .back-btn {\n  color: #ffffff;\n  font-size: 25px;\n}\n.header-bg-color .header-title {\n  display: inline-block;\n}\nion-content {\n  --background: #ffff;\n}\nion-content .content .content-box {\n  height: 90%;\n  margin-top: 20px;\n  display: inline-block;\n  width: 100%;\n}\nion-content .content .content-box ion-item {\n  --background:#fff;\n  color: #000;\n}\nion-content .content .content-box ion-item .mesg {\n  width: 60%;\n  text-overflow: wrap;\n}\nion-content .content .content-box ion-item .created_on {\n  width: 40%;\n  margin-left: 20px;\n  color: #e3e3e3;\n}\nion-content .send_message_wrapper {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  display: flex;\n  z-index: 99;\n  background: #fff;\n}\nion-content .send_message_wrapper form {\n  display: flex;\n  width: 100%;\n}\nion-content .send_message_wrapper form ion-input {\n  color: #000;\n  border: solid 1px #e3e3e3;\n  flex-grow: 1;\n}\nion-content .send_message_wrapper form .send_mess-btn {\n  height: 40px;\n  margin: 0;\n}\nion-content .send_message_wrapper form .send_mess-btn ion-icon {\n  font-size: 26px;\n  color: #fff;\n  margin: 5px 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlbmQtbWVzc2FnZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxvQkFBQTtFQUNBLHFCQUFBO0FBQ0o7QUFBQTtFQUFXLGNBQUE7RUFBZ0IsZUFBQTtBQUkzQjtBQUZBO0VBQ0kscUJBQUE7QUFJSjtBQURBO0VBQ0ksbUJBQUE7QUFJSjtBQUZRO0VBQ0ksV0FBQTtFQUNBLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxXQUFBO0FBSVo7QUFIWTtFQUFTLGlCQUFBO0VBQW1CLFdBQUE7QUFPeEM7QUFOWTtFQUNJLFVBQUE7RUFDQSxtQkFBQTtBQVFoQjtBQU5ZO0VBQ0ksVUFBQTtFQUNBLGlCQUFBO0VBQ0EsY0FBQTtBQVFoQjtBQUZJO0VBQ0ksZUFBQTtFQUNBLFNBQUE7RUFDQSxPQUFBO0VBQ0EsUUFBQTtFQUNBLGFBQUE7RUFDQSxXQUFBO0VBQ0EsZ0JBQUE7QUFJUjtBQUhRO0VBQ0ksYUFBQTtFQUNBLFdBQUE7QUFLWjtBQUpRO0VBQ0ksV0FBQTtFQUNBLHlCQUFBO0VBQ0QsWUFBQTtBQU1YO0FBSFE7RUFDSSxZQUFBO0VBQ0EsU0FBQTtBQUtaO0FBSlE7RUFDSSxlQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0FBTVoiLCJmaWxlIjoic2VuZC1tZXNzYWdlLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oZWFkZXItYmctY29sb3J7XHJcbiAgICAtLWJhY2tncm91bmQ6I2UxNGI0YzsgICAgXHJcbiAgICAtLXBhZGRpbmctc3RhcnQ6IDE1cHg7XHJcbi5iYWNrLWJ0bnsgY29sb3I6ICNmZmZmZmY7IGZvbnQtc2l6ZTogMjVweDt9XHJcblxyXG4uaGVhZGVyLXRpdGxle1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG59XHJcbn1cclxuaW9uLWNvbnRlbnR7XHJcbiAgICAtLWJhY2tncm91bmQ6ICNmZmZmO1xyXG4gICAgLmNvbnRlbnR7XHJcbiAgICAgICAgLmNvbnRlbnQtYm94e1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDkwJTtcclxuICAgICAgICAgICAgbWFyZ2luLXRvcDogMjBweDtcclxuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgICAgICAgaW9uLWl0ZW17LS1iYWNrZ3JvdW5kOiNmZmY7IGNvbG9yOiAjMDAwO1xyXG4gICAgICAgICAgICAubWVzZ3tcclxuICAgICAgICAgICAgICAgIHdpZHRoOiA2MCU7XHJcbiAgICAgICAgICAgICAgICB0ZXh0LW92ZXJmbG93OiB3cmFwO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIC5jcmVhdGVkX29ue1xyXG4gICAgICAgICAgICAgICAgd2lkdGg6IDQwJTtcclxuICAgICAgICAgICAgICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG4gICAgICAgICAgICAgICAgY29sb3I6ICNlM2UzZTM7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuICAgIH1cclxuICAgIFxyXG4gICAgLnNlbmRfbWVzc2FnZV93cmFwcGVye1xyXG4gICAgICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgICAgICBib3R0b206IDA7XHJcbiAgICAgICAgbGVmdDogMCA7XHJcbiAgICAgICAgcmlnaHQ6IDA7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICB6LWluZGV4OiA5OTtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAjZmZmO1xyXG4gICAgICAgIGZvcm17XHJcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIGlvbi1pbnB1dHtcclxuICAgICAgICAgICAgY29sb3I6ICMwMDA7XHJcbiAgICAgICAgICAgIGJvcmRlcjogc29saWQgMXB4ICNlM2UzZTM7XHJcbiAgICAgICAgICAgZmxleC1ncm93OiAxO1xyXG5cclxuICAgICAgICB9XHJcbiAgICAgICAgLnNlbmRfbWVzcy1idG57XHJcbiAgICAgICAgICAgIGhlaWdodDogNDBweDtcclxuICAgICAgICAgICAgbWFyZ2luOiAwO1xyXG4gICAgICAgIGlvbi1pY29ue1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDI2cHg7XHJcbiAgICAgICAgICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgICAgICAgICBtYXJnaW46IDVweCAxNXB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuICAgIH1cclxuICAgIH1cclxufSJdfQ== */";
 
 /***/ }),
 

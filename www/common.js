@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["common"],{
 
-/***/ 71065:
+/***/ 50980:
 /*!***********************************************!*\
   !*** ./src/app/add-button/add-button.page.ts ***!
   \***********************************************/
@@ -89,7 +89,100 @@ AddButtonPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 51550:
+/***/ 56008:
+/*!***************************************************!*\
+  !*** ./src/app/custom-range/custom-range.page.ts ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CustomRangePage": () => (/* binding */ CustomRangePage)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 42321);
+/* harmony import */ var _custom_range_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./custom-range.page.html?ngResource */ 82619);
+/* harmony import */ var _custom_range_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./custom-range.page.scss?ngResource */ 62108);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ 9306);
+var CustomRangePage_1;
+
+
+
+
+
+
+let CustomRangePage = CustomRangePage_1 = class CustomRangePage {
+    constructor() {
+        this.min = 0;
+        this.onChange = () => { };
+        this.onTouch = () => { };
+        this.sliderVal = new _angular_core__WEBPACK_IMPORTED_MODULE_2__.EventEmitter();
+        this.faIndianRupeeSign = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faIndianRupeeSign;
+    }
+    ngOnInit() { }
+    ionViewWillEnter() { }
+    writeValue(value) {
+        this.value = value;
+    }
+    registerOnChange(fn) {
+        this.onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this.onTouch = fn;
+    }
+    updateValue(event) {
+        const newValue = Number(event.target.value);
+        this.value = newValue;
+        this.onChange(newValue);
+        this.onTouch();
+        // console.log(this.value);
+    }
+    updateSliderValue(event) {
+        const newValue = Number(event.target.value);
+        this.value = newValue;
+        this.onChange(newValue);
+        this.onTouch();
+        this.sliderVal.emit(this.value);
+        //   this.slider = document.getElementById('rango');
+        //   this.slider.oninput = function() {
+        //     var output = document.getElementById('valor');      
+        //     output.innerHTML = this.value + "cr";
+        //     var sliderWidth = this.getBoundingClientRect().width;
+        //     var outputWidth = output.getBoundingClientRect().width;
+        //     var offset = this.value / (this.max - this.min) * sliderWidth - outputWidth / 2;
+        //     output.setAttribute('style', 'left: ' + offset + 'px');
+        // }
+        // this.slider.oninput();
+    }
+};
+CustomRangePage.ctorParameters = () => [];
+CustomRangePage.propDecorators = {
+    min: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Input }],
+    max: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Input }],
+    step: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Input }],
+    sliderVal: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Output }]
+};
+CustomRangePage = CustomRangePage_1 = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Component)({
+        selector: 'app-custom-range',
+        template: _custom_range_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+        providers: [
+            {
+                provide: _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NG_VALUE_ACCESSOR,
+                useExisting: CustomRangePage_1,
+                multi: true,
+            },
+        ],
+        styles: [_custom_range_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
+    })
+], CustomRangePage);
+
+
+
+/***/ }),
+
+/***/ 24762:
 /*!******************************************************************!*\
   !*** ./src/app/explore-container/explore-container.component.ts ***!
   \******************************************************************/
@@ -127,7 +220,7 @@ ExploreContainerComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 74081:
+/***/ 581:
 /*!***************************************************************!*\
   !*** ./src/app/explore-container/explore-container.module.ts ***!
   \***************************************************************/
@@ -142,7 +235,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _explore_container_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./explore-container.component */ 51550);
+/* harmony import */ var _explore_container_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./explore-container.component */ 24762);
 
 
 
@@ -163,9 +256,9 @@ ExploreContainerComponentModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decora
 
 /***/ }),
 
-/***/ 72943:
+/***/ 65539:
 /*!*********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/button-active-8251f533.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/button-active-a4d897e8.js ***!
   \*********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -175,7 +268,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _index_8e692445_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-8e692445.js */ 91559);
 /* harmony import */ var _haptic_029a46f6_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./haptic-029a46f6.js */ 12815);
-/* harmony import */ var _index_f8d8aa5a_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-f8d8aa5a.js */ 69286);
+/* harmony import */ var _index_422b6e83_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-422b6e83.js */ 36366);
 /*!
  * (C) Ionic http://ionicframework.com - MIT License
  */
@@ -228,7 +321,7 @@ const createButtonActiveGesture = (el, isButton) => {
     }
     currentTouchedButton = undefined;
   };
-  return (0,_index_f8d8aa5a_js__WEBPACK_IMPORTED_MODULE_2__.createGesture)({
+  return (0,_index_422b6e83_js__WEBPACK_IMPORTED_MODULE_2__.createGesture)({
     el,
     gestureName: 'buttonActiveDrag',
     threshold: 0,
@@ -279,9 +372,9 @@ const isRTL = (hostEl) => {
 
 /***/ }),
 
-/***/ 55777:
+/***/ 69118:
 /*!*********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/focus-visible-096cf6fd.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/focus-visible-bd02518b.js ***!
   \*********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -331,6 +424,7 @@ const startFocusVisible = (rootEl) => {
   const onFocusin = (ev) => {
     if (keyboardMode && ev.composedPath !== undefined) {
       const toFocus = ev.composedPath().filter((el) => {
+        // TODO(FW-2832): type
         if (el.classList) {
           return el.classList.contains(ION_FOCUSABLE);
         }
@@ -367,9 +461,9 @@ const startFocusVisible = (rootEl) => {
 
 /***/ }),
 
-/***/ 23701:
+/***/ 90539:
 /*!**************************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/framework-delegate-897f849d.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/framework-delegate-c3305a28.js ***!
   \**************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -379,17 +473,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "a": () => (/* binding */ attachComponent),
 /* harmony export */   "d": () => (/* binding */ detachComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_naveen_kumar_katiyar_OneDrive_Desktop_huntnew_huntpropertynew_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 83918);
+/* harmony import */ var _Users_amitvasani_Desktop_mahesh_huntpropertynew_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _helpers_3b390e48_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-3b390e48.js */ 29259);
 
 
 /*!
  * (C) Ionic http://ionicframework.com - MIT License
  */
-
+ // TODO(FW-2832): types
 
 const attachComponent = /*#__PURE__*/function () {
-  var _ref = (0,C_Users_naveen_kumar_katiyar_OneDrive_Desktop_huntnew_huntpropertynew_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
+  var _ref = (0,_Users_amitvasani_Desktop_mahesh_huntpropertynew_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
     var _a;
 
     if (delegate) {
@@ -438,7 +532,7 @@ const CoreDelegate = () => {
   let Reference;
 
   const attachViewToDom = /*#__PURE__*/function () {
-    var _ref2 = (0,C_Users_naveen_kumar_katiyar_OneDrive_Desktop_huntnew_huntpropertynew_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
+    var _ref2 = (0,_Users_amitvasani_Desktop_mahesh_huntpropertynew_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
       var _a, _b;
 
       BaseComponent = parentElement;
@@ -474,14 +568,23 @@ const CoreDelegate = () => {
         BaseComponent.appendChild(el);
         yield new Promise(resolve => (0,_helpers_3b390e48_js__WEBPACK_IMPORTED_MODULE_1__.c)(el, resolve));
       } else if (BaseComponent.children.length > 0) {
-        // If there is no component, then we need to create a new parent
-        // element to apply the css classes to.
-        const el = (_b = BaseComponent.ownerDocument) === null || _b === void 0 ? void 0 : _b.createElement('div');
-        cssClasses.forEach(c => el.classList.add(c)); // Move each child from the original template to the new parent element.
+        const root = BaseComponent.children[0];
 
-        el.append(...BaseComponent.children); // Append the new parent element to the original parent element.
+        if (!root.classList.contains('ion-delegate-host')) {
+          /**
+           * If the root element is not a delegate host, it means
+           * that the overlay has not been presented yet and we need
+           * to create the containing element with the specified classes.
+           */
+          const el = (_b = BaseComponent.ownerDocument) === null || _b === void 0 ? void 0 : _b.createElement('div'); // Add a class to track if the root element was created by the delegate.
 
-        BaseComponent.appendChild(el);
+          el.classList.add('ion-delegate-host');
+          cssClasses.forEach(c => el.classList.add(c)); // Move each child from the original template to the new parent element.
+
+          el.append(...BaseComponent.children); // Append the new parent element to the original parent element.
+
+          BaseComponent.appendChild(el);
+        }
       }
       /**
        * Get the root of the app and
@@ -682,9 +785,9 @@ const hapticImpact = (options) => {
 
 /***/ }),
 
-/***/ 2002:
+/***/ 7309:
 /*!*************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/index-40bb69ee.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/index-2bcb741c.js ***!
   \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -716,38 +819,38 @@ __webpack_require__.r(__webpack_exports__);
 /*!
  * (C) Ionic http://ionicframework.com - MIT License
  */
-/* Ionicons v6.0.3, ES Modules */
-const arrowBackSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Arrow Back</title><path stroke-linecap='square' stroke-miterlimit='10' stroke-width='48' d='M244 400L100 256l144-144M120 256h292' class='ionicon-fill-none'/></svg>";
-const arrowDown = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Arrow Down</title><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M112 268l144 144 144-144M256 392V100' class='ionicon-fill-none'/></svg>";
-const caretBackSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Caret Back</title><path d='M368 64L144 256l224 192V64z'/></svg>";
-const caretDownSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Caret Down</title><path d='M64 144l192 224 192-224H64z'/></svg>";
-const caretUpSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Caret Up</title><path d='M448 368L256 144 64 368h384z'/></svg>";
-const checkmarkOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Checkmark</title><path stroke-linecap='round' stroke-linejoin='round' d='M416 128L192 384l-96-96' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
-const chevronBack = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Chevron Back</title><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M328 112L184 256l144 144' class='ionicon-fill-none'/></svg>";
-const chevronDown = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Chevron Down</title><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M112 184l144 144 144-144' class='ionicon-fill-none'/></svg>";
-const chevronForward = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Chevron Forward</title><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M184 112l144 144-144 144' class='ionicon-fill-none'/></svg>";
-const chevronForwardOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Chevron Forward</title><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M184 112l144 144-144 144' class='ionicon-fill-none'/></svg>";
-const close = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Close</title><path d='M289.94 256l95-95A24 24 0 00351 127l-95 95-95-95a24 24 0 00-34 34l95 95-95 95a24 24 0 1034 34l95-95 95 95a24 24 0 0034-34z'/></svg>";
-const closeCircle = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Close Circle</title><path d='M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm75.31 260.69a16 16 0 11-22.62 22.62L256 278.63l-52.69 52.68a16 16 0 01-22.62-22.62L233.37 256l-52.68-52.69a16 16 0 0122.62-22.62L256 233.37l52.69-52.68a16 16 0 0122.62 22.62L278.63 256z'/></svg>";
-const closeSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Close</title><path d='M400 145.49L366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49z'/></svg>";
-const ellipseOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Ellipse</title><circle cx='256' cy='256' r='192' stroke-linecap='round' stroke-linejoin='round' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
-const ellipsisHorizontal = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Ellipsis Horizontal</title><circle cx='256' cy='256' r='48'/><circle cx='416' cy='256' r='48'/><circle cx='96' cy='256' r='48'/></svg>";
-const menuOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Menu</title><path stroke-linecap='round' stroke-miterlimit='10' d='M80 160h352M80 256h352M80 352h352' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
-const menuSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Menu</title><path d='M64 384h384v-42.67H64zm0-106.67h384v-42.66H64zM64 128v42.67h384V128z'/></svg>";
-const removeOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Remove</title><path stroke-linecap='round' stroke-linejoin='round' d='M400 256H112' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
-const reorderThreeOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Reorder Three</title><path stroke-linecap='round' stroke-linejoin='round' d='M96 256h320M96 176h320M96 336h320' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
-const reorderTwoSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Reorder Two</title><path stroke-linecap='square' stroke-linejoin='round' stroke-width='44' d='M118 304h276M118 208h276' class='ionicon-fill-none'/></svg>";
-const searchOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Search</title><path d='M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z' stroke-miterlimit='10' class='ionicon-fill-none ionicon-stroke-width'/><path stroke-linecap='round' stroke-miterlimit='10' d='M338.29 338.29L448 448' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
-const searchSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Search</title><path d='M464 428L339.92 303.9a160.48 160.48 0 0030.72-94.58C370.64 120.37 298.27 48 209.32 48S48 120.37 48 209.32s72.37 161.32 161.32 161.32a160.48 160.48 0 0094.58-30.72L428 464zM209.32 319.69a110.38 110.38 0 11110.37-110.37 110.5 110.5 0 01-110.37 110.37z'/></svg>";
+/* Ionicons v6.1.3, ES Modules */
+const arrowBackSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path stroke-linecap='square' stroke-miterlimit='10' stroke-width='48' d='M244 400L100 256l144-144M120 256h292' class='ionicon-fill-none'/></svg>";
+const arrowDown = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M112 268l144 144 144-144M256 392V100' class='ionicon-fill-none'/></svg>";
+const caretBackSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path d='M368 64L144 256l224 192V64z'/></svg>";
+const caretDownSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path d='M64 144l192 224 192-224H64z'/></svg>";
+const caretUpSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path d='M448 368L256 144 64 368h384z'/></svg>";
+const checkmarkOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path stroke-linecap='round' stroke-linejoin='round' d='M416 128L192 384l-96-96' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
+const chevronBack = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M328 112L184 256l144 144' class='ionicon-fill-none'/></svg>";
+const chevronDown = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M112 184l144 144 144-144' class='ionicon-fill-none'/></svg>";
+const chevronForward = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M184 112l144 144-144 144' class='ionicon-fill-none'/></svg>";
+const chevronForwardOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M184 112l144 144-144 144' class='ionicon-fill-none'/></svg>";
+const close = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path d='M289.94 256l95-95A24 24 0 00351 127l-95 95-95-95a24 24 0 00-34 34l95 95-95 95a24 24 0 1034 34l95-95 95 95a24 24 0 0034-34z'/></svg>";
+const closeCircle = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path d='M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm75.31 260.69a16 16 0 11-22.62 22.62L256 278.63l-52.69 52.68a16 16 0 01-22.62-22.62L233.37 256l-52.68-52.69a16 16 0 0122.62-22.62L256 233.37l52.69-52.68a16 16 0 0122.62 22.62L278.63 256z'/></svg>";
+const closeSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path d='M400 145.49L366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49z'/></svg>";
+const ellipseOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><circle cx='256' cy='256' r='192' stroke-linecap='round' stroke-linejoin='round' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
+const ellipsisHorizontal = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><circle cx='256' cy='256' r='48'/><circle cx='416' cy='256' r='48'/><circle cx='96' cy='256' r='48'/></svg>";
+const menuOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path stroke-linecap='round' stroke-miterlimit='10' d='M80 160h352M80 256h352M80 352h352' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
+const menuSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path d='M64 384h384v-42.67H64zm0-106.67h384v-42.66H64zM64 128v42.67h384V128z'/></svg>";
+const removeOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path stroke-linecap='round' stroke-linejoin='round' d='M400 256H112' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
+const reorderThreeOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path stroke-linecap='round' stroke-linejoin='round' d='M96 256h320M96 176h320M96 336h320' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
+const reorderTwoSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path stroke-linecap='square' stroke-linejoin='round' stroke-width='44' d='M118 304h276M118 208h276' class='ionicon-fill-none'/></svg>";
+const searchOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path d='M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z' stroke-miterlimit='10' class='ionicon-fill-none ionicon-stroke-width'/><path stroke-linecap='round' stroke-miterlimit='10' d='M338.29 338.29L448 448' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
+const searchSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path d='M464 428L339.92 303.9a160.48 160.48 0 0030.72-94.58C370.64 120.37 298.27 48 209.32 48S48 120.37 48 209.32s72.37 161.32 161.32 161.32a160.48 160.48 0 0094.58-30.72L428 464zM209.32 319.69a110.38 110.38 0 11110.37-110.37 110.5 110.5 0 01-110.37 110.37z'/></svg>";
 
 
 
 
 /***/ }),
 
-/***/ 33081:
+/***/ 24311:
 /*!*************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/index-5d0c8232.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/index-e6d1a8be.js ***!
   \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -765,7 +868,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "r": () => (/* binding */ resetContentScrollY),
 /* harmony export */   "s": () => (/* binding */ scrollToTop)
 /* harmony export */ });
-/* harmony import */ var C_Users_naveen_kumar_katiyar_OneDrive_Desktop_huntnew_huntpropertynew_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 83918);
+/* harmony import */ var _Users_amitvasani_Desktop_mahesh_huntpropertynew_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _helpers_3b390e48_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-3b390e48.js */ 29259);
 /* harmony import */ var _index_c4b11676_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-c4b11676.js */ 99273);
 
@@ -802,7 +905,7 @@ const isIonContent = el => el.tagName === ION_CONTENT_TAG_NAME;
 
 
 const getScrollElement = /*#__PURE__*/function () {
-  var _ref = (0,C_Users_naveen_kumar_katiyar_OneDrive_Desktop_huntnew_huntpropertynew_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
+  var _ref = (0,_Users_amitvasani_Desktop_mahesh_huntpropertynew_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
     if (isIonContent(el)) {
       yield new Promise(resolve => (0,_helpers_3b390e48_js__WEBPACK_IMPORTED_MODULE_1__.c)(el, resolve));
       return el.getScrollElement();
@@ -847,6 +950,7 @@ const findClosestIonContent = el => {
  * Scrolls to the top of the element. If an `ion-content` is found, it will scroll
  * using the public API `scrollToTop` with a duration.
  */
+// TODO(FW-2832): type
 
 
 const scrollToTop = (el, durationMs) => {
@@ -927,9 +1031,9 @@ const resetContentScrollY = (contentEl, initialScrollY) => {
 
 /***/ }),
 
-/***/ 96524:
+/***/ 20512:
 /*!****************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/keyboard-4d5544a0.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/keyboard-282b81b8.js ***!
   \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -953,6 +1057,7 @@ __webpack_require__.r(__webpack_exports__);
 const KEYBOARD_DID_OPEN = 'ionKeyboardDidShow';
 const KEYBOARD_DID_CLOSE = 'ionKeyboardDidHide';
 const KEYBOARD_THRESHOLD = 150;
+// TODO(FW-2832): types
 let previousVisualViewport = {};
 let currentVisualViewport = {};
 let keyboardOpen = false;
@@ -1293,9 +1398,9 @@ const SPINNERS = spinners;
 
 /***/ }),
 
-/***/ 64114:
+/***/ 35861:
 /*!******************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/swipe-back-5351da01.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/swipe-back-e35bd7d6.js ***!
   \******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -1305,7 +1410,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _helpers_3b390e48_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers-3b390e48.js */ 29259);
 /* harmony import */ var _dir_e8b767a8_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dir-e8b767a8.js */ 17481);
-/* harmony import */ var _index_f8d8aa5a_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-f8d8aa5a.js */ 69286);
+/* harmony import */ var _index_422b6e83_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-422b6e83.js */ 36366);
 /* harmony import */ var _gesture_controller_17060b7c_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./gesture-controller-17060b7c.js */ 56379);
 /*!
  * (C) Ionic http://ionicframework.com - MIT License
@@ -1317,7 +1422,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const createSwipeBackGesture = (el, canStartHandler, onStartHandler, onMoveHandler, onEndHandler) => {
   const win = el.ownerDocument.defaultView;
-  const rtl = (0,_dir_e8b767a8_js__WEBPACK_IMPORTED_MODULE_1__.i)(el);
+  let rtl = (0,_dir_e8b767a8_js__WEBPACK_IMPORTED_MODULE_1__.i)(el);
   /**
    * Determine if a gesture is near the edge
    * of the screen. If true, then the swipe
@@ -1338,6 +1443,12 @@ const createSwipeBackGesture = (el, canStartHandler, onStartHandler, onMoveHandl
     return rtl ? -detail.velocityX : detail.velocityX;
   };
   const canStart = (detail) => {
+    /**
+     * The user's locale can change mid-session,
+     * so we need to check text direction at
+     * the beginning of every gesture.
+     */
+    rtl = (0,_dir_e8b767a8_js__WEBPACK_IMPORTED_MODULE_1__.i)(el);
     return isAtEdge(detail) && canStartHandler();
   };
   const onMove = (detail) => {
@@ -1361,14 +1472,9 @@ const createSwipeBackGesture = (el, canStartHandler, onStartHandler, onMoveHandl
       const dur = missingDistance / Math.abs(velocity);
       realDur = Math.min(dur, 540);
     }
-    /**
-     * TODO: stepValue can sometimes return negative values
-     * or values greater than 1 which should not be possible.
-     * Need to investigate more to find where the issue is.
-     */
     onEndHandler(shouldComplete, stepValue <= 0 ? 0.01 : (0,_helpers_3b390e48_js__WEBPACK_IMPORTED_MODULE_0__.l)(0, stepValue, 0.9999), realDur);
   };
-  return (0,_index_f8d8aa5a_js__WEBPACK_IMPORTED_MODULE_2__.createGesture)({
+  return (0,_index_422b6e83_js__WEBPACK_IMPORTED_MODULE_2__.createGesture)({
     el,
     gestureName: 'goback-swipe',
     gesturePriority: 40,
@@ -1391,7 +1497,17 @@ const createSwipeBackGesture = (el, canStartHandler, onStartHandler, onMoveHandl
   \************************************************************/
 /***/ ((module) => {
 
-module.exports = ".addBtn {\n  height: 28px;\n  font-size: 12px;\n  margin: 0;\n  --background: rgb(254,19,0);\n  --border-radius: 5px;\n}\n.addBtn .plusminus {\n  height: 100%;\n  width: 22px;\n  background: #fe1300;\n  color: #66e366;\n  font-size: 18px;\n  line-height: 22px;\n  vertical-align: middle;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkZC1idXR0b24ucGFnZS5zY3NzIiwiLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxuYXZlZW4lMjBrdW1hciUyMGthdGl5YXJcXE9uZURyaXZlXFxEZXNrdG9wXFxodW50bmV3XFxodW50cHJvcGVydHluZXdcXHNyY1xcYXBwXFxhZGQtYnV0dG9uXFxhZGQtYnV0dG9uLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQUE7RUFDQSxlQUFBO0VBQ0EsU0FBQTtFQUNBLDJCQUFBO0VBQ0Esb0JBQUE7QUNDSjtBREFJO0VBQ0ksWUFBQTtFQUNBLFdBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxzQkFBQTtBQ0VSIiwiZmlsZSI6ImFkZC1idXR0b24ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFkZEJ0bntcclxuICAgIGhlaWdodDogMjhweDtcclxuICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgIG1hcmdpbjogMDtcclxuICAgIC0tYmFja2dyb3VuZDogcmdiKDI1NCwxOSwwKTtcclxuICAgIC0tYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICAgLnBsdXNtaW51cyB7XHJcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgIHdpZHRoOiAyMnB4O1xyXG4gICAgICAgIGJhY2tncm91bmQ6IHJnYigyNTQsMTksMCk7XHJcbiAgICAgICAgY29sb3I6ICM2NmUzNjY7XHJcbiAgICAgICAgZm9udC1zaXplOiAxOHB4O1xyXG4gICAgICAgIGxpbmUtaGVpZ2h0OiAyMnB4O1xyXG4gICAgICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbiAgICB9XHJcbn0iLCIuYWRkQnRuIHtcbiAgaGVpZ2h0OiAyOHB4O1xuICBmb250LXNpemU6IDEycHg7XG4gIG1hcmdpbjogMDtcbiAgLS1iYWNrZ3JvdW5kOiByZ2IoMjU0LDE5LDApO1xuICAtLWJvcmRlci1yYWRpdXM6IDVweDtcbn1cbi5hZGRCdG4gLnBsdXNtaW51cyB7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDIycHg7XG4gIGJhY2tncm91bmQ6ICNmZTEzMDA7XG4gIGNvbG9yOiAjNjZlMzY2O1xuICBmb250LXNpemU6IDE4cHg7XG4gIGxpbmUtaGVpZ2h0OiAyMnB4O1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xufSJdfQ== */";
+module.exports = ".addBtn {\n  height: 28px;\n  font-size: 12px;\n  margin: 0;\n  --background: rgb(254,19,0);\n  --border-radius: 5px;\n}\n.addBtn .plusminus {\n  height: 100%;\n  width: 22px;\n  background: #fe1300;\n  color: #66e366;\n  font-size: 18px;\n  line-height: 22px;\n  vertical-align: middle;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkZC1idXR0b24ucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtFQUNBLGVBQUE7RUFDQSxTQUFBO0VBQ0EsMkJBQUE7RUFDQSxvQkFBQTtBQUNKO0FBQUk7RUFDSSxZQUFBO0VBQ0EsV0FBQTtFQUNBLG1CQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtFQUNBLHNCQUFBO0FBRVIiLCJmaWxlIjoiYWRkLWJ1dHRvbi5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWRkQnRue1xyXG4gICAgaGVpZ2h0OiAyOHB4O1xyXG4gICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgLS1iYWNrZ3JvdW5kOiByZ2IoMjU0LDE5LDApO1xyXG4gICAgLS1ib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICAucGx1c21pbnVzIHtcclxuICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgd2lkdGg6IDIycHg7XHJcbiAgICAgICAgYmFja2dyb3VuZDogcmdiKDI1NCwxOSwwKTtcclxuICAgICAgICBjb2xvcjogIzY2ZTM2NjtcclxuICAgICAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICAgICAgbGluZS1oZWlnaHQ6IDIycHg7XHJcbiAgICAgICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxuICAgIH1cclxufSJdfQ== */";
+
+/***/ }),
+
+/***/ 62108:
+/*!****************************************************************!*\
+  !*** ./src/app/custom-range/custom-range.page.scss?ngResource ***!
+  \****************************************************************/
+/***/ ((module) => {
+
+module.exports = "ion-content {\n  --background: #fff;\n}\nion-content ion-item {\n  --background: #fff;\n}\nion-content ion-item input {\n  width: 100%;\n}\nion-content ion-item .simulador {\n  display: inline-block;\n  width: 100%;\n}\nion-content ion-item .simulador .slidecontainer {\n  display: flex;\n  align-items: center;\n  justify-content: left;\n}\nion-content ion-item .simulador .slidecontainer span {\n  position: absolute;\n  right: 0;\n  z-index: 99;\n  display: flex;\n  width: 50px;\n  color: red;\n}\nion-content ion-item .simulador .slidecontainer span fa-icon {\n  color: red;\n}\nion-content ion-item .simulador .slider-container .interno .slidecontainer {\n  width: 100%;\n  padding-top: 0px;\n}\nion-content ion-item .simulador .slider-container .interno .slidecontainer output {\n  font-family: \"museo700\";\n  margin-bottom: 0px;\n  position: absolute;\n  padding: 0.5em;\n  background: transparent;\n  color: #FF2323;\n  top: -3px;\n}\nion-content ion-item .simulador .slider-container .interno .slider {\n  -webkit-appearance: none;\n  width: 85%;\n  height: 5px;\n  border-radius: 2.5px;\n  background: #FF2323;\n  outline: none;\n  transition: opacity 0.2s;\n  border: 0;\n}\nion-content ion-item .simulador .slider-container .interno .slider:hover {\n  opacity: 1;\n}\nion-content ion-item .simulador .slider-container .interno .slider::-webkit-slider-thumb {\n  appearance: none;\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background: #FF2323;\n  cursor: pointer;\n  border: 3.5px solid #FF2323;\n}\nion-content ion-item .simulador .slider-container .interno .slider ::-moz-range-thumb {\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background: #FF2323;\n  cursor: pointer;\n  border: 3.5px solid #FF2323;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImN1c3RvbS1yYW5nZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtBQUNKO0FBQUk7RUFDSSxrQkFBQTtBQUVSO0FBRFE7RUFBTSxXQUFBO0FBSWQ7QUFIUTtFQUNJLHFCQUFBO0VBQ0EsV0FBQTtBQUtaO0FBSlk7RUFDSSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxxQkFBQTtBQU1oQjtBQUxnQjtFQUNJLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7RUFDQSxhQUFBO0VBQ0EsV0FBQTtFQUNBLFVBQUE7QUFPcEI7QUFOb0I7RUFDSSxVQUFBO0FBUXhCO0FBSFU7RUFDRSxXQUFBO0VBQ0EsZ0JBQUE7QUFLWjtBQUZVO0VBQ0UsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLHVCQUFBO0VBQ0EsY0FBQTtFQUNBLFNBQUE7QUFJWjtBQUZVO0VBQ0Usd0JBQUE7RUFDQSxVQUFBO0VBQ0EsV0FBQTtFQUNBLG9CQUFBO0VBQ0EsbUJBQUE7RUFDQSxhQUFBO0VBRUEsd0JBQUE7RUFDQSxTQUFBO0FBSVo7QUFGVTtFQUNFLFVBQUE7QUFJWjtBQUZVO0VBRUUsZ0JBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0VBQ0EsMkJBQUE7QUFJWjtBQUZVO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtFQUNBLDJCQUFBO0FBSVoiLCJmaWxlIjoiY3VzdG9tLXJhbmdlLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1jb250ZW50e1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjZmZmO1xyXG4gICAgaW9uLWl0ZW17XHJcbiAgICAgICAgLS1iYWNrZ3JvdW5kOiAjZmZmO1xyXG4gICAgICAgIGlucHV0e3dpZHRoOiAxMDAlO31cclxuICAgICAgICAuc2ltdWxhZG9yIHtcclxuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgICAgICAgLnNsaWRlY29udGFpbmVye1xyXG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAgICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGxlZnQ7XHJcbiAgICAgICAgICAgICAgICBzcGFue1xyXG4gICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICAgICAgICAgICAgICByaWdodDogMDtcclxuICAgICAgICAgICAgICAgICAgICB6LWluZGV4OiA5OTtcclxuICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICAgICAgICAgIHdpZHRoOiA1MHB4O1xyXG4gICAgICAgICAgICAgICAgICAgIGNvbG9yOiByZWQ7XHJcbiAgICAgICAgICAgICAgICAgICAgZmEtaWNvbntcclxuICAgICAgICAgICAgICAgICAgICAgICAgY29sb3I6IHJlZDtcclxuICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIH0gICAgICAgICAgIFxyXG4gICAgICAgICBcclxuICAgICAgICAgIC5zbGlkZXItY29udGFpbmVyIC5pbnRlcm5vIC5zbGlkZWNvbnRhaW5lciB7XHJcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgICAgICBwYWRkaW5nLXRvcDogMHB4O1xyXG4gICAgICAgICAgICBcclxuICAgICAgICAgIH1cclxuICAgICAgICAgIC5zbGlkZXItY29udGFpbmVyIC5pbnRlcm5vIC5zbGlkZWNvbnRhaW5lciBvdXRwdXQge1xyXG4gICAgICAgICAgICBmb250LWZhbWlseTogJ211c2VvNzAwJztcclxuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMHB4O1xyXG4gICAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IC41ZW07XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG4gICAgICAgICAgICBjb2xvcjogI0ZGMjMyMztcclxuICAgICAgICAgICAgdG9wOiAtM3B4O1xyXG4gICAgICAgICAgfVxyXG4gICAgICAgICAgLnNsaWRlci1jb250YWluZXIgLmludGVybm8gLnNsaWRlciB7XHJcbiAgICAgICAgICAgIC13ZWJraXQtYXBwZWFyYW5jZTogbm9uZTtcclxuICAgICAgICAgICAgd2lkdGg6IDg1JTtcclxuICAgICAgICAgICAgaGVpZ2h0OiA1cHg7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDIuNXB4O1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kOiAjRkYyMzIzO1xyXG4gICAgICAgICAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgICAgICAgICAtd2Via2l0LXRyYW5zaXRpb246IC4ycztcclxuICAgICAgICAgICAgdHJhbnNpdGlvbjogb3BhY2l0eSAuMnM7XHJcbiAgICAgICAgICAgIGJvcmRlcjogMDtcclxuICAgICAgICAgIH1cclxuICAgICAgICAgIC5zbGlkZXItY29udGFpbmVyIC5pbnRlcm5vIC5zbGlkZXI6aG92ZXIge1xyXG4gICAgICAgICAgICBvcGFjaXR5OiAxO1xyXG4gICAgICAgICAgfVxyXG4gICAgICAgICAgLnNsaWRlci1jb250YWluZXIgLmludGVybm8gLnNsaWRlcjo6LXdlYmtpdC1zbGlkZXItdGh1bWIge1xyXG4gICAgICAgICAgICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICAgICAgICAgIGFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgICAgICAgICAgIHdpZHRoOiAyNXB4O1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDI1cHg7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgICAgICAgICAgYmFja2dyb3VuZDogI0ZGMjMyMztcclxuICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgICAgICBib3JkZXI6IDMuNXB4IHNvbGlkICNGRjIzMjM7XHJcbiAgICAgICAgICB9XHJcbiAgICAgICAgICAuc2xpZGVyLWNvbnRhaW5lciAuaW50ZXJubyAuc2xpZGVyIDo6LW1vei1yYW5nZS10aHVtYiB7XHJcbiAgICAgICAgICAgIHdpZHRoOiAyNXB4O1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDI1cHg7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgICAgICAgICAgYmFja2dyb3VuZDogI0ZGMjMyMztcclxuICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgICAgICBib3JkZXI6IDMuNXB4IHNvbGlkICNGRjIzMjM7XHJcbiAgICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxufSJdfQ== */";
 
 /***/ }),
 
@@ -1401,7 +1517,7 @@ module.exports = ".addBtn {\n  height: 28px;\n  font-size: 12px;\n  margin: 0;\n
   \*******************************************************************************/
 /***/ ((module) => {
 
-module.exports = "#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4cGxvcmUtY29udGFpbmVyLmNvbXBvbmVudC5zY3NzIiwiLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxuYXZlZW4lMjBrdW1hciUyMGthdGl5YXJcXE9uZURyaXZlXFxEZXNrdG9wXFxodW50bmV3XFxodW50cHJvcGVydHluZXdcXHNyY1xcYXBwXFxleHBsb3JlLWNvbnRhaW5lclxcZXhwbG9yZS1jb250YWluZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBQTtFQUVBLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxRQUFBO0VBQ0EsMkJBQUE7QUNBRjs7QURHQTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtBQ0FGOztBREdBO0VBQ0UsZUFBQTtFQUNBLGlCQUFBO0VBRUEsY0FBQTtFQUVBLFNBQUE7QUNGRjs7QURLQTtFQUNFLHFCQUFBO0FDRkYiLCJmaWxlIjoiZXhwbG9yZS1jb250YWluZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY29udGFpbmVyIHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblxyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHRvcDogNTAlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxufVxyXG5cclxuI2NvbnRhaW5lciBzdHJvbmcge1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxuICBsaW5lLWhlaWdodDogMjZweDtcclxufVxyXG5cclxuI2NvbnRhaW5lciBwIHtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgbGluZS1oZWlnaHQ6IDIycHg7XHJcblxyXG4gIGNvbG9yOiAjOGM4YzhjO1xyXG5cclxuICBtYXJnaW46IDA7XHJcbn1cclxuXHJcbiNjb250YWluZXIgYSB7XHJcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG59IiwiI2NvbnRhaW5lciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiAwO1xuICByaWdodDogMDtcbiAgdG9wOiA1MCU7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcbn1cblxuI2NvbnRhaW5lciBzdHJvbmcge1xuICBmb250LXNpemU6IDIwcHg7XG4gIGxpbmUtaGVpZ2h0OiAyNnB4O1xufVxuXG4jY29udGFpbmVyIHAge1xuICBmb250LXNpemU6IDE2cHg7XG4gIGxpbmUtaGVpZ2h0OiAyMnB4O1xuICBjb2xvcjogIzhjOGM4YztcbiAgbWFyZ2luOiAwO1xufVxuXG4jY29udGFpbmVyIGEge1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59Il19 */";
+module.exports = "#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4cGxvcmUtY29udGFpbmVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQUE7RUFFQSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsUUFBQTtFQUNBLDJCQUFBO0FBQUY7O0FBR0E7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7QUFBRjs7QUFHQTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtFQUVBLGNBQUE7RUFFQSxTQUFBO0FBRkY7O0FBS0E7RUFDRSxxQkFBQTtBQUZGIiwiZmlsZSI6ImV4cGxvcmUtY29udGFpbmVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2NvbnRhaW5lciB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG5cclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgbGVmdDogMDtcclxuICByaWdodDogMDtcclxuICB0b3A6IDUwJTtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbn1cclxuXHJcbiNjb250YWluZXIgc3Ryb25nIHtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbiAgbGluZS1oZWlnaHQ6IDI2cHg7XHJcbn1cclxuXHJcbiNjb250YWluZXIgcCB7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGxpbmUtaGVpZ2h0OiAyMnB4O1xyXG5cclxuICBjb2xvcjogIzhjOGM4YztcclxuXHJcbiAgbWFyZ2luOiAwO1xyXG59XHJcblxyXG4jY29udGFpbmVyIGEge1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxufSJdfQ== */";
 
 /***/ }),
 
@@ -1412,6 +1528,16 @@ module.exports = "#container {\n  text-align: center;\n  position: absolute;\n  
 /***/ ((module) => {
 
 module.exports = "<ion-button class=\"addBtn\" (click)=\"addProduct()\" *ngIf=\"showAddBtn\">ADD</ion-button>\r\n<div class=\"add-btn\" *ngIf=\"plusMinus\" [formGroup]=\"form\">    \r\n<a class=\"plusminus\"  (click)=\"handleMinus()\">-</a>\r\n<input type=\"text\" readonly class=\"num\" value=\"0\" formControlName=\"control\" [(ngModel)]=\"value\" />\r\n<a class=\"plusminus\" (click)=\"handlePlus()\">+</a>\r\n</div>";
+
+/***/ }),
+
+/***/ 82619:
+/*!****************************************************************!*\
+  !*** ./src/app/custom-range/custom-range.page.html?ngResource ***!
+  \****************************************************************/
+/***/ ((module) => {
+
+module.exports = "\r\n<ion-content>\r\n  <ion-item lines=\"none\" class=\"range_parent\">  \r\n    \r\n    <div class=\"simulador\">\r\n      <div class=\"contenedor\">          \r\n          <div class=\"slider-container\">\r\n              <div class=\"interno\">\r\n                  <div class=\"slidecontainer\">\r\n                    <input class=\"slider\"\r\n                    type=\"range\"\r\n                    [min]=\"min\"\r\n                    [max]=\"max\"\r\n                    [step]=\"step\"\r\n                    [value]=\"value\"\r\n                    (input)=\"updateSliderValue($event)\"\r\n                  />\r\n                   <span>\r\n                    <fa-icon [icon]=\"faIndianRupeeSign\"></fa-icon>\r\n                    <div *ngIf=\"!value\">{{min}}</div>\r\n                    {{value}}Cr</span>\r\n                  </div>\r\n              </div>\r\n          </div>\r\n      </div>\r\n  </div>\r\n</ion-item>\r\n</ion-content>\r\n";
 
 /***/ }),
 

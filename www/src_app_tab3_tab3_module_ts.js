@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_tab3_tab3_module_ts"],{
 
-/***/ 55392:
+/***/ 99818:
 /*!*********************************************!*\
   !*** ./src/app/tab3/tab3-routing.module.ts ***!
   \*********************************************/
@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _tab3_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tab3.page */ 65646);
+/* harmony import */ var _tab3_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tab3.page */ 78592);
 
 
 
@@ -38,7 +38,7 @@ Tab3PageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
-/***/ 20573:
+/***/ 53746:
 /*!*************************************!*\
   !*** ./src/app/tab3/tab3.module.ts ***!
   \*************************************/
@@ -53,9 +53,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _explore_container_explore_container_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../explore-container/explore-container.module */ 74081);
-/* harmony import */ var _tab3_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tab3-routing.module */ 55392);
-/* harmony import */ var _tab3_page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tab3.page */ 65646);
+/* harmony import */ var _explore_container_explore_container_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../explore-container/explore-container.module */ 581);
+/* harmony import */ var _tab3_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tab3-routing.module */ 99818);
+/* harmony import */ var _tab3_page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tab3.page */ 78592);
 
 
 
@@ -83,7 +83,7 @@ Tab3PageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 65646:
+/***/ 78592:
 /*!***********************************!*\
   !*** ./src/app/tab3/tab3.page.ts ***!
   \***********************************/

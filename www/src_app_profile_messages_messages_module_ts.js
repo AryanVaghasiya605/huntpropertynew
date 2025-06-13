@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_profile_messages_messages_module_ts"],{
 
-/***/ 5604:
+/***/ 94484:
 /*!*************************************************************!*\
   !*** ./src/app/profile/messages/messages-routing.module.ts ***!
   \*************************************************************/
@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _messages_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./messages.page */ 39604);
+/* harmony import */ var _messages_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./messages.page */ 7533);
 
 
 
@@ -26,7 +26,7 @@ const routes = [
     },
     {
         path: 'send-message',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_profile_messages_send-message_send-message_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./send-message/send-message.module */ 96360)).then(m => m.SendMessagePageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_profile_messages_send-message_send-message_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./send-message/send-message.module */ 28397)).then(m => m.SendMessagePageModule)
     }
 ];
 let MessagesPageRoutingModule = class MessagesPageRoutingModule {
@@ -42,7 +42,7 @@ MessagesPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
-/***/ 61730:
+/***/ 26182:
 /*!*****************************************************!*\
   !*** ./src/app/profile/messages/messages.module.ts ***!
   \*****************************************************/
@@ -57,8 +57,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _messages_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./messages-routing.module */ 5604);
-/* harmony import */ var _messages_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./messages.page */ 39604);
+/* harmony import */ var _messages_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./messages-routing.module */ 94484);
+/* harmony import */ var _messages_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./messages.page */ 7533);
 
 
 
@@ -84,7 +84,7 @@ MessagesPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 39604:
+/***/ 7533:
 /*!***************************************************!*\
   !*** ./src/app/profile/messages/messages.page.ts ***!
   \***************************************************/
@@ -99,8 +99,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _messages_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./messages.page.scss?ngResource */ 52654);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 20070);
-/* harmony import */ var src_app_services_main_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/main.service */ 42735);
+/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 55916);
+/* harmony import */ var src_app_services_main_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/main.service */ 91557);
 
 
 
@@ -160,7 +160,7 @@ MessagesPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
   \****************************************************************/
 /***/ ((module) => {
 
-module.exports = ".header-bg-color {\n  --background:#e14b4c;\n  --padding-start: 15px;\n}\n.header-bg-color .back-btn {\n  color: #ffffff;\n  font-size: 25px;\n}\n.header-bg-color .header-title {\n  color: #ffffff;\n  text-align: left;\n}\nion-content, ion-item {\n  --background: #ffff;\n  --border-color: #e3e3e3;\n}\n.list_text {\n  color: #000;\n}\n.list_text_bottom {\n  font-size: 12px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lc3NhZ2VzLnBhZ2Uuc2NzcyIsIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXG5hdmVlbiUyMGt1bWFyJTIwa2F0aXlhclxcT25lRHJpdmVcXERlc2t0b3BcXGh1bnRuZXdcXGh1bnRwcm9wZXJ0eW5ld1xcc3JjXFxhcHBcXHByb2ZpbGVcXG1lc3NhZ2VzXFxtZXNzYWdlcy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxvQkFBQTtFQUNBLHFCQUFBO0FDQ0o7QURBQTtFQUFXLGNBQUE7RUFBZ0IsZUFBQTtBQ0kzQjtBREhBO0VBQ0ksY0FBQTtFQUNBLGdCQUFBO0FDS0o7QURGQTtFQUNJLG1CQUFBO0VBQ0EsdUJBQUE7QUNLSjtBREFBO0VBQVksV0FBQTtBQ0daO0FERkE7RUFBbUIsZUFBQTtBQ01uQiIsImZpbGUiOiJtZXNzYWdlcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaGVhZGVyLWJnLWNvbG9ye1xyXG4gICAgLS1iYWNrZ3JvdW5kOiNlMTRiNGM7ICAgIFxyXG4gICAgLS1wYWRkaW5nLXN0YXJ0OiAxNXB4O1xyXG4uYmFjay1idG57IGNvbG9yOiAjZmZmZmZmOyBmb250LXNpemU6IDI1cHg7fVxyXG4uaGVhZGVyLXRpdGxle1xyXG4gICAgY29sb3I6ICNmZmZmZmY7XHJcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG59XHJcbn1cclxuaW9uLWNvbnRlbnQsIGlvbi1pdGVte1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjZmZmZjtcclxuICAgIC0tYm9yZGVyLWNvbG9yOiAjZTNlM2UzO1xyXG4gICAgaW9uLWl0ZW17XHJcblxyXG4gICAgfVxyXG59XHJcbi5saXN0X3RleHR7IGNvbG9yOiAjMDAwO31cclxuLmxpc3RfdGV4dF9ib3R0b217IGZvbnQtc2l6ZTogMTJweDt9XHJcbiIsIi5oZWFkZXItYmctY29sb3Ige1xuICAtLWJhY2tncm91bmQ6I2UxNGI0YztcbiAgLS1wYWRkaW5nLXN0YXJ0OiAxNXB4O1xufVxuLmhlYWRlci1iZy1jb2xvciAuYmFjay1idG4ge1xuICBjb2xvcjogI2ZmZmZmZjtcbiAgZm9udC1zaXplOiAyNXB4O1xufVxuLmhlYWRlci1iZy1jb2xvciAuaGVhZGVyLXRpdGxlIHtcbiAgY29sb3I6ICNmZmZmZmY7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG59XG5cbmlvbi1jb250ZW50LCBpb24taXRlbSB7XG4gIC0tYmFja2dyb3VuZDogI2ZmZmY7XG4gIC0tYm9yZGVyLWNvbG9yOiAjZTNlM2UzO1xufVxuLmxpc3RfdGV4dCB7XG4gIGNvbG9yOiAjMDAwO1xufVxuXG4ubGlzdF90ZXh0X2JvdHRvbSB7XG4gIGZvbnQtc2l6ZTogMTJweDtcbn0iXX0= */";
+module.exports = ".header-bg-color {\n  --background:#e14b4c;\n  --padding-start: 15px;\n}\n.header-bg-color .back-btn {\n  color: #ffffff;\n  font-size: 25px;\n}\n.header-bg-color .header-title {\n  color: #ffffff;\n  text-align: left;\n}\nion-content, ion-item {\n  --background: #ffff;\n  --border-color: #e3e3e3;\n}\n.list_text {\n  color: #000;\n}\n.list_text_bottom {\n  font-size: 12px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lc3NhZ2VzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG9CQUFBO0VBQ0EscUJBQUE7QUFDSjtBQUFBO0VBQVcsY0FBQTtFQUFnQixlQUFBO0FBSTNCO0FBSEE7RUFDSSxjQUFBO0VBQ0EsZ0JBQUE7QUFLSjtBQUZBO0VBQ0ksbUJBQUE7RUFDQSx1QkFBQTtBQUtKO0FBQUE7RUFBWSxXQUFBO0FBR1o7QUFGQTtFQUFtQixlQUFBO0FBTW5CIiwiZmlsZSI6Im1lc3NhZ2VzLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oZWFkZXItYmctY29sb3J7XHJcbiAgICAtLWJhY2tncm91bmQ6I2UxNGI0YzsgICAgXHJcbiAgICAtLXBhZGRpbmctc3RhcnQ6IDE1cHg7XHJcbi5iYWNrLWJ0bnsgY29sb3I6ICNmZmZmZmY7IGZvbnQtc2l6ZTogMjVweDt9XHJcbi5oZWFkZXItdGl0bGV7XHJcbiAgICBjb2xvcjogI2ZmZmZmZjtcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbn1cclxufVxyXG5pb24tY29udGVudCwgaW9uLWl0ZW17XHJcbiAgICAtLWJhY2tncm91bmQ6ICNmZmZmO1xyXG4gICAgLS1ib3JkZXItY29sb3I6ICNlM2UzZTM7XHJcbiAgICBpb24taXRlbXtcclxuXHJcbiAgICB9XHJcbn1cclxuLmxpc3RfdGV4dHsgY29sb3I6ICMwMDA7fVxyXG4ubGlzdF90ZXh0X2JvdHRvbXsgZm9udC1zaXplOiAxMnB4O31cclxuIl19 */";
 
 /***/ }),
 

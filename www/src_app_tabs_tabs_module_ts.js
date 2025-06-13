@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_tabs_tabs_module_ts"],{
 
-/***/ 77991:
+/***/ 80530:
 /*!*********************************************!*\
   !*** ./src/app/tabs/tabs-routing.module.ts ***!
   \*********************************************/
@@ -14,8 +14,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _tabs_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tabs.page */ 43962);
-/* harmony import */ var _services_auth_guard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/auth.guard */ 57706);
+/* harmony import */ var _tabs_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tabs.page */ 7942);
+/* harmony import */ var _services_auth_guard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/auth.guard */ 98063);
 
 
 
@@ -28,20 +28,20 @@ const routes = [
         children: [
             {
                 path: 'home',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_swiper_angular_fesm2015_swiper_angular_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_home_home_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../home/home.module */ 82711)).then(m => m.HomePageModule)
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_swiper_angular_fesm2015_swiper_angular_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_home_home_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../home/home.module */ 3467)).then(m => m.HomePageModule)
             },
             {
                 path: 'Profile',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_profile_profile_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../profile/profile.module */ 47350)).then(m => m.ProfilePageModule),
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_profile_profile_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../profile/profile.module */ 84523)).then(m => m.ProfilePageModule),
                 canActivate: [_services_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard]
             },
             {
                 path: 'Notifications',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_tab3_tab3_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../tab3/tab3.module */ 20573)).then(m => m.Tab3PageModule)
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_tab3_tab3_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../tab3/tab3.module */ 53746)).then(m => m.Tab3PageModule)
             },
             {
                 path: 'more',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_more_more_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../more/more.module */ 85110)).then(m => m.MorePageModule)
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_more_more_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../more/more.module */ 36436)).then(m => m.MorePageModule)
             },
             {
                 path: '',
@@ -68,7 +68,7 @@ TabsPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 86432:
+/***/ 15564:
 /*!*************************************!*\
   !*** ./src/app/tabs/tabs.module.ts ***!
   \*************************************/
@@ -83,8 +83,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _tabs_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tabs-routing.module */ 77991);
-/* harmony import */ var _tabs_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs.page */ 43962);
+/* harmony import */ var _tabs_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tabs-routing.module */ 80530);
+/* harmony import */ var _tabs_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs.page */ 7942);
 
 
 
@@ -110,7 +110,7 @@ TabsPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 43962:
+/***/ 7942:
 /*!***********************************!*\
   !*** ./src/app/tabs/tabs.page.ts ***!
   \***********************************/
@@ -191,7 +191,7 @@ TabsPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "ion-tab-bar {\n  --background:#ffffff;\n  --border: solid 1px #e3e3e3;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhYnMucGFnZS5zY3NzIiwiLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxuYXZlZW4lMjBrdW1hciUyMGthdGl5YXJcXE9uZURyaXZlXFxEZXNrdG9wXFxodW50bmV3XFxodW50cHJvcGVydHluZXdcXHNyY1xcYXBwXFx0YWJzXFx0YWJzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUFZLG9CQUFBO0VBQXFCLDJCQUFBO0FDRWpDIiwiZmlsZSI6InRhYnMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbmlvbi10YWItYmFyey0tYmFja2dyb3VuZDojZmZmZmZmOy0tYm9yZGVyOiBzb2xpZCAxcHggI2UzZTNlMztcclxuaW9uLXRhYi1idXR0b257XHJcbi5wcm9maWxle1xyXG4gICAgXHJcbn1cclxufVxyXG59IiwiaW9uLXRhYi1iYXIge1xuICAtLWJhY2tncm91bmQ6I2ZmZmZmZjtcbiAgLS1ib3JkZXI6IHNvbGlkIDFweCAjZTNlM2UzO1xufSJdfQ== */";
+module.exports = "ion-tab-bar {\n  --background:#ffffff;\n  --border: solid 1px #e3e3e3;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhYnMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQVksb0JBQUE7RUFBcUIsMkJBQUE7QUFFakMiLCJmaWxlIjoidGFicy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuaW9uLXRhYi1iYXJ7LS1iYWNrZ3JvdW5kOiNmZmZmZmY7LS1ib3JkZXI6IHNvbGlkIDFweCAjZTNlM2UzO1xyXG5pb24tdGFiLWJ1dHRvbntcclxuLnByb2ZpbGV7XHJcbiAgICBcclxufVxyXG59XHJcbn0iXX0= */";
 
 /***/ }),
 

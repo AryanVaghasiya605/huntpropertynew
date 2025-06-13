@@ -1,4 +1,4 @@
-cordova.define("cordova-plugin-file.androidEntry", function(require, exports, module) {
+cordova.define("cordova-plugin-file.iosFileSystem", function(require, exports, module) {
 /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -19,17 +19,13 @@ cordova.define("cordova-plugin-file.androidEntry", function(require, exports, mo
  * under the License.
  *
 */
+/* eslint no-undef : 0 */
+FILESYSTEM_PROTOCOL = 'cdvfile';
 
 module.exports = {
-    /**
-   * Return a URL that can be used to identify this entry.
-   * Use a URL that can be used to as the src attribute of a <video> or
-   * <audio> tag. If that is not possible, construct a http(s)://(localhost) URL.
-   */
-    toURL: function () {
-        return window.location.origin.includes('file://')
-            ? this.nativeURL
-            : this.toInternalURL();
+    __format__: function (fullPath) {
+        var path = ('/' + this.name + (fullPath[0] === '/' ? '' : '/') + FileSystem.encodeURIPath(fullPath)).replace('//', '/');
+        return FILESYSTEM_PROTOCOL + '://localhost' + path;
     }
 };
 

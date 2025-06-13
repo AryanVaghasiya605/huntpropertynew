@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_client-register_client-register_module_ts"],{
 
-/***/ 745:
+/***/ 15014:
 /*!*******************************************************************!*\
   !*** ./src/app/client-register/client-register-routing.module.ts ***!
   \*******************************************************************/
@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _client_register_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./client-register.page */ 22785);
+/* harmony import */ var _client_register_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./client-register.page */ 42946);
 
 
 
@@ -26,7 +26,7 @@ const routes = [
     },
     {
         path: 'client-registeration-form',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("default-src_app_custom-range_custom-range_page_ts"), __webpack_require__.e("src_app_client-register_client-registeration-form_client-registeration-form_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./client-registeration-form/client-registeration-form.module */ 27474)).then(m => m.ClientRegisterationFormPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_client-register_client-registeration-form_client-registeration-form_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./client-registeration-form/client-registeration-form.module */ 4884)).then(m => m.ClientRegisterationFormPageModule)
     }
 ];
 let ClientRegisterPageRoutingModule = class ClientRegisterPageRoutingModule {
@@ -42,7 +42,7 @@ ClientRegisterPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decora
 
 /***/ }),
 
-/***/ 92758:
+/***/ 88148:
 /*!***********************************************************!*\
   !*** ./src/app/client-register/client-register.module.ts ***!
   \***********************************************************/
@@ -57,8 +57,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _client_register_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./client-register-routing.module */ 745);
-/* harmony import */ var _client_register_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./client-register.page */ 22785);
+/* harmony import */ var _client_register_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./client-register-routing.module */ 15014);
+/* harmony import */ var _client_register_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./client-register.page */ 42946);
 
 
 
@@ -85,7 +85,7 @@ ClientRegisterPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 22785:
+/***/ 42946:
 /*!*********************************************************!*\
   !*** ./src/app/client-register/client-register.page.ts ***!
   \*********************************************************/
@@ -100,8 +100,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _client_register_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./client-register.page.scss?ngResource */ 75351);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 20070);
-/* harmony import */ var _services_main_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/main.service */ 42735);
+/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 55916);
+/* harmony import */ var _services_main_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/main.service */ 91557);
 
 
 
@@ -157,7 +157,7 @@ ClientRegisterPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
   \**********************************************************************/
 /***/ ((module) => {
 
-module.exports = ".clients_header {\n  display: flex;\n  flex-direction: row;\n}\n.clients_header ion-title {\n  margin-left: 10px;\n}\n.clients_header ion-label {\n  margin-right: 10px;\n  font-size: 40px;\n}\nion-content {\n  --background:#fff;\n}\nion-content ion-item {\n  --background:#fff;\n}\nion-content ion-item ion-label h2 {\n  color: #000;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNsaWVudC1yZWdpc3Rlci5wYWdlLnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXG5hdmVlbiUyMGt1bWFyJTIwa2F0aXlhclxcT25lRHJpdmVcXERlc2t0b3BcXGh1bnRuZXdcXGh1bnRwcm9wZXJ0eW5ld1xcc3JjXFxhcHBcXGNsaWVudC1yZWdpc3RlclxcY2xpZW50LXJlZ2lzdGVyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7RUFDQSxtQkFBQTtBQ0NKO0FEQUk7RUFDRyxpQkFBQTtBQ0VQO0FEQUk7RUFBVyxrQkFBQTtFQUFvQixlQUFBO0FDSW5DO0FERkE7RUFDSSxpQkFBQTtBQ0tKO0FESkk7RUFDSSxpQkFBQTtBQ01SO0FESlk7RUFBSSxXQUFBO0FDT2hCIiwiZmlsZSI6ImNsaWVudC1yZWdpc3Rlci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2xpZW50c19oZWFkZXJ7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgIGlvbi10aXRsZXtcclxuICAgICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xyXG4gICAgfVxyXG4gICAgaW9uLWxhYmVseyBtYXJnaW4tcmlnaHQ6IDEwcHg7IGZvbnQtc2l6ZTogNDBweDt9XHJcbn1cclxuaW9uLWNvbnRlbnR7XHJcbiAgICAtLWJhY2tncm91bmQ6I2ZmZjtcclxuICAgIGlvbi1pdGVte1xyXG4gICAgICAgIC0tYmFja2dyb3VuZDojZmZmO1xyXG4gICAgICAgIGlvbi1sYWJlbHtcclxuICAgICAgICAgICAgaDJ7IGNvbG9yOiAjMDAwO31cclxuICAgICAgICB9XHJcbiAgICB9XHJcbn0iLCIuY2xpZW50c19oZWFkZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogcm93O1xufVxuLmNsaWVudHNfaGVhZGVyIGlvbi10aXRsZSB7XG4gIG1hcmdpbi1sZWZ0OiAxMHB4O1xufVxuLmNsaWVudHNfaGVhZGVyIGlvbi1sYWJlbCB7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbiAgZm9udC1zaXplOiA0MHB4O1xufVxuXG5pb24tY29udGVudCB7XG4gIC0tYmFja2dyb3VuZDojZmZmO1xufVxuaW9uLWNvbnRlbnQgaW9uLWl0ZW0ge1xuICAtLWJhY2tncm91bmQ6I2ZmZjtcbn1cbmlvbi1jb250ZW50IGlvbi1pdGVtIGlvbi1sYWJlbCBoMiB7XG4gIGNvbG9yOiAjMDAwO1xufSJdfQ== */";
+module.exports = ".clients_header {\n  display: flex;\n  flex-direction: row;\n}\n.clients_header ion-title {\n  margin-left: 10px;\n}\n.clients_header ion-label {\n  margin-right: 10px;\n  font-size: 40px;\n}\nion-content {\n  --background:#fff;\n}\nion-content ion-item {\n  --background:#fff;\n}\nion-content ion-item ion-label h2 {\n  color: #000;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNsaWVudC1yZWdpc3Rlci5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsbUJBQUE7QUFDSjtBQUFJO0VBQ0csaUJBQUE7QUFFUDtBQUFJO0VBQVcsa0JBQUE7RUFBb0IsZUFBQTtBQUluQztBQUZBO0VBQ0ksaUJBQUE7QUFLSjtBQUpJO0VBQ0ksaUJBQUE7QUFNUjtBQUpZO0VBQUksV0FBQTtBQU9oQiIsImZpbGUiOiJjbGllbnQtcmVnaXN0ZXIucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNsaWVudHNfaGVhZGVye1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICBpb24tdGl0bGV7XHJcbiAgICAgICBtYXJnaW4tbGVmdDogMTBweDtcclxuICAgIH1cclxuICAgIGlvbi1sYWJlbHsgbWFyZ2luLXJpZ2h0OiAxMHB4OyBmb250LXNpemU6IDQwcHg7fVxyXG59XHJcbmlvbi1jb250ZW50e1xyXG4gICAgLS1iYWNrZ3JvdW5kOiNmZmY7XHJcbiAgICBpb24taXRlbXtcclxuICAgICAgICAtLWJhY2tncm91bmQ6I2ZmZjtcclxuICAgICAgICBpb24tbGFiZWx7XHJcbiAgICAgICAgICAgIGgyeyBjb2xvcjogIzAwMDt9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59Il19 */";
 
 /***/ }),
 
@@ -167,7 +167,7 @@ module.exports = ".clients_header {\n  display: flex;\n  flex-direction: row;\n}
   \**********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header class=\"clients_header\">\n  <ion-toolbar class=\"header-bg-color\">    \n    <ion-icon slot=\"start\" routerLink=\"/splash/tabs/home\" class=\"back-btn\" name=\"arrow-back-outline\"></ion-icon>\n    <ion-title slot=\"start\" class=\"header-title\">Clients</ion-title>\n    <ion-label slot=\"end\" (click)=\"clientRegistration()\">+</ion-label>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-item lines=\"none\" *ngFor=\"let list of clientList\">\n    <ion-avatar slot=\"start\">\n      <img src=\"../../assets/images/user.png\" />\n    </ion-avatar>\n    <ion-label>\n      <h2>{{list.client_name}}</h2>\n      <p>{{list.propertyType}}, Flat</p>\n      <p>{{list.property_location}}</p>\n    </ion-label>\n  </ion-item>\n</ion-content>\n";
+module.exports = "<ion-header class=\"clients_header\">\r\n  <ion-toolbar class=\"header-bg-color\">    \r\n    <ion-icon slot=\"start\" routerLink=\"/splash/tabs/home\" class=\"back-btn\" name=\"arrow-back-outline\"></ion-icon>\r\n    <ion-title slot=\"start\" class=\"header-title\">Clients</ion-title>\r\n    <ion-label slot=\"end\" (click)=\"clientRegistration()\">+</ion-label>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-item lines=\"none\" *ngFor=\"let list of clientList\">\r\n    <ion-avatar slot=\"start\">\r\n      <img src=\"../../assets/images/user.png\" />\r\n    </ion-avatar>\r\n    <ion-label>\r\n      <h2>{{list.client_name}}</h2>\r\n      <p>{{list.propertyType}}, Flat</p>\r\n      <p>{{list.property_location}}</p>\r\n    </ion-label>\r\n  </ion-item>\r\n</ion-content>\r\n";
 
 /***/ })
 

@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_custom-range_custom-range_module_ts"],{
 
-/***/ 98387:
+/***/ 49091:
 /*!*************************************************************!*\
   !*** ./src/app/custom-range/custom-range-routing.module.ts ***!
   \*************************************************************/
@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _custom_range_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./custom-range.page */ 56974);
+/* harmony import */ var _custom_range_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./custom-range.page */ 56008);
 
 
 
@@ -38,7 +38,7 @@ CustomRangePageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)
 
 /***/ }),
 
-/***/ 95574:
+/***/ 99143:
 /*!*****************************************************!*\
   !*** ./src/app/custom-range/custom-range.module.ts ***!
   \*****************************************************/
@@ -53,7 +53,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _custom_range_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./custom-range-routing.module */ 98387);
+/* harmony import */ var _custom_range_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./custom-range-routing.module */ 49091);
 /* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ 19397);
 
 

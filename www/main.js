@@ -1,6 +1,6 @@
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["main"],{
 
-/***/ 70809:
+/***/ 90158:
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
   \***************************************/
@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _services_auth_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./services/auth.guard */ 57706);
+/* harmony import */ var _services_auth_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./services/auth.guard */ 98063);
 
 
 
@@ -23,68 +23,68 @@ const routes = [
     {
         path: '',
         // loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_splash_splash_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./splash/splash.module */ 83633)).then(m => m.SplashPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_splash_splash_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./splash/splash.module */ 89623)).then(m => m.SplashPageModule)
     },
     {
         path: 'loan-eligibility',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_loan-eligibility_loan-eligibility_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./loan-eligibility/loan-eligibility.module */ 34502)).then(m => m.LoanEligibilityPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_loan-eligibility_loan-eligibility_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./loan-eligibility/loan-eligibility.module */ 63297)).then(m => m.LoanEligibilityPageModule)
     },
     {
         path: 'emi-calculator',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_emi-calculator_emi-calculator_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./emi-calculator/emi-calculator.module */ 17311)).then(m => m.EmiCalculatorPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_emi-calculator_emi-calculator_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./emi-calculator/emi-calculator.module */ 53511)).then(m => m.EmiCalculatorPageModule)
     },
     {
         path: 'future-value-calculator',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_future-value-calculator_future-value-calculator_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./future-value-calculator/future-value-calculator.module */ 36736)).then(m => m.FutureValueCalculatorPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_future-value-calculator_future-value-calculator_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./future-value-calculator/future-value-calculator.module */ 38558)).then(m => m.FutureValueCalculatorPageModule)
     },
     {
         path: 'rental-value-calculator',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_rental-value-calculator_rental-value-calculator_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./rental-value-calculator/rental-value-calculator.module */ 37295)).then(m => m.RentalValueCalculatorPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_rental-value-calculator_rental-value-calculator_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./rental-value-calculator/rental-value-calculator.module */ 79685)).then(m => m.RentalValueCalculatorPageModule)
     },
     {
         path: 'login',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("src_app_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./login/login.module */ 77641)).then(m => m.LoginPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("src_app_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./login/login.module */ 80107)).then(m => m.LoginPageModule)
     },
     {
         path: 'messages',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_profile_messages_messages_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./profile/messages/messages.module */ 61730)).then(m => m.MessagesPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_profile_messages_messages_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./profile/messages/messages.module */ 26182)).then(m => m.MessagesPageModule)
     },
     {
         path: 'posted-property',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_profile_posted-property_posted-property_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./profile/posted-property/posted-property.module */ 44967)).then(m => m.PostedPropertyPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_profile_posted-property_posted-property_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./profile/posted-property/posted-property.module */ 39732)).then(m => m.PostedPropertyPageModule)
     },
     {
         path: 'list-property',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_list-property_list-property_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./list-property/list-property.module */ 40527)).then(m => m.ListPropertyPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_list-property_list-property_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./list-property/list-property.module */ 94286)).then(m => m.ListPropertyPageModule)
     },
     {
         path: 'property-details',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_property-details_property-details_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./property-details/property-details.module */ 70242)).then(m => m.PropertyDetailsPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_property-details_property-details_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./property-details/property-details.module */ 61988)).then(m => m.PropertyDetailsPageModule)
     },
     {
         path: 'select-package',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_select-package_select-package_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./select-package/select-package.module */ 12442)).then(m => m.SelectPackagePageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_select-package_select-package_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./select-package/select-package.module */ 33954)).then(m => m.SelectPackagePageModule)
     },
     {
         path: 'add-button',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_add-button_add-button_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./add-button/add-button.module */ 57558)).then(m => m.AddButtonPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_add-button_add-button_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./add-button/add-button.module */ 97699)).then(m => m.AddButtonPageModule)
     },
     {
         path: 'client-register',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_client-register_client-register_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./client-register/client-register.module */ 92758)).then(m => m.ClientRegisterPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_client-register_client-register_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./client-register/client-register.module */ 88148)).then(m => m.ClientRegisterPageModule)
     },
     {
         path: 'post-project',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_post-project_post-project_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./post-project/post-project.module */ 93190)).then(m => m.PostProjectPageModule),
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_post-project_post-project_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./post-project/post-project.module */ 34025)).then(m => m.PostProjectPageModule),
         canActivate: [_services_auth_guard__WEBPACK_IMPORTED_MODULE_0__.AuthGuard]
     },
     {
         path: 'custom-range',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("default-src_app_custom-range_custom-range_page_ts"), __webpack_require__.e("src_app_custom-range_custom-range_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./custom-range/custom-range.module */ 95574)).then(m => m.CustomRangePageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_custom-range_custom-range_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./custom-range/custom-range.module */ 99143)).then(m => m.CustomRangePageModule)
     },
     {
         path: 'splash',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_tabs_tabs_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./tabs/tabs.module */ 86432)).then(m => m.TabsPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_tabs_tabs_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./tabs/tabs.module */ 15564)).then(m => m.TabsPageModule)
     },
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -102,7 +102,7 @@ AppRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
-/***/ 20721:
+/***/ 55041:
 /*!**********************************!*\
   !*** ./src/app/app.component.ts ***!
   \**********************************/
@@ -157,7 +157,7 @@ let AppComponent = class AppComponent {
                             text: 'Cancel',
                             role: 'cancel',
                             handler: () => {
-                                console.log('Exit canceled');
+                                //console.log('Exit canceled');
                             }
                         },
                         {
@@ -200,7 +200,7 @@ AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 50023:
+/***/ 36747:
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
   \*******************************/
@@ -218,18 +218,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common/http */ 28784);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ionic-native/camera/ngx */ 6018);
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 70809);
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ 20721);
-/* harmony import */ var _services_calculator_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/calculator.service */ 75849);
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 90158);
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ 55041);
+/* harmony import */ var _services_calculator_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/calculator.service */ 4975);
 /* harmony import */ var _ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/http/ngx */ 44719);
-/* harmony import */ var _services_main_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/main.service */ 42735);
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/auth.service */ 46221);
-/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 20070);
-/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/util.service */ 91944);
-/* harmony import */ var _awesome_cordova_plugins_geolocation_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @awesome-cordova-plugins/geolocation/ngx */ 36457);
+/* harmony import */ var _services_main_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/main.service */ 91557);
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/auth.service */ 37556);
+/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 55916);
+/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/util.service */ 67241);
+/* harmony import */ var _awesome_cordova_plugins_geolocation_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @awesome-cordova-plugins/geolocation/ngx */ 75626);
 /* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ 37954);
-/* harmony import */ var _services_jwt_interceptor__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./services/jwt.interceptor */ 23464);
-/* harmony import */ var _services_auth_guard__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./services/auth.guard */ 57706);
+/* harmony import */ var _services_jwt_interceptor__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./services/jwt.interceptor */ 37792);
+/* harmony import */ var _services_auth_guard__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./services/auth.guard */ 98063);
 /* harmony import */ var _awesome_cordova_plugins_social_sharing_ngx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @awesome-cordova-plugins/social-sharing/ngx */ 26436);
 
 
@@ -282,7 +282,7 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__decorate)([
 
 /***/ }),
 
-/***/ 57706:
+/***/ 98063:
 /*!****************************************!*\
   !*** ./src/app/services/auth.guard.ts ***!
   \****************************************/
@@ -296,8 +296,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _main_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.service */ 42735);
-/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth.service */ 46221);
+/* harmony import */ var _main_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.service */ 91557);
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth.service */ 37556);
 
 
 
@@ -337,7 +337,7 @@ AuthGuard = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 46221:
+/***/ 37556:
 /*!******************************************!*\
   !*** ./src/app/services/auth.service.ts ***!
   \******************************************/
@@ -352,8 +352,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 28784);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ionic-native/http/ngx */ 44719);
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../environments/environment */ 24766);
-/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 20070);
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../environments/environment */ 92340);
+/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 55916);
 
 
 
@@ -400,7 +400,7 @@ LoginService = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 75849:
+/***/ 4975:
 /*!************************************************!*\
   !*** ./src/app/services/calculator.service.ts ***!
   \************************************************/
@@ -414,7 +414,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ionic-native/http/ngx */ 44719);
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../environments/environment */ 24766);
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../environments/environment */ 92340);
 
 
 
@@ -483,7 +483,7 @@ CalculatorService = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 23464:
+/***/ 37792:
 /*!*********************************************!*\
   !*** ./src/app/services/jwt.interceptor.ts ***!
   \*********************************************/
@@ -496,7 +496,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 20070);
+/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 55916);
 
 
 
@@ -528,7 +528,7 @@ AuthInterceptor = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
-/***/ 42735:
+/***/ 91557:
 /*!******************************************!*\
   !*** ./src/app/services/main.service.ts ***!
   \******************************************/
@@ -542,9 +542,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 28784);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 20070);
+/* harmony import */ var _awesome_cordova_plugins_native_storage_ngx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @awesome-cordova-plugins/native-storage/ngx */ 55916);
 /* harmony import */ var _ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic-native/http/ngx */ 44719);
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../environments/environment */ 24766);
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../environments/environment */ 92340);
 
 
 
@@ -759,7 +759,7 @@ MainService = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 91944:
+/***/ 67241:
 /*!******************************************!*\
   !*** ./src/app/services/util.service.ts ***!
   \******************************************/
@@ -802,7 +802,7 @@ UtilService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
 
 /***/ }),
 
-/***/ 24766:
+/***/ 92340:
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
   \*****************************************/
@@ -833,7 +833,7 @@ const environment = {
 
 /***/ }),
 
-/***/ 8835:
+/***/ 14431:
 /*!*********************!*\
   !*** ./src/main.ts ***!
   \*********************/
@@ -843,8 +843,8 @@ const environment = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ 68150);
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/app.module */ 50023);
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./environments/environment */ 24766);
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/app.module */ 36747);
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./environments/environment */ 92340);
 
 
 
@@ -853,7 +853,7 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.productio
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.enableProdMode)();
 }
 (0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__.platformBrowserDynamic)().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
-    .catch(err => console.log(err));
+    .catch(err => { });
 
 
 /***/ }),
@@ -925,12 +925,12 @@ var map = {
 	],
 	"./ion-datetime-button.entry.js": [
 		17950,
-		"default-node_modules_ionic_core_dist_esm_parse-5b8a1541_js-node_modules_ionic_core_dist_esm_t-8d4d32",
+		"default-node_modules_ionic_core_dist_esm_data-caf38df0_js-node_modules_ionic_core_dist_esm_th-d3ab8e",
 		"node_modules_ionic_core_dist_esm_ion-datetime-button_entry_js"
 	],
 	"./ion-datetime_3.entry.js": [
 		79689,
-		"default-node_modules_ionic_core_dist_esm_parse-5b8a1541_js-node_modules_ionic_core_dist_esm_t-8d4d32",
+		"default-node_modules_ionic_core_dist_esm_data-caf38df0_js-node_modules_ionic_core_dist_esm_th-d3ab8e",
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-datetime_3_entry_js"
 	],
@@ -950,6 +950,7 @@ var map = {
 	],
 	"./ion-input.entry.js": [
 		83288,
+		"common",
 		"node_modules_ionic_core_dist_esm_ion-input_entry_js"
 	],
 	"./ion-item-option_3.entry.js": [
@@ -1130,7 +1131,7 @@ module.exports = "<ion-app>\r\n  <ion-router-outlet></ion-router-outlet>\r\n</io
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ __webpack_require__.O(0, ["vendor"], () => (__webpack_exec__(8835)));
+/******/ __webpack_require__.O(0, ["vendor"], () => (__webpack_exec__(14431)));
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);

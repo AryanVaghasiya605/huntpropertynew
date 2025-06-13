@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_splash_splash_module_ts"],{
 
-/***/ 26600:
+/***/ 3523:
 /*!*************************************************!*\
   !*** ./src/app/splash/splash-routing.module.ts ***!
   \*************************************************/
@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _splash_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./splash.page */ 27799);
+/* harmony import */ var _splash_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./splash.page */ 84399);
 
 
 
@@ -38,7 +38,7 @@ SplashPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
-/***/ 83633:
+/***/ 89623:
 /*!*****************************************!*\
   !*** ./src/app/splash/splash.module.ts ***!
   \*****************************************/
@@ -53,8 +53,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _splash_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./splash-routing.module */ 26600);
-/* harmony import */ var _splash_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./splash.page */ 27799);
+/* harmony import */ var _splash_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./splash-routing.module */ 3523);
+/* harmony import */ var _splash_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./splash.page */ 84399);
 
 
 
@@ -80,7 +80,7 @@ SplashPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 27799:
+/***/ 84399:
 /*!***************************************!*\
   !*** ./src/app/splash/splash.page.ts ***!
   \***************************************/
@@ -133,7 +133,7 @@ SplashPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
   \****************************************************/
 /***/ ((module) => {
 
-module.exports = "ion-content {\n  --background:#fff;\n  position: relative;\n}\nion-content img {\n  position: absolute;\n  bottom: 0;\n}\nion-content .video {\n  position: absolute;\n  top: 25%;\n  width: 98%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNwbGFzaC5wYWdlLnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXG5hdmVlbiUyMGt1bWFyJTIwa2F0aXlhclxcT25lRHJpdmVcXERlc2t0b3BcXGh1bnRuZXdcXGh1bnRwcm9wZXJ0eW5ld1xcc3JjXFxhcHBcXHNwbGFzaFxcc3BsYXNoLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGlCQUFBO0VBQ0Esa0JBQUE7QUNDSjtBRENJO0VBQ0ksa0JBQUE7RUFDQSxTQUFBO0FDQ1I7QURDSTtFQUNJLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFVBQUE7QUNDUiIsImZpbGUiOiJzcGxhc2gucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnR7XHJcbiAgICAtLWJhY2tncm91bmQ6I2ZmZjtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIC8vIGltZzpudGgtY2hpbGQoMSl7IGhlaWdodDogMTAwJTt9XHJcbiAgICBpbWd7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgIH1cclxuICAgIC52aWRlb3tcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgdG9wOiAyNSU7XHJcbiAgICAgICAgd2lkdGg6IDk4JTtcclxuICAgIH1cclxufSIsImlvbi1jb250ZW50IHtcbiAgLS1iYWNrZ3JvdW5kOiNmZmY7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cbmlvbi1jb250ZW50IGltZyB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgYm90dG9tOiAwO1xufVxuaW9uLWNvbnRlbnQgLnZpZGVvIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDI1JTtcbiAgd2lkdGg6IDk4JTtcbn0iXX0= */";
+module.exports = "ion-content {\n  --background:#fff;\n  position: relative;\n}\nion-content img {\n  position: absolute;\n  bottom: 0;\n}\nion-content .video {\n  position: absolute;\n  top: 25%;\n  width: 98%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNwbGFzaC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxpQkFBQTtFQUNBLGtCQUFBO0FBQ0o7QUFDSTtFQUNJLGtCQUFBO0VBQ0EsU0FBQTtBQUNSO0FBQ0k7RUFDSSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxVQUFBO0FBQ1IiLCJmaWxlIjoic3BsYXNoLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1jb250ZW50e1xyXG4gICAgLS1iYWNrZ3JvdW5kOiNmZmY7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAvLyBpbWc6bnRoLWNoaWxkKDEpeyBoZWlnaHQ6IDEwMCU7fVxyXG4gICAgaW1ne1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBib3R0b206IDA7XHJcbiAgICB9XHJcbiAgICAudmlkZW97XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHRvcDogMjUlO1xyXG4gICAgICAgIHdpZHRoOiA5OCU7XHJcbiAgICB9XHJcbn0iXX0= */";
 
 /***/ }),
 
@@ -143,7 +143,7 @@ module.exports = "ion-content {\n  --background:#fff;\n  position: relative;\n}\
   \****************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content [fullscreen]=\"true\">\n  <!-- <img src=\"../../assets/images/splash-top.gif\" alt=\"\"> -->\n<!-- <img src=\"../../assets/images/spash  screen.gif\" alt=\"\"> -->\n<img autoplay class=\"video\" src=\"../../assets/video/splash.gif\" />\n</ion-content>\n";
+module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <!-- <img src=\"../../assets/images/splash-top.gif\" alt=\"\"> -->\r\n<!-- <img src=\"../../assets/images/spash  screen.gif\" alt=\"\"> -->\r\n<img autoplay class=\"video\" src=\"../../assets/video/splash.gif\" />\r\n</ion-content>\r\n";
 
 /***/ })
 

@@ -1,4 +1,4 @@
-cordova.define("cordova-plugin-camera.CameraPopoverHandle", function(require, exports, module) {
+cordova.define("cordova-plugin-geolocation.Position", function(require, exports, module) {
 /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -18,18 +18,27 @@ cordova.define("cordova-plugin-camera.CameraPopoverHandle", function(require, ex
  * specific language governing permissions and limitations
  * under the License.
  *
-*/
-
-/**
- * @ignore in favour of iOS' one
- * A handle to an image picker popover.
  */
-var CameraPopoverHandle = function () {
-    this.setPosition = function (popoverOptions) {
-        console.log('CameraPopoverHandle.setPosition is only supported on iOS.');
-    };
+
+var Coordinates = require('./Coordinates');
+
+var Position = function (coords, timestamp) {
+    if (coords) {
+        this.coords = new Coordinates(
+            coords.latitude,
+            coords.longitude,
+            coords.altitude,
+            coords.accuracy,
+            coords.heading,
+            coords.velocity,
+            coords.altitudeAccuracy
+        );
+    } else {
+        this.coords = new Coordinates();
+    }
+    this.timestamp = timestamp !== undefined ? timestamp : new Date().getTime();
 };
 
-module.exports = CameraPopoverHandle;
+module.exports = Position;
 
 });

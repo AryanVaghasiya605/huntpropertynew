@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_more_more_module_ts"],{
 
-/***/ 59803:
+/***/ 39738:
 /*!*********************************************!*\
   !*** ./src/app/more/more-routing.module.ts ***!
   \*********************************************/
@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _more_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./more.page */ 92191);
+/* harmony import */ var _more_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./more.page */ 97730);
 
 
 
@@ -26,7 +26,7 @@ const routes = [
     },
     {
         path: 'contact-us',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_more_contact-us_contact-us_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./contact-us/contact-us.module */ 26305)).then(m => m.ContactUsPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_fortawesome_angular-fontawesome_fesm2015_angular-fontawesome_mjs"), __webpack_require__.e("default-node_modules_fortawesome_free-solid-svg-icons_index_mjs"), __webpack_require__.e("src_app_more_contact-us_contact-us_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./contact-us/contact-us.module */ 15277)).then(m => m.ContactUsPageModule)
     }
 ];
 let MorePageRoutingModule = class MorePageRoutingModule {
@@ -42,7 +42,7 @@ MorePageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
-/***/ 85110:
+/***/ 36436:
 /*!*************************************!*\
   !*** ./src/app/more/more.module.ts ***!
   \*************************************/
@@ -57,9 +57,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _more_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./more.page */ 92191);
-/* harmony import */ var _explore_container_explore_container_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../explore-container/explore-container.module */ 74081);
-/* harmony import */ var _more_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./more-routing.module */ 59803);
+/* harmony import */ var _more_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./more.page */ 97730);
+/* harmony import */ var _explore_container_explore_container_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../explore-container/explore-container.module */ 581);
+/* harmony import */ var _more_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./more-routing.module */ 39738);
 
 
 
@@ -87,7 +87,7 @@ MorePageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 92191:
+/***/ 97730:
 /*!***********************************!*\
   !*** ./src/app/more/more.page.ts ***!
   \***********************************/
@@ -162,7 +162,7 @@ MorePage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "ion-item {\n  --background: #fff;\n  --border-color:#E4E4E4;\n  --min-height:60px;\n}\nion-item ion-icon {\n  color: #000;\n}\nion-item .more_list {\n  color: #000;\n  margin-left: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vcmUucGFnZS5zY3NzIiwiLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxuYXZlZW4lMjBrdW1hciUyMGthdGl5YXJcXE9uZURyaXZlXFxEZXNrdG9wXFxodW50bmV3XFxodW50cHJvcGVydHluZXdcXHNyY1xcYXBwXFxtb3JlXFxtb3JlLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0Esc0JBQUE7RUFDQSxpQkFBQTtBQ0NKO0FEQUk7RUFBVSxXQUFBO0FDR2Q7QURGRztFQUFZLFdBQUE7RUFBYSxpQkFBQTtBQ001QiIsImZpbGUiOiJtb3JlLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1pdGVte1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjZmZmO1xyXG4gICAgLS1ib3JkZXItY29sb3I6I0U0RTRFNDtcclxuICAgIC0tbWluLWhlaWdodDo2MHB4O1xyXG4gICAgaW9uLWljb257IGNvbG9yOiAjMDAwO31cclxuICAgLm1vcmVfbGlzdHsgY29sb3I6ICMwMDA7IG1hcmdpbi1sZWZ0OiAyMHB4O31cclxufSIsImlvbi1pdGVtIHtcbiAgLS1iYWNrZ3JvdW5kOiAjZmZmO1xuICAtLWJvcmRlci1jb2xvcjojRTRFNEU0O1xuICAtLW1pbi1oZWlnaHQ6NjBweDtcbn1cbmlvbi1pdGVtIGlvbi1pY29uIHtcbiAgY29sb3I6ICMwMDA7XG59XG5pb24taXRlbSAubW9yZV9saXN0IHtcbiAgY29sb3I6ICMwMDA7XG4gIG1hcmdpbi1sZWZ0OiAyMHB4O1xufSJdfQ== */";
+module.exports = "ion-item {\n  --background: #fff;\n  --border-color:#E4E4E4;\n  --min-height:60px;\n}\nion-item ion-icon {\n  color: #000;\n}\nion-item .more_list {\n  color: #000;\n  margin-left: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vcmUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxzQkFBQTtFQUNBLGlCQUFBO0FBQ0o7QUFBSTtFQUFVLFdBQUE7QUFHZDtBQUZHO0VBQVksV0FBQTtFQUFhLGlCQUFBO0FBTTVCIiwiZmlsZSI6Im1vcmUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWl0ZW17XHJcbiAgICAtLWJhY2tncm91bmQ6ICNmZmY7XHJcbiAgICAtLWJvcmRlci1jb2xvcjojRTRFNEU0O1xyXG4gICAgLS1taW4taGVpZ2h0OjYwcHg7XHJcbiAgICBpb24taWNvbnsgY29sb3I6ICMwMDA7fVxyXG4gICAubW9yZV9saXN0eyBjb2xvcjogIzAwMDsgbWFyZ2luLWxlZnQ6IDIwcHg7fVxyXG59Il19 */";
 
 /***/ }),
 
